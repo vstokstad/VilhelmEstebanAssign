@@ -11,7 +11,7 @@ int Game::Init()
 
 
 	SDL_Init(SDL_INIT_EVERYTHING);
-
+	IMG_Init(IMG_INIT_PNG);
 	screenSize = new Vector2Int(800, 600);
 
 	//CONSTRUCTOR AND WINDOW GETS MADE HERE//

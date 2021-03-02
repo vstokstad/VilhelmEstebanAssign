@@ -55,7 +55,7 @@ int Player::Fire()
 int Player::Rendering()
 {
 
-	SDL_RenderCopy(mPlayerRenderer, mPlayerTex, mSrcR, mDestR);
+	SDL_RenderCopy(mPlayerRenderer, mPlayerTex, NULL, NULL);
 
 	return 0;
 }
