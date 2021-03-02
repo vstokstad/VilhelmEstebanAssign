@@ -12,23 +12,24 @@ class Game
 {
 public:
 
-	Game();
+	Game()
+	= default;
 
-	void Init();
+	int Init();
 
-	Player* player;
+	Player* player = new Player();
 
 	bool appRunning = true;
 
-	void GameLoop();
+	int GameLoop();
 
-	void HandleEvents();
+	int HandleEvents();
 
-	void Render();
+	int Render();
 
-	void Update();
+	int Update();
 
-	void Cleanup() const;
+	int Cleanup() const;
 
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;

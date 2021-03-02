@@ -21,8 +21,8 @@ public:
 	SDL_KeyCode mRight = SDLK_RIGHT;
 	SDL_KeyCode mSpace = SDLK_SPACE;
 
-	Vector2 mPosition;
-	Vector2 mDirection;
+	Vector2 mPosition = Vector2(0,0);
+	Vector2 mDirection = Vector2(0,0);
 
 	SDL_Renderer* mPlayerRenderer = nullptr;
 
@@ -32,17 +32,17 @@ public:
 	SDL_FRect* mDestR = nullptr;
 
 
-	void Update();
+	int Update();
 
-	void Rendering();
+	int Rendering();
 
-	void HandleInput(SDL_Event event);
+	int HandleInput(SDL_Event event);
 
-	void Fire();
+	int Fire();
 
-	void Move();
+	int Move();
 
-	void Init(SDL_Renderer* playerRenderer);
+	int Init(SDL_Renderer* playerRenderer);
 
 
 };
