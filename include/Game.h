@@ -25,9 +25,9 @@ public:
 
 	int HandleEvents();
 
-	int Render();
+	int Render() const;
 
-	int Update();
+	int Update() const;
 
 	int Cleanup() const;
 

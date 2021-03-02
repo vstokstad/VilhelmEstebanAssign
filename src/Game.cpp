@@ -15,26 +15,23 @@ int Game::Init()
 	screenSize = new Vector2Int(800, 600);
 
 	//CONSTRUCTOR AND WINDOW GETS MADE HERE//
-	if (!SDL_CreateWindowAndRenderer(screenSize->x, screenSize->y, SDL_WINDOW_ALLOW_HIGHDPI, &window, &renderer)){
+	if (!SDL_CreateWindowAndRenderer(screenSize->x, screenSize->y, SDL_WINDOW_ALLOW_HIGHDPI, &window, &renderer)) {
 		if (window == nullptr) {
 			// In the case that the window could not be made...
-
+			return 1;
 		}
 		if (renderer == nullptr) {
 			// In the case that the window could not be made...
-
+			return 1;
 		}
 	}
 
-
-
+	player->Init(renderer);
 
 	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
 	SDL_RenderClear(renderer);
 	SDL_RenderPresent(renderer);
 
-	player = new Player();
-	player->Init(renderer);
 
 
 	appRunning = true;
@@ -74,13 +71,13 @@ int Game::HandleEvents()
 		if (events.type == SDL_KEYDOWN) {
 			player->HandleInput(events);
 		}
-		if (events.button.type == SDL_MOUSEBUTTONDOWN) {
-			r = events.button.x;
-			b = events.button.y;
-			SDL_SetRenderDrawColor(renderer, r, g, b, a);
-			//Set and render a new color//
-			SDL_RenderClear(renderer);
-		}
+		/*	if (events.button.type == SDL_MOUSEBUTTONDOWN) {
+				r = events.button.x;
+				b = events.button.y;
+				SDL_SetRenderDrawColor(renderer, r, g, b, a);
+				//Set and render a new color//
+				SDL_RenderClear(renderer);
+			}*/
 		//check if app is closing to quit.
 		if (SDL_QUIT == events.type) {
 
@@ -93,11 +90,10 @@ int Game::HandleEvents()
 
 }
 
-int Game::Render()
+int Game::Render() const
 {
 
 	SDL_RenderClear(renderer);
-
 
 	player->Rendering();
 
@@ -106,7 +102,7 @@ int Game::Render()
 	return 0;
 }
 
-int Game::Update()
+int Game::Update() const
 {
 	player->Update();
 	return 0;
@@ -119,7 +115,7 @@ int Game::Cleanup() const
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
-return 0;
+	return 0;
 }
 
 
