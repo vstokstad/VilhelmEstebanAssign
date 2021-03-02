@@ -38,8 +38,8 @@ int Player::HandleInput(SDL_Event event)
 
 int Player::Move()
 {
-	mPosition.x += mDirection.x;
-	mPosition.y += mDirection.y;
+	mPosition.x = Library::IntLerp(mPosition.x, mDirection.x, 1);
+	mPosition.y = Library::IntLerp(mPosition.y, mDirection.y, 1);
 
 	mSrcR.x = mDestR.x;
 	mSrcR.y = mDestR.y;
@@ -80,7 +80,7 @@ int Player::Init(SDL_Renderer* playerRenderer)
 
 
 	IMG_Init(IMG_INIT_PNG);
-	const char* playerWhite = "../assets/playerWhite.png";
+	const char* playerWhite = "assets/playerWhite.png";
 
 	SDL_Surface* tmpSurface = IMG_Load(playerWhite);
 	mPlayerTex = SDL_CreateTextureFromSurface(mPlayerRenderer, tmpSurface);

@@ -9,13 +9,13 @@
 #include <SDL_image.h>
 
 //STD SYSTEM
-//#include <iostream>
-//#include <cstdlib>
-//#include <cstdio>
-//#include <cstddef>
-//#include <cstdint>
-//#include <cstdarg>
-//#include <cstdbool>
+#include <iostream>
+#include <cstdlib>
+#include <cstdio>
+#include <cstddef>
+#include <cstdint>
+#include <cstdarg>
+#include <cstdbool>
 
 
 //EXTRAS

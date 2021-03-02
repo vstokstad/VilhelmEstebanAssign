@@ -1,12 +1,11 @@
 //Stolen from Oliver Lebert;
 //Added Vector3 with similar operators as V2;
 //Added Lerp function for floats and Vector3;
-
+//added back IntLerp;
 
 #pragma once
 
 #include <cmath>
-
 
 
 struct Vector3
@@ -280,6 +279,11 @@ public:
 	{
 		return (value - a) / (b - a);
 	};
+
+	int static IntLerp(int a, int b, int t)
+	{
+		return a + t * (b - a);
+	}
 
 	float static Lerp(float a, float b, float t)
 	{

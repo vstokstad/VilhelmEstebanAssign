@@ -12,10 +12,10 @@ int Game::Init()
 
 	SDL_Init(SDL_INIT_EVERYTHING);
 	IMG_Init(IMG_INIT_PNG);
-	screenSize = new Vector2Int(800, 600);
+
 
 	//CONSTRUCTOR AND WINDOW GETS MADE HERE//
-	if (!SDL_CreateWindowAndRenderer(screenSize->x, screenSize->y, SDL_WINDOW_ALLOW_HIGHDPI, &window, &renderer)) {
+	if (!SDL_CreateWindowAndRenderer(screenSize.x, screenSize.y, SDL_WINDOW_ALLOW_HIGHDPI, &window, &renderer)) {
 		if (window == nullptr) {
 			// In the case that the window could not be made...
 			return 1;
@@ -26,10 +26,10 @@ int Game::Init()
 		}
 	}
 
-	player->Init(renderer);
-
 	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
 	SDL_RenderClear(renderer);
+	player->Init(renderer);
+
 	SDL_RenderPresent(renderer);
 
 
@@ -90,7 +90,7 @@ int Game::HandleEvents()
 
 }
 
-int Game::Render() const
+int Game::Render()
 {
 
 	SDL_RenderClear(renderer);
@@ -98,13 +98,14 @@ int Game::Render() const
 	player->Rendering();
 
 	SDL_RenderPresent(renderer);
-
+fixedDeltaCounter++;
 	return 0;
 }
 
-int Game::Update() const
+int Game::Update()
 {
 	player->Update();
+deltaCounter++;
 	return 0;
 }
 
