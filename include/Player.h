@@ -28,8 +28,8 @@ public:
 
 
 	SDL_Texture* mPlayerTex = nullptr;
-	SDL_Rect* mSrcR = nullptr;
-	SDL_Rect* mDestR = nullptr;
+	SDL_Rect mSrcR = {};
+	SDL_Rect mDestR ={};
 
 
 	int Update();

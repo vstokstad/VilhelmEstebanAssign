@@ -11,19 +11,19 @@
 int Player::HandleInput(SDL_Event event)
 {
 	if (event.key.keysym.sym == mUp) {
-		mDirection.y = Library::Lerp(mDirection.y, 1.0f, 1.0f);
+		mDirection.y--;
 		std::cout << "up" << std::endl;
 	}
 	if (event.key.keysym.sym == mDown) {
-		mDirection.y = Library::Lerp(mDirection.y, -1.0f, 1.0f);
+		mDirection.y++;
 		std::cout << "down" << std::endl;
 	}
 	if (event.key.keysym.sym == mLeft) {
-		mDirection.x = Library::Lerp(mDirection.x, -1.0f, 1.0f);
+		mDirection.x--;
 		std::cout << "left" << std::endl;
 	}
 	if (event.key.keysym.sym == mRight) {
-		mDirection.x = Library::Lerp(mDirection.x, 1.0f, 1.0f);
+		mDirection.x++;
 		std::cout << "right" << std::endl;
 	}
 	if (event.key.keysym.sym == mSpace) {
@@ -31,19 +31,20 @@ int Player::HandleInput(SDL_Event event)
 		std::cout << "fire" << std::endl;
 	}
 
-	Move();
+
 	return 0;
 }
 
 
 int Player::Move()
 {
+	mPosition.x += mDirection.x;
+	mPosition.y += mDirection.y;
 
-
-	mPosition.x = Library::Lerp(mPosition.x, mDirection.x, 0.2F);
-	mPosition.y = Library::Lerp(mPosition.y, mDirection.y, 0.2F);
-	mDestR->x = mPosition.x;
-	mDestR->y = mPosition.y;
+	mSrcR.x = mDestR.x;
+	mSrcR.y = mDestR.y;
+	mDestR.x = mPosition.x;
+	mDestR.y = mPosition.y;
 	return 0;
 }
 
@@ -55,7 +56,7 @@ int Player::Fire()
 int Player::Rendering()
 {
 
-	SDL_RenderCopy(mPlayerRenderer, mPlayerTex, NULL, NULL);
+	SDL_RenderCopy(mPlayerRenderer, mPlayerTex, NULL, &mDestR);
 
 	return 0;
 }
@@ -63,8 +64,9 @@ int Player::Rendering()
 int Player::Update()
 {
 
-	cnt++;
-	mDestR->x = cnt;
+	mDestR.w = 64;
+	mDestR.h = 64;
+	Move();
 	return 0;
 
 }
@@ -73,11 +75,8 @@ int Player::Init(SDL_Renderer* playerRenderer)
 {
 
 	mPlayerRenderer = playerRenderer;
-	mSrcR = new SDL_Rect{ .w=32, .h=32, };
-	mDestR = new SDL_Rect{ .w=32, .h=32 };
-
-
-
+	mSrcR = SDL_Rect{ .w=64, .h=64 };
+	mDestR = SDL_Rect{ .w=64, .h=64 };
 
 
 	IMG_Init(IMG_INIT_PNG);
