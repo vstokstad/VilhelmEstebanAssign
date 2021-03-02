@@ -21,15 +21,15 @@ public:
 	SDL_KeyCode mRight = SDLK_RIGHT;
 	SDL_KeyCode mSpace = SDLK_SPACE;
 
-	Vector2 mPosition = Vector2(0,0);
-	Vector2 mDirection = Vector2(0,0);
+	Vector2Int mPosition = Vector2Int(0,0);
+	Vector2Int mDirection = Vector2Int(0,0);
 
 	SDL_Renderer* mPlayerRenderer = nullptr;
 
 
 	SDL_Texture* mPlayerTex = nullptr;
 	SDL_Rect* mSrcR = nullptr;
-	SDL_FRect* mDestR = nullptr;
+	SDL_Rect* mDestR = nullptr;
 
 
 	int Update();
@@ -45,6 +45,7 @@ public:
 	int Init(SDL_Renderer* playerRenderer);
 
 
+	int cnt = 0;
 };
 
 
