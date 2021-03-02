@@ -47,24 +47,9 @@ C:\Users\Admin\Documents\GitHub\VilhemEsteban\include\Player.h(22,21): error C36
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\include\Player.h(22,21): error C2059: syntax error: '='
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\include\Player.h(22,33): error C2238: unexpected token(s) preceding ';'
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(13,30): error C2065: 'mUp': undeclared identifier
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(14,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(14,31): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(17,30): error C2065: 'mDown': undeclared identifier
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(18,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(18,31): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(21,30): error C2065: 'mLeft': undeclared identifier
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(22,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(22,31): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(25,30): error C2065: 'mRight': undeclared identifier
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(26,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(26,31): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(29,30): error C2065: 'mSpace': undeclared identifier
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(43,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(43,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(43,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(44,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(44,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(44,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(76,24): error C7555: use of designated initializers requires at least '/std:c++latest'
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(77,25): error C7555: use of designated initializers requires at least '/std:c++latest'
-  Generating Code...
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(78,20): error C7555: use of designated initializers requires at least '/std:c++latest'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(79,21): error C7555: use of designated initializers requires at least '/std:c++latest'
