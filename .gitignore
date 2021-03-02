@@ -3,12 +3,4 @@
 .idea
 
 /cmake/
-VilhemEstebanSolution/VilhemEstebanSolution.sln
-VilhemEstebanSolution/.vs/VilhemEstebanSolution/v16/ipch/AutoPCH/a0175f0b275ee79a/MAIN.ipch
-VilhemEstebanSolution/.vs/VilhemEstebanSolution/v16/ipch/AutoPCH/c41e9dc2a90008cc/PLAYER.ipch
-VilhemEstebanSolution/.vs/VilhemEstebanSolution/v16/ipch/AutoPCH/3da3ace349c7f7a0/GAME.ipch
-VilhemEstebanSolution/.vs/VilhemEstebanSolution/v16/Browse.VC.db
-VilhemEstebanSolution/.vs/VilhemEstebanSolution/v16/.suo
-AsteroidsAssignment.vcxproj.filters
-AsteroidsAssignment.vcxproj
-VilhemEstebanSolution/.vs/VilhemEstebanSolution/v16/ipch/AutoPCH/7f3e5f4d22d27ae1/PLAYER.ipch
+
