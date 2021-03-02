@@ -7,9 +7,7 @@
 #include "Player.h"
 
 
-
-
-void Player::HandleInput(SDL_Event event)
+int Player::HandleInput(SDL_Event event)
 {
 	if (event.key.keysym.sym == mUp) {
 		mDirection.y = Library::Lerp(mDirection.y, 1.0f, 1.0f);
@@ -32,10 +30,11 @@ void Player::HandleInput(SDL_Event event)
 	}
 
 	Move();
+	return 0;
 }
 
 
-void Player::Move()
+int Player::Move()
 {
 
 
@@ -45,30 +44,32 @@ void Player::Move()
 	this->mPosition.y = Library::Lerp(this->mPosition.y, mDirection.y, 0.2F);
 	mDestR->x = mPosition.x;
 	mDestR->y = mPosition.y;
-
+	return 0;
 }
 
-void Player::Fire()
+int Player::Fire()
 {
+	return 0;
 }
 
-void Player::Rendering()
+int Player::Rendering()
 {
 	auto dirDeg = std::cos(Vector2::Dot(mDirection.normalized(), mPosition.normalized()));
 	SDL_RendererFlip flip = dirDeg > 180 ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE;
 	SDL_RenderCopyExF(mPlayerRenderer, mPlayerTex, mSrcR, mDestR, dirDeg, nullptr, flip);
+	return 0;
 }
 
-void Player::Update()
+int Player::Update()
 {
 
 
 	//destR.x = cnt;
-
+	return 0;
 
 }
 
-void Player::Init(SDL_Renderer* playerRenderer)
+int Player::Init(SDL_Renderer* playerRenderer)
 {
 
 	mPlayerRenderer = playerRenderer;
@@ -79,15 +80,13 @@ void Player::Init(SDL_Renderer* playerRenderer)
 	mPosition = Vector2(0.0f, 0.0f);
 
 
-
 	IMG_Init(IMG_INIT_PNG);
-	const char* playerWhite = "assets/playerWhite.png";
-	SDL_RWops* file = SDL_RWFromFile(playerWhite, "READ");
+	const char* playerWhite = "../assets/playerWhite.png";
 
-	SDL_Surface* tmpSurface = IMG_LoadPNG_RW(file);
+	SDL_Surface* tmpSurface = IMG_Load(playerWhite);
 	mPlayerTex = SDL_CreateTextureFromSurface(mPlayerRenderer, tmpSurface);
 	SDL_FreeSurface(tmpSurface);
-
+	return 0;
 
 }
 

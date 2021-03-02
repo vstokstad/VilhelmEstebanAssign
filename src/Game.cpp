@@ -6,7 +6,7 @@
 #include "Game.h"
 
 
-void Game::Init()
+int Game::Init()
 {
 
 
@@ -15,17 +15,19 @@ void Game::Init()
 	screenSize = new Vector2Int(800, 600);
 
 	//CONSTRUCTOR AND WINDOW GETS MADE HERE//
-	SDL_CreateWindowAndRenderer(screenSize->x, screenSize->y, SDL_WINDOW_ALLOW_HIGHDPI, &window, &renderer);
+	if (!SDL_CreateWindowAndRenderer(screenSize->x, screenSize->y, SDL_WINDOW_ALLOW_HIGHDPI, &window, &renderer)){
+		if (window == nullptr) {
+			// In the case that the window could not be made...
 
+		}
+		if (renderer == nullptr) {
+			// In the case that the window could not be made...
 
-	if (window == nullptr) {
-		// In the case that the window could not be made...
-
+		}
 	}
-	if (renderer == nullptr) {
-		// In the case that the window could not be made...
 
-	}
+
+
 
 	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
 	SDL_RenderClear(renderer);
@@ -36,11 +38,11 @@ void Game::Init()
 
 
 	appRunning = true;
-
+	return 0;
 }
 
 
-void Game::GameLoop()
+int Game::GameLoop()
 {
 
 
@@ -54,11 +56,11 @@ void Game::GameLoop()
 		Render();
 
 	}
-
+	return 0;
 }
 
 
-void Game::HandleEvents()
+int Game::HandleEvents()
 {
 	//Colors just for fun//
 	Uint8 r;
@@ -87,11 +89,11 @@ void Game::HandleEvents()
 
 		}
 	}
-
+	return 0;
 
 }
 
-void Game::Render()
+int Game::Render()
 {
 
 	SDL_RenderClear(renderer);
@@ -101,23 +103,23 @@ void Game::Render()
 
 	SDL_RenderPresent(renderer);
 
-
+	return 0;
 }
 
-void Game::Update()
+int Game::Update()
 {
 	player->Update();
+	return 0;
 }
 
 
-void Game::Cleanup() const
+int Game::Cleanup() const
 {
 
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
-	SDL_WasInit(SDL_INIT_EVERYTHING);
 	SDL_Quit();
-
+return 0;
 }
 
 
