@@ -75,12 +75,12 @@ int Player::Init(SDL_Renderer* playerRenderer)
 {
 
 	mPlayerRenderer = playerRenderer;
-	mSrcR = SDL_Rect{ .w=64, .h=64 };
-	mDestR = SDL_Rect{ .w=64, .h=64 };
+	mSrcR = SDL_Rect{ mSrcR.w=64, mSrcR.h=64 };
+	mDestR = SDL_Rect{ mDestR.w=64, mDestR.h=64 };
 
 
 	IMG_Init(IMG_INIT_PNG);
-	const char* playerWhite = "../assets/playerWhite.png";
+	const char* playerWhite = "assets/playerWhite.png";
 
 	SDL_Surface* tmpSurface = IMG_Load(playerWhite);
 	mPlayerTex = SDL_CreateTextureFromSurface(mPlayerRenderer, tmpSurface);

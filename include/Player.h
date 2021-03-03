@@ -4,7 +4,7 @@
 
 
 
-
+#pragma once
 #include "include.h"
 #include "SDL_keycode.h"
 #include "SDL_keyboard.h"
@@ -17,11 +17,11 @@ public:
 
 	Player();
 
-	SDL_KeyCode mUp = SDLK_UP;
-	SDL_KeyCode mDown = SDLK_DOWN;
-	SDL_KeyCode mLeft = SDLK_LEFT;
-	SDL_KeyCode mRight = SDLK_RIGHT;
-	SDL_KeyCode mSpace = SDLK_SPACE;
+	SDL_Keycode mUp = SDLK_UP;
+	SDL_Keycode mDown = SDLK_DOWN;
+	SDL_Keycode mLeft = SDLK_LEFT;
+	SDL_Keycode mRight = SDLK_RIGHT;
+	SDL_Keycode mSpace = SDLK_SPACE;
 
 	Vector2Int mPosition = Vector2Int(0,0);
 	Vector2Int mDirection = Vector2Int(0,0);

@@ -4,7 +4,7 @@
 
 
 
-
+#pragma once
 #include "include.h"
 #include "Player.h"
 
