@@ -17,7 +17,6 @@
 #include <cstdarg>
 #include <cstdbool>
 
-
 //EXTRAS
 #include "Library.h"
 

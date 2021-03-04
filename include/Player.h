@@ -5,9 +5,9 @@
 
 
 #pragma once
+
 #include "include.h"
-#include "SDL_keycode.h"
-#include "SDL_keyboard.h"
+#include "RigidBody.h"
 
 
 class Player
@@ -16,32 +16,31 @@ class Player
 public:
 
 	Player();
+
 	SDL_Keycode mUp = SDLK_UP;
 	SDL_Keycode mDown = SDLK_DOWN;
 	SDL_Keycode mLeft = SDLK_LEFT;
 	SDL_Keycode mRight = SDLK_RIGHT;
 	SDL_Keycode mSpace = SDLK_SPACE;
 
-	Vector2Int mPosition = Vector2Int(0,0);
-	Vector2Int mDirection = Vector2Int(0,0);
 
+	RigidBody mRigidBody = RigidBody(1);
 	SDL_Renderer* mPlayerRenderer = nullptr;
-
 
 	SDL_Texture* mPlayerTex = nullptr;
 	SDL_Rect mSrcR = {};
 	SDL_Rect mDestR = {};
 
 
-	int Update();
+	int Update(double_t t, double_t dt);
 
-	int Rendering();
+	int Rendering(double t, double fdt);
 
-	int HandleInput(SDL_Event event);
+	int HandleInput(SDL_KeyboardEvent event);
 
 	int Fire();
 
-	int Move();
+	int Move(double t, double dt);
 
 	int Init(SDL_Renderer* playerRenderer);
 };
