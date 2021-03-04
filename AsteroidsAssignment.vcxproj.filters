@@ -24,6 +24,15 @@
     <ClCompile Include="src\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TextureManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Asteroids.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Actor.h">
@@ -260,6 +269,15 @@
     <ClInclude Include="Dev\SDL2_image-2.0.1\include\SDL_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TextureManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asteroids.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="SDL2.dll" />
@@ -279,6 +297,15 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="assets\playerWhite.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\MediumAsteroid.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\bigAsteroid.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\smallAsteroid.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

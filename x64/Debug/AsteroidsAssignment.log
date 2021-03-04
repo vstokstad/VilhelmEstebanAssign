@@ -1,2 +1,8 @@
-﻿  Player.cpp
+﻿  main.cpp
+  Asteroids.cpp
+  Game.cpp
+  GameObject.cpp
+  Player.cpp
+  TextureManager.cpp
+  Generating Code...
   AsteroidsAssignment.vcxproj -> C:\Users\Admin\Documents\GitHub\VilhemEsteban\VilhemEstebanSolution\x64\Debug\AsteroidsAssignment.exe

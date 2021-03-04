@@ -20,8 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Asteroids.cpp" />
     <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\GameObject.cpp" />
     <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dev\SDL2\include\begin_code.h" />
@@ -96,12 +99,15 @@
     <ClInclude Include="Dev\SDL2\include\SDL_video.h" />
     <ClInclude Include="Dev\SDL2_image-2.0.1\include\SDL_image.h" />
     <ClInclude Include="include\Actor.h" />
+    <ClInclude Include="include\Asteroids.h" />
     <ClInclude Include="include\Enemy.h" />
     <ClInclude Include="include\Game.h" />
     <ClInclude Include="include\include.h" />
     <ClInclude Include="include\Library.h" />
     <ClInclude Include="include\Player.h" />
     <ClInclude Include="include\Rock.h" />
+    <ClInclude Include="include\GameObject.h" />
+    <ClInclude Include="include\TextureManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Dev\SDL2\lib\x64\SDL2.dll" />
@@ -117,8 +123,11 @@
     <None Include="zlib1.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="assets\bigAsteroid.png" />
+    <Image Include="assets\MediumAsteroid.png" />
     <Image Include="assets\player.png" />
     <Image Include="assets\playerWhite.png" />
+    <Image Include="assets\smallAsteroid.png" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Dev\SDL2\lib\x64\SDL2.lib" />
