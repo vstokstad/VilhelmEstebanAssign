@@ -6,7 +6,7 @@
 
 #include "Player.h"
 #include <iostream>
-
+#include "TextureManager.h"
 
 int Player::HandleInput(SDL_Event event)
 {
@@ -38,8 +38,8 @@ int Player::HandleInput(SDL_Event event)
 
 int Player::Move()
 {
-	mPosition.x = Library::IntLerp(mPosition.x, mDirection.x, 1);
-	mPosition.y = Library::IntLerp(mPosition.y, mDirection.y, 1);
+	mPosition.x += mDirection.x;
+	mPosition.y += mDirection.y;
 
 	mSrcR.x = mDestR.x;
 	mSrcR.y = mDestR.y;
@@ -73,20 +73,16 @@ int Player::Update()
 
 int Player::Init(SDL_Renderer* playerRenderer)
 {
-
 	mPlayerRenderer = playerRenderer;
-	mSrcR = SDL_Rect{ .w=64, .h=64 };
-	mDestR = SDL_Rect{ .w=64, .h=64 };
-
+	mSrcR = SDL_Rect{ mSrcR.w=64, mSrcR.h=64 };
+	mDestR = SDL_Rect{ mDestR.w=64, mDestR.h=64 };
 
 	IMG_Init(IMG_INIT_PNG);
 	const char* playerWhite = "assets/playerWhite.png";
+	//now using the Texture Manager
+	mPlayerTex = TextureManager::LoadTexture(playerWhite, mPlayerRenderer);
 
-	SDL_Surface* tmpSurface = IMG_Load(playerWhite);
-	mPlayerTex = SDL_CreateTextureFromSurface(mPlayerRenderer, tmpSurface);
-	SDL_FreeSurface(tmpSurface);
 	return 0;
-
 }
 
 Player::Player()

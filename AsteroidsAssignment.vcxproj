@@ -20,8 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Asteroids.cpp" />
     <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\GameObject.cpp" />
     <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dev\SDL2\include\begin_code.h" />
@@ -96,22 +99,48 @@
     <ClInclude Include="Dev\SDL2\include\SDL_video.h" />
     <ClInclude Include="Dev\SDL2_image-2.0.1\include\SDL_image.h" />
     <ClInclude Include="include\Actor.h" />
+    <ClInclude Include="include\Asteroids.h" />
     <ClInclude Include="include\Enemy.h" />
     <ClInclude Include="include\Game.h" />
     <ClInclude Include="include\include.h" />
     <ClInclude Include="include\Library.h" />
     <ClInclude Include="include\Player.h" />
     <ClInclude Include="include\Rock.h" />
+    <ClInclude Include="include\GameObject.h" />
+    <ClInclude Include="include\TextureManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Dev\SDL2\lib\x64\SDL2.dll" />
+    <None Include="Dev\SDL2_image-2.0.1\lib\x64\libjpeg-9.dll" />
+    <None Include="Dev\SDL2_image-2.0.1\lib\x64\libpng16-16.dll" />
+    <None Include="Dev\SDL2_image-2.0.1\lib\x64\libtiff-5.dll" />
+    <None Include="Dev\SDL2_image-2.0.1\lib\x64\libwebp-4.dll" />
+    <None Include="Dev\SDL2_image-2.0.1\lib\x64\SDL2_image.dll" />
+    <None Include="Dev\SDL2_image-2.0.1\lib\x64\zlib1.dll" />
     <None Include="libpng16-16.dll" />
     <None Include="SDL2.dll" />
     <None Include="SDL2_image.dll" />
     <None Include="zlib1.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="assets\bigAsteroid.png" />
+    <Image Include="assets\MediumAsteroid.png" />
     <Image Include="assets\player.png" />
     <Image Include="assets\playerWhite.png" />
+    <Image Include="assets\smallAsteroid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Dev\SDL2\lib\x64\SDL2.lib" />
+    <Library Include="Dev\SDL2\lib\x64\SDL2main.lib" />
+    <Library Include="Dev\SDL2\lib\x64\SDL2test.lib" />
+    <Library Include="Dev\SDL2_image-2.0.1\lib\x64\SDL2_image.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Dev\SDL2_image-2.0.1\lib\x64\LICENSE.jpeg.txt" />
+    <Text Include="Dev\SDL2_image-2.0.1\lib\x64\LICENSE.png.txt" />
+    <Text Include="Dev\SDL2_image-2.0.1\lib\x64\LICENSE.tiff.txt" />
+    <Text Include="Dev\SDL2_image-2.0.1\lib\x64\LICENSE.webp.txt" />
+    <Text Include="Dev\SDL2_image-2.0.1\lib\x64\LICENSE.zlib.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

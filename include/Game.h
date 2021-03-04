@@ -2,11 +2,11 @@
 // Created by Vilhelm Stokstad on 2021-02-17.
 //
 
-
-
+#pragma once
 
 #include "include.h"
 #include "Player.h"
+#include "Asteroids.h"
 
 class Game
 {
@@ -19,9 +19,13 @@ public:
 
 	Player* player = new Player();
 
+
+
 	bool appRunning = true;
 
 	int GameLoop();
+
+	int StartGame();
 
 	int HandleEvents();
 

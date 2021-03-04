@@ -16,6 +16,7 @@ class Player
 public:
 
 	Player();
+
 	SDL_Keycode mUp = SDLK_UP;
 	SDL_Keycode mDown = SDLK_DOWN;
 	SDL_Keycode mLeft = SDLK_LEFT;
@@ -27,11 +28,9 @@ public:
 
 	SDL_Renderer* mPlayerRenderer = nullptr;
 
-
 	SDL_Texture* mPlayerTex = nullptr;
 	SDL_Rect mSrcR = {};
 	SDL_Rect mDestR = {};
-
 
 	int Update();
 
@@ -44,6 +43,8 @@ public:
 	int Move();
 
 	int Init(SDL_Renderer* playerRenderer);
+
+	int cnt = 0;
 };
 
 
