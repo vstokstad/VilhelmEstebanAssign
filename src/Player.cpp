@@ -10,30 +10,32 @@
 
 int Player::HandleInput(SDL_KeyboardEvent event)
 {
-	Vector2 addedMoveForce = Vector2();
+
 
 	if (event.keysym.sym == mUp) {
-		addedMoveForce.y-= 100;
+	mDirection.y--;
 		std::cout << "up" << std::endl;
 	}
 	if (event.keysym.sym == mDown) {
-		addedMoveForce.y+= 100;
+		mDirection.y++;
 		std::cout << "down" << std::endl;
 	}
 	if (event.keysym.sym == mLeft) {
-		addedMoveForce.x-=100;
+		mDirection.x--;
 		std::cout << "left" << std::endl;
 	}
 	if (event.keysym.sym == mRight) {
-		addedMoveForce.x+=100;
+		mDirection.x++;
 		std::cout << "right" << std::endl;
 	}
 	if (event.keysym.sym == mSpace) {
 		Fire();
 		std::cout << "fire" << std::endl;
 	};
-std::cout << addedMoveForce.x << addedMoveForce.y << std::endl;
-	mRigidBody.AddForce(addedMoveForce);
+Vector2 force;
+force.x = mDirection.x;
+force.y = mDirection.y;
+	mRigidBody.AddForce(force);
 
 	return 0;
 }
@@ -41,8 +43,8 @@ std::cout << addedMoveForce.x << addedMoveForce.y << std::endl;
 
 int Player::Move(double t, double dt)
 {
-	mPosition.x += mDirection.x;
-	mPosition.y += mDirection.y;
+	mPosition.x += mDirection.x *dt;
+	mPosition.y += mDirection.y*dt;
 
 	return 0;
 }
@@ -56,9 +58,8 @@ int Player::Rendering(double t, double fdt)
 {
 	mDestR.w = 64;
 	mDestR.h = 64;
-	std::cout <<"x: "<< mRigidBody.position.x <<" y: " << mRigidBody.position.y <<std::endl;
-	mDestR.x = mRigidBody.position.x;
-	mDestR.y = mRigidBody.position.y;
+	mDestR.x = mPosition.x*fdt;
+	mDestR.y = mPosition.y*fdt;
 
 	SDL_RenderCopy(mPlayerRenderer, mPlayerTex, NULL, &mDestR);
 
@@ -84,10 +85,6 @@ int Player::Init(SDL_Renderer* playerRenderer)
 	//now using the Texture Manager
 	mPlayerTex = TextureManager::LoadTexture(playerWhite, mPlayerRenderer);
 
-	const char* playerWhite = "/assets/playerWhite.png";
-	SDL_Surface* tmpSurface = IMG_Load(playerWhite);
-	mPlayerTex = SDL_CreateTextureFromSurface(mPlayerRenderer, tmpSurface);
-	SDL_FreeSurface(tmpSurface);
 	return 0;
 }
 

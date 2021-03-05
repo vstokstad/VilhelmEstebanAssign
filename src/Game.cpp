@@ -36,7 +36,7 @@ int Game::Init()
 
 double Game::Now()
 {
-	auto time = SDL_GetTicks() ;
+	double time = (double)SDL_GetPerformanceCounter() * 1000 / (double)SDL_GetPerformanceFrequency();
 	return time;
 }
 
@@ -46,25 +46,23 @@ int Game::GameLoop()
 {
 //SET TIME START//
 	double t = 0.0f;
-	const double dt = 1.0f;
-	double fdt = 1.0f;
+	const double dt = 0.01f;
+	double fdt = 0.02f;
 	double accumulator = 0.0f;
-	// the fps that the game is set at.
+/*	// the fps that the game is set at.
 	const int FPS = 60;
 	const int frameDelay = 1000 / FPS;
 	Uint32 frameStart;
-	int frameTime;
+	int frameTime;*/
 
 
-	double currentTime = Now();
+	double end;
 	StartGame();
-
+	double frameTime;
 	while (appRunning) {
 
-		double newTime = Now();
-		double frameTime = newTime - currentTime;
-		currentTime = newTime;
-		std::cout << frameTime << std::endl;
+		double start = Now();
+
 		if (frameTime > 0.25) {
 			frameTime = 0.25;
 		}
@@ -75,12 +73,18 @@ int Game::GameLoop()
 			t += dt;
 			accumulator -= dt;
 		}
-		const double alpha = accumulator / dt;
-		//fdt = alpha*fdt;
-		Render(t, fdt);
+		double alpha = accumulator / dt;
+		fdt = alpha;
+		Render(t, alpha);
+
+		end = Now();
+		frameTime = end-start;
+		std::cout << "frameTime: "<< frameTime << " accumulator: " << accumulator <<" deltaTime : "<< dt << std::endl;
+		std::cout << "alpha: "<< alpha << " time: " << t <<" fixedDeltaTime : "<< fdt << std::endl;
+
 	}
 
-	while (appRunning)
+	/*while (appRunning)
 	{
 		frameStart = SDL_GetTicks();
 
@@ -92,7 +96,7 @@ int Game::GameLoop()
 		// this will get how many ticks have gone by on one loop or frame
 		frameTime = SDL_GetTicks() - frameStart;
 		if (frameDelay > frameTime){ SDL_Delay(frameDelay - frameTime); }
-	}
+	}*/
 	return 0;
 }
 
@@ -100,32 +104,24 @@ int Game::GameLoop()
 int Game::HandleEvents()
 {
 	while (SDL_PollEvent(&events)) {
-		if (events.type == SDL_KEYDOWN) { player->HandleInput(events); }
+		if (events.type == SDL_KEYDOWN) /*{ player->HandleInput(events); }*/
 		if (events.key.type == SDL_KEYDOWN) {
 			player->HandleInput(events.key);
 		}
-		if (events.button.type == SDL_MOUSEBUTTONDOWN) {
-			r = events.button.x;
-			b = events.button.y;
-			SDL_SetRenderDrawColor(renderer, r, g, b, a);
-			//Set and render a new color//
-			SDL_RenderClear(renderer);
-		}
+
 		//check if app is closing to quit.
 		if (SDL_QUIT == events.type) { appRunning = false; }
 	}
 	return 0;
 }
 
-int Game::Render() const
+
 int Game::Render(double t, double fdt)
 {
 	SDL_RenderClear(renderer);
-	player->Rendering();
-	if (!asteroid->Render()){}
-
 	player->Rendering(t, fdt);
-	player->Rendering(0.0, 1.0);
+	asteroid->Render();
+
 	//present the first render.
 	SDL_RenderPresent(renderer);
 
@@ -138,7 +134,6 @@ int Game::Update(double t, double dt)
 	player->Update(t, dt);
 
 	asteroid->Update();
-	player->Update();
 	return 0;
 }
 

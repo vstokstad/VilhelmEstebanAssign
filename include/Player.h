@@ -33,9 +33,8 @@ public:
 	SDL_Rect mSrcR = {};
 	SDL_Rect mDestR = {};
 
-	int Update();
 
-	int Update(double_t t, double_t dt);
+	int Update(double t, double dt);
 
 	int Rendering(double t, double fdt);
 
