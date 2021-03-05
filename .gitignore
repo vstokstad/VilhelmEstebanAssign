@@ -5,3 +5,8 @@
 
 /cmake/
 
+.vs/
+.vs
+/VilhemEstebanSolution/
+*.exe
+*.db
