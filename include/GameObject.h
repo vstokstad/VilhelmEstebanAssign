@@ -1,23 +1,53 @@
 #pragma once
-#include "Game.h"
+
+#include "include.h"
+#include "TextureManager.h"
 
 class GameObject
 {
 
 public:
-	GameObject(const char* texturesheet, SDL_Renderer* ren);
-	~GameObject();
+	GameObject() = default;
 
-	void Update();
-	void Render();
-	int xpos = 64;
-	int ypos = 64;
+	explicit GameObject(const char* texturesheet, SDL_Renderer* ren, int ypos = 64, int xpos = 64) : mYpos(ypos),
+	                                                                                                 mXpos(xpos)
+	{}
+
+	~GameObject() = default;
 
 
-private:
+	int Update()
+	{
+		mXpos = 0;
+		mYpos = 0;
 
-	SDL_Texture* objTexture;
-	SDL_Rect srcRect, destRect;
-	SDL_Renderer* renderer;
+		srcRect.h = 64;
+		srcRect.w = 64;
+		srcRect.x = 0;
+		srcRect.y = 0;
+
+		destRect.x = mXpos;
+		destRect.y = mYpos;
+		destRect.w = srcRect.w * 2;
+		destRect.h = srcRect.h * 2;
+		return 0;
+	}
+
+	int Render()
+	{
+
+		SDL_RenderCopy(this->renderer, this->objTexture, NULL, &destRect);
+		return 0;
+
+	};
+
+	int mXpos = {};
+	int mYpos = {};
+
+
+	SDL_Texture* objTexture = nullptr;
+	SDL_Rect srcRect = {};
+	SDL_Rect destRect = {};
+	SDL_Renderer* renderer = nullptr;
 };
 

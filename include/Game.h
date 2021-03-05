@@ -6,7 +6,8 @@
 
 #include "include.h"
 #include "Player.h"
-#include "Asteroids.h"
+#include "GameObject.h"
+#include "TextureManager.h"
 
 class Game
 {
@@ -15,10 +16,10 @@ public:
 	Game()
 	= default;
 
+
 	int Init();
 
 	Player* player = new Player();
-
 
 
 	bool appRunning = true;
@@ -29,14 +30,13 @@ public:
 
 	int HandleEvents();
 
-	int Render();
+	int Render() const;
 
 	int Update();
 
 	int Cleanup() const;
 
-	int deltaCounter = 0;
-	int fixedDeltaCounter = 0;
+	GameObject* asteroid = new GameObject();
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
 	SDL_Event events = SDL_Event();

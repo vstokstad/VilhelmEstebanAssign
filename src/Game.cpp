@@ -4,12 +4,6 @@
 
 
 #include "Game.h"
-#include "TextureManager.h"
-#include "GameObject.h"
-#include <iostream>
-
-GameObject* Asteroid;
-
 
 
 int Game::Init()
@@ -19,7 +13,7 @@ int Game::Init()
 
 
 	//CONSTRUCTOR AND WINDOW GETS MADE HERE//
-	if (!SDL_CreateWindowAndRenderer(screenSize->x, screenSize->y, SDL_WINDOW_ALLOW_HIGHDPI, &window, &renderer))
+	if (!SDL_CreateWindowAndRenderer(screenSize.x, screenSize.y, SDL_WINDOW_ALLOW_HIGHDPI, &window, &renderer))
 	{
 		// In the case that the window could not be made...
 		if (window == nullptr) { return 1; }
@@ -29,12 +23,14 @@ int Game::Init()
 	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
 	SDL_RenderClear(renderer);
 	player->Init(renderer);
-
+	asteroid = new GameObject("assets/bigAsteroid.png", renderer, 0, 0);
 	SDL_RenderPresent(renderer);
 
 	appRunning = true;
 	return 0;
 }
+
+
 
 
 int Game::GameLoop()
@@ -78,23 +74,24 @@ int Game::Render() const
 {
 	SDL_RenderClear(renderer);
 	player->Rendering();
-	Asteroid->Render();
+	if (!asteroid->Render()){}
 	SDL_RenderPresent(renderer);
 	return 0;
 }
 
-int Game::Update() const
+int Game::Update()
 {
+	asteroid->Update();
 	player->Update();
 	return 0;
 }
 
 int Game::StartGame()
 {
-	Asteroid = new GameObject("assets/bigAsteroid.png", renderer);
 
-	std::cout << Asteroid->xpos << std::endl;
-	std::cout << Asteroid->ypos << std::endl;
+
+	std::cout << asteroid->mXpos << std::endl;
+	std::cout << asteroid->mYpos << std::endl;
 	return 0;
 }
 
@@ -107,5 +104,6 @@ int Game::Cleanup() const
 	SDL_Quit();
 	return 0;
 }
+
 
 

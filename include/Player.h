@@ -6,9 +6,7 @@
 
 #pragma once
 #include "include.h"
-#include "SDL_keycode.h"
-#include "SDL_keyboard.h"
-
+#include "TextureManager.h"
 
 class Player
 {

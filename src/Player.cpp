@@ -5,8 +5,7 @@
 
 
 #include "Player.h"
-#include <iostream>
-#include "TextureManager.h"
+
 
 int Player::HandleInput(SDL_Event event)
 {

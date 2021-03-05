@@ -1,8 +1,7 @@
 
 
-#include "Asteroids.h"
-#include <iostream>
-#include "TextureManager.h"
+#include "Asteroid.h"
+
 
 
 int Asteroid::Split()
