@@ -13,3 +13,5 @@ AsteroidsAssignment.vcxproj.filters
 AsteroidsAssignment.vcxproj.user
 VilhemEstebanSolution/
 VilhemEstebanSolution/.vs/VilhemEstebanSolution/v16/Browse.VC.db
+*.db
+*.ipch
