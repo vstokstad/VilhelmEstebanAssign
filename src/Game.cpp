@@ -4,7 +4,9 @@
 
 
 #include "Game.h"
-
+#include "Player.h"
+#include "GameObject.h"
+#include "TextureManager.h"
 
 int Game::Init()
 {

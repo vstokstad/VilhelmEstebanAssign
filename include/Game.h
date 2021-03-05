@@ -7,7 +7,6 @@
 #include "include.h"
 #include "Player.h"
 #include "GameObject.h"
-#include "TextureManager.h"
 
 class Game
 {

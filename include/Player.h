@@ -6,8 +6,10 @@
 
 #pragma once
 #include "include.h"
-#include "RigidBody.cpp"
-#include "TextureManager.h"
+
+class Player;
+class RigidBody;
+class GameObject;
 
 class Player : GameObject
 {

@@ -6,7 +6,7 @@
 
 
 #include "Player.h"
-
+#include "TextureManager.h"
 
 int Player::HandleInput(SDL_KeyboardEvent event)
 {
