@@ -7,25 +7,27 @@
 
 #include "Player.h"
 #include "TextureManager.h"
+#include "GameObject.h"
+#include "RigidBody.h"
 
 int Player::HandleInput(SDL_KeyboardEvent event)
 {
-
+	const float moveModifier = 10.f;
 
 	if (event.keysym.sym == mUp) {
-		mDirection.y--;
+		mDirection.y = moveModifier;
 		std::cout << "up" << std::endl;
 	}
 	if (event.keysym.sym == mDown) {
-		mDirection.y++;
+		mDirection.y = moveModifier;
 		std::cout << "down" << std::endl;
 	}
 	if (event.keysym.sym == mLeft) {
-		mDirection.x--;
+		mDirection.x = moveModifier;
 		std::cout << "left" << std::endl;
 	}
 	if (event.keysym.sym == mRight) {
-		mDirection.x++;
+		mDirection.x = moveModifier;
 		std::cout << "right" << std::endl;
 	}
 	if (event.keysym.sym == mSpace) {
@@ -38,11 +40,11 @@ int Player::HandleInput(SDL_KeyboardEvent event)
 }
 
 
-int Player::Move(double t, double fdt)
+int Player::Move(double t, double dt)
 {
-	mPosition.x += mDirection.x * fdt;
-	mPosition.y += mDirection.y * fdt;
-	mRigidBody.UpdateRigidBody(mDirection, fdt);
+	mPosition = mPosition+mDirection*dt;
+
+
 	return 0;
 }
 
@@ -51,15 +53,17 @@ int Player::Fire()
 	return 0;
 }
 
-int Player::Rendering(double t, double fdt)
+int Player::Render(double t, double fdt)
 {
-	mDestR.w = 64;
-	mDestR.h = 64;
-	mDestR.x = mPosition.x * fdt;
-	mDestR.y = mPosition.y * fdt;
+	mRigidBody.AddForce(mDirection);
+	Move(t, fdt);
+	mRigidBody.UpdatePosition(fdt);
+	mDestRect.w = 64;
+	mDestRect.h = 64;
+	mDestRect.x += (int)mPosition.x;
+	mDestRect.y += (int)mPosition.y;
 
-	SDL_RenderCopy(mPlayerRenderer, mPlayerTex, NULL, &mDestR);
-
+	SDL_RenderCopy(mRenderer, mPlayerTex, NULL, &mDestRect);
 	return 0;
 }
 
@@ -71,18 +75,23 @@ int Player::Update(double t, double dt)
 
 }
 
-int Player::Init(SDL_Renderer* playerRenderer)
+
+Player::Player(SDL_Renderer* renderer) : mRenderer(renderer)
 {
-	mPlayerRenderer = playerRenderer;
-	mSrcR = SDL_Rect{ mSrcR.w = 64, mSrcR.h = 64 };
-	mDestR = SDL_Rect{ mDestR.w = 64, mDestR.h = 64 };
-	mRigidBody = RigidBody(2.0, { mDestR.w, mDestR.h }, this->mPosition, this.mGameObject);
-	IMG_Init(IMG_INIT_PNG);
+	mRenderer = renderer;
+	mSrcRect = SDL_Rect{ mSrcRect.w = 64, mSrcRect.h = 64 };
+	mDestRect = SDL_Rect{ mDestRect.w = 64, mDestRect.h = 64 };
+	mRigidBody = RigidBody(0, Vector2(), &this->mPosition, this);
+	mPosition = Vector2(1.f, 1.f);
+	mDirection = Vector2(1.f, 1.f);
+	if (IMG_Init(IMG_INIT_PNG) == 0) {
+		std::cout << "could not init SDL_image in Player constructor: " << SDL_GetError() << std::endl;
+	}
 	const char* playerWhite = "assets/playerWhite.png";
 	//now using the Texture Manager
-	mPlayerTex = TextureManager::LoadTexture(playerWhite, mPlayerRenderer);
-
-	return 0;
+	mPlayerTex = TextureManager::LoadTexture(playerWhite, mRenderer);
+	SDL_RenderCopy(mRenderer, mPlayerTex, NULL, NULL);
+	SDL_RenderPresent(renderer);
 }
 
 

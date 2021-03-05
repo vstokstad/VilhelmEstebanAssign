@@ -11,11 +11,11 @@ RigidBody::RigidBody(float mass, Vector2 size, Vector2* parentPosition, GameObje
 {
 	mMass = mass;
 	mSize = size;
-	mPosition = parentPosition;
+	mPosition = *parentPosition;
 	mParentObject = gameObject;
 };
 
-void UpdateRigidBody(Vector2 withForce, double fdt)
+void RigidBody::UpdateRigidBody(Vector2 withForce, double fdt)
 {
 	AddForce(withForce);
 	UpdateVelocity(fdt);
@@ -23,27 +23,26 @@ void UpdateRigidBody(Vector2 withForce, double fdt)
 }
 
 
-
-void AddForce(Vector2 addedForce)
+void RigidBody::AddForce(Vector2 addedForce)
 {
-	mForce = addedForce;
+	mAcceleration += addedForce;
 }
 
-Vector2 GetAcceleration()
+Vector2 RigidBody::GetAcceleration() const
 {
-	return { mForce.x / mMass,
-	         mForce.y / mMass };
+	return { mAcceleration.x / mMass,
+	         mAcceleration.y / mMass };
 }
 
-void UpdateVelocity(double fdt)
+void RigidBody::UpdateVelocity(double fdt)
 {
 	mVelocity += GetAcceleration() * (float)fdt;
 }
 
-void UpdatePosition(double fdt)
+void RigidBody::UpdatePosition(double fdt)
 {
 	UpdateVelocity(fdt);
-	*mPosition += mVelocity * (float)fdt;
+	mPosition +=  mVelocity * (float)fdt;
 }
 
 

@@ -10,22 +10,19 @@ class GameObject;
 
 class RigidBody
 {
+	friend class GameObject;
 
-	RigidBody(float mass, Vector2 size, Vector2* parentPosition, GameObject* gameObject);
-
-
+public:
 	GameObject* mParentObject{};
-	Vector2* mPosition;
+	Vector2 mPosition;
 	Vector2 mSize;
 	float mMass{};
 
-	Vector2 mForce;
+	Vector2 mAcceleration;
 
 	Vector2 mVelocity;
 
-	void UpdateRigidBody(Vector2 withForce, double fdt);
-
-	Vector2 GetAcceleration() const;
+	[[nodiscard]] Vector2 GetAcceleration() const;
 
 	void UpdateVelocity(double fdt);
 
@@ -33,5 +30,10 @@ class RigidBody
 
 	void UpdatePosition(double fdt);
 
+	void UpdateRigidBody(Vector2 withForce, double fdt);
 
+
+	RigidBody(float mass, Vector2 size, Vector2* parentPosition, GameObject* gameObject);
+
+	RigidBody() = default;
 };

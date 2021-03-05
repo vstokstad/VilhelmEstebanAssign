@@ -1,32 +1,42 @@
 #pragma once
 
 #include "include.h"
-#include "TextureManager.h"
+#include "GameObject.h"
+#include "RigidBody.h"
 
-class Asteroid
+class TextureManager;
+class RigidBody;
+
+class Asteroid : public virtual GameObject
 {
 
 public:
 
-	Asteroid();
+	Asteroid() = delete;
 
+	~Asteroid() = default;
 
-	Vector2Int mPosition = Vector2Int(0, 0);
-	Vector2Int mDirection = Vector2Int(0, 0);
+	explicit Asteroid(SDL_Renderer* renderer);
 
-	SDL_Renderer* mAsteroidRenderer = nullptr;
+	Vector2 mPosition;
+	Vector2 mDirection;
 
-	SDL_Texture* mAsteroidTex = nullptr;
-	SDL_Rect mSrcR = {};
-	SDL_Rect mDestR = {};
+	SDL_Renderer* mRenderer = nullptr;
+	RigidBody mRigidBody;
+	SDL_Texture* mTexture = nullptr;
+	SDL_Rect* mSrcRect;
+	SDL_Rect* mDestRect;
 
-	int Update();
+	int Update(double t, double dt) override;
 
-	int Rendering();
+	int Render(double t, double fdt) override;
 
 	int Split();
 
-	int Init(SDL_Renderer* mAsteroidRenderer);
+	int Move(double t, double fdt);
+
 
 };
+
+
 

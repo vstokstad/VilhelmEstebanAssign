@@ -1,5 +1,7 @@
 #include "Game.h"
 #include "include.h"
+class Game;
+
 int main(int argc, char** argv)
 {
 
@@ -10,10 +12,10 @@ int main(int argc, char** argv)
 
 	game.GameLoop();
 
-	if (!game.Cleanup()){
+	game.Cleanup();
 
 	SDL_Quit();
-	};
+
 
 	return 0;
 }

@@ -6,7 +6,7 @@
 #include "Game.h"
 #include "Player.h"
 #include "GameObject.h"
-#include "TextureManager.h"
+#include "Asteroid.h"
 
 int Game::Init()
 {
@@ -25,10 +25,8 @@ int Game::Init()
 	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
 	SDL_RenderClear(renderer);
 	//initialize the player//
-	player = new Player();
-	player->Init(renderer);
-	asteroid = new GameObject("assets/bigAsteroid.png", renderer, 0, 0);
-
+	player = new Player(renderer);
+asteroid = new Asteroid(renderer);
 	//present the first render.
 	SDL_RenderPresent(renderer);
 
@@ -119,11 +117,11 @@ int Game::HandleEvents()
 }
 
 
-int Game::Render(double t, double fdt)
+int Game::Render(double t, double fdt) const
 {
 	SDL_RenderClear(renderer);
-	player->Rendering(t, fdt);
-	asteroid->Render();
+	player->Render(t, fdt);
+	asteroid->Render(t, fdt);
 
 	//present the first render.
 	SDL_RenderPresent(renderer);
@@ -136,7 +134,7 @@ int Game::Update(double t, double dt)
 
 	player->Update(t, dt);
 
-	asteroid->Update();
+	asteroid->Update(t,dt);
 	return 0;
 }
 
@@ -144,8 +142,7 @@ int Game::StartGame()
 {
 
 
-	std::cout << asteroid->mXpos << std::endl;
-	std::cout << asteroid->mYpos << std::endl;
+
 	return 0;
 }
 

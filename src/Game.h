@@ -7,6 +7,7 @@
 #include "include.h"
 #include "Player.h"
 #include "GameObject.h"
+#include "Asteroid.h"
 
 class Game
 {
@@ -18,7 +19,7 @@ public:
 
 	int Init();
 
-	Player* player = new Player();
+	Player* player{};
 
 	bool appRunning = true;
 
@@ -28,15 +29,14 @@ public:
 
 	int HandleEvents();
 
-	int Render(double t, double fdt);
-	int Render() const;
+	int Render(double t, double fdt) const;
 
 	int Update(double t, double dt);
 
 	int Cleanup() const;
 
 
-	GameObject* asteroid = new GameObject();
+	Asteroid* asteroid{};
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
 	SDL_Event events = SDL_Event();
