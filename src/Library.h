@@ -188,10 +188,13 @@ static Vector2 operator+(Vector2 lhs, const Vector2 rhs)
 	return Vector2(lhs.x + rhs.x, lhs.y + rhs.y);
 }
 
-static void operator+=(Vector2 lhs, const Vector2 rhs)
+
+static Vector2 operator+=(Vector2 lhs, const Vector2 rhs)
 {
-	lhs.x += rhs.x;
-	lhs.y += rhs.y;
+	
+    lhs.x += rhs.x;
+		lhs.y += rhs.y;
+  return lhs;
 }
 
 static Vector2 operator-(Vector2 lhs, const Vector2 rhs)
@@ -215,15 +218,25 @@ static Vector2 operator*(Vector2 lhs, const float rhs)
 	return { lhs.x * rhs, lhs.y * rhs };
 }
 
-static void operator*=(Vector2 lhs, const float rhs)
+
+static Vector2 operator*=(Vector2 lhs, const float rhs)
 {
 	lhs.x *= rhs;
 	lhs.y *= rhs;
+	return lhs;
 }
 
 static Vector2 operator*(Vector2 lhs, const Vector2 rhs)
 {
 	return { lhs.x * rhs.x, lhs.y * rhs.y };
+}
+
+
+static Vector2 operator/(Vector2 lhs, const float rhs)
+{
+	return { lhs.x / rhs,
+	         lhs.y / rhs };
+
 }
 
 static void operator*=(Vector2 lhs, const Vector2 rhs)

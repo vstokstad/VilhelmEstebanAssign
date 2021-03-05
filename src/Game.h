@@ -7,7 +7,9 @@
 #include "include.h"
 #include "Player.h"
 #include "GameObject.h"
-#include "TextureManager.h"
+
+#include "Asteroid.h"
+
 
 class Game
 {
@@ -19,7 +21,8 @@ public:
 
 	int Init();
 
-	Player* player = new Player();
+
+	Player* player{};
 
 
 	bool appRunning = true;
@@ -30,17 +33,21 @@ public:
 
 	int HandleEvents();
 
-	int Render() const;
 
-	int Update();
+	int Render(double t, double fdt) const;
+
+	int Update(double t, double dt);
 
 	int Cleanup() const;
 
-	GameObject* asteroid = new GameObject();
+
+	Asteroid* asteroid{};
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
 	SDL_Event events = SDL_Event();
-	Vector2Int screenSize = Vector2Int(800, 600);
+	Vector2Int screenSize = Vector2Int(1200, 800);
+
+	static uint64_t Now();
 
 };
 

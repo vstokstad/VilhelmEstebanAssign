@@ -5,15 +5,25 @@
 
 
 #pragma once
-#include "include.h"
-#include "TextureManager.h"
 
-class Player
+
+#include "include.h"
+#include "GameObject.h"
+#include "RigidBody.h"
+
+class RigidBody;
+
+class Player : public virtual GameObject
+
 {
 
 public:
 
-	Player();
+
+	~Player() = default;
+
+	explicit Player(SDL_Renderer* renderer);
+
 
 	SDL_Keycode mUp = SDLK_UP;
 	SDL_Keycode mDown = SDLK_DOWN;
@@ -21,28 +31,32 @@ public:
 	SDL_Keycode mRight = SDLK_RIGHT;
 	SDL_Keycode mSpace = SDLK_SPACE;
 
-	Vector2Int mPosition = Vector2Int(0,0);
-	Vector2Int mDirection = Vector2Int(0,0);
 
-	SDL_Renderer* mPlayerRenderer = nullptr;
+	Vector2 mPosition;
+	Vector2 mDirection;
+	RigidBody mRigidBody;
+	SDL_Renderer* mRenderer = nullptr;
 
 	SDL_Texture* mPlayerTex = nullptr;
-	SDL_Rect mSrcR = {};
-	SDL_Rect mDestR = {};
+	SDL_Rect mSrcRect;
+	SDL_Rect mDestRect;
 
-	int Update();
 
-	int Rendering();
 
-	int HandleInput(SDL_Event event);
+	int Render(double t, double fdt) override;
+
+	int Update(double t, double dt) override;
+
+	int HandleInput(SDL_KeyboardEvent event);
 
 	int Fire();
 
-	int Move();
+	int Move(double t, double dt);
 
-	int Init(SDL_Renderer* playerRenderer);
 
 	int cnt = 0;
+
+
 };
 
 

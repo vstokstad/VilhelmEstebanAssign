@@ -4,6 +4,12 @@
 .idea
 
 /cmake/
+
+
+.vs/
+.vs
+/VilhemEstebanSolution/
+*.exe
 /Release/
 /Debug/
 /.vs/
@@ -15,3 +21,4 @@ VilhemEstebanSolution/
 VilhemEstebanSolution/.vs/VilhemEstebanSolution/v16/Browse.VC.db
 *.db
 *.ipch
+
