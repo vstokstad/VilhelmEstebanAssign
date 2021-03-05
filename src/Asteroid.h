@@ -12,6 +12,7 @@ class Asteroid : public virtual GameObject
 
 public:
 
+
 	Asteroid() = delete;
 
 	~Asteroid() = default;
@@ -37,6 +38,3 @@ public:
 
 
 };
-
-
-

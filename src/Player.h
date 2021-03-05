@@ -6,6 +6,7 @@
 
 #pragma once
 
+
 #include "include.h"
 #include "GameObject.h"
 #include "RigidBody.h"
@@ -13,19 +14,23 @@
 class RigidBody;
 
 class Player : public virtual GameObject
+
 {
 
 public:
 
+
 	~Player() = default;
 
 	explicit Player(SDL_Renderer* renderer);
+
 
 	SDL_Keycode mUp = SDLK_UP;
 	SDL_Keycode mDown = SDLK_DOWN;
 	SDL_Keycode mLeft = SDLK_LEFT;
 	SDL_Keycode mRight = SDLK_RIGHT;
 	SDL_Keycode mSpace = SDLK_SPACE;
+
 
 	Vector2 mPosition;
 	Vector2 mDirection;
@@ -50,6 +55,7 @@ public:
 
 
 	int cnt = 0;
+
 
 };
 

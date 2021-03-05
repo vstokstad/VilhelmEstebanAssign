@@ -2,6 +2,7 @@
 
 #include "include.h"
 
+
 class TextureManager;
 
 class GameObject
@@ -18,11 +19,10 @@ friend class RigidBody;
 	Vector2 mPosition;
 	SDL_Rect mSrcRect{};
 	SDL_Rect mDestRect{};
-
+public:
 	virtual int Update(double t, double dt) = 0;
 
-public:
+
 	virtual int Render(double t, double fdt) = 0;
 };
-
 

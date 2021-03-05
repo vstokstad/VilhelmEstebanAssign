@@ -14,6 +14,11 @@
 #include <cstdio>
 #include <cstddef>
 
+#include <cstdint>
+#include <cstdarg>
+#include <cstdbool>
+
+
 
 //EXTRAS
 #include "Library.h"
