@@ -40,7 +40,7 @@ public:
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
 	SDL_Event events = SDL_Event();
-	Vector2Int screenSize = Vector2Int(800, 600);
+	Vector2Int screenSize = Vector2Int(1200, 800);
 
 	static double Now();
 };
