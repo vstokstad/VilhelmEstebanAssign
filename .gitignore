@@ -4,4 +4,11 @@
 .idea
 
 /cmake/
-
+/Release/
+/Debug/
+/.vs/
+/x64/
+AsteroidsAssignment.vcxproj
+AsteroidsAssignment.vcxproj.filters
+AsteroidsAssignment.vcxproj.user
+VilhemEstebanSolution/
