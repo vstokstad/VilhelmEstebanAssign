@@ -1,0 +1,17 @@
+/CMakeLists.txt
+/cmake-build-debug/
+/cmake-*/
+.idea
+
+/cmake/
+/Release/
+/Debug/
+/.vs/
+/x64/
+AsteroidsAssignment.vcxproj
+AsteroidsAssignment.vcxproj.filters
+AsteroidsAssignment.vcxproj.user
+VilhemEstebanSolution/
+VilhemEstebanSolution/.vs/VilhemEstebanSolution/v16/Browse.VC.db
+*.db
+*.ipch
