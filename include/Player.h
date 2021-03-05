@@ -5,10 +5,10 @@
 
 
 #pragma once
-
 #include "include.h"
 #include "RigidBody.h"
 
+#include "TextureManager.h"
 
 class Player
 {
@@ -23,6 +23,8 @@ public:
 	SDL_Keycode mRight = SDLK_RIGHT;
 	SDL_Keycode mSpace = SDLK_SPACE;
 
+	Vector2Int mPosition = Vector2Int(0,0);
+	Vector2Int mDirection = Vector2Int(0,0);
 
 	RigidBody mRigidBody = RigidBody(1);
 	SDL_Renderer* mPlayerRenderer = nullptr;
@@ -31,6 +33,7 @@ public:
 	SDL_Rect mSrcR = {};
 	SDL_Rect mDestR = {};
 
+	int Update();
 
 	int Update(double_t t, double_t dt);
 
@@ -43,6 +46,8 @@ public:
 	int Move(double t, double dt);
 
 	int Init(SDL_Renderer* playerRenderer);
+
+	int cnt = 0;
 };
 
 
