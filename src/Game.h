@@ -42,7 +42,7 @@ public:
 	SDL_Event events = SDL_Event();
 	Vector2Int screenSize = Vector2Int(1200, 800);
 
-	static double Now();
+	static uint64_t Now();
 };
 
 

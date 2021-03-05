@@ -12,10 +12,10 @@
 
 int Player::HandleInput(SDL_KeyboardEvent event)
 {
-	const float moveModifier = 10.f;
+	const float moveModifier = 50.f;
 
 	if (event.keysym.sym == mUp) {
-		mDirection.y = moveModifier;
+		mDirection.y = -moveModifier;
 		std::cout << "up" << std::endl;
 	}
 	if (event.keysym.sym == mDown) {
@@ -23,7 +23,7 @@ int Player::HandleInput(SDL_KeyboardEvent event)
 		std::cout << "down" << std::endl;
 	}
 	if (event.keysym.sym == mLeft) {
-		mDirection.x = moveModifier;
+		mDirection.x = -moveModifier;
 		std::cout << "left" << std::endl;
 	}
 	if (event.keysym.sym == mRight) {
@@ -42,7 +42,7 @@ int Player::HandleInput(SDL_KeyboardEvent event)
 
 int Player::Move(double t, double dt)
 {
-	mPosition = mPosition+(mDirection*(float)dt);
+	mPosition = mPosition+mDirection*dt;
 
 
 	return 0;
@@ -55,13 +55,13 @@ int Player::Fire()
 
 int Player::Render(double t, double fdt)
 {
-//	mRigidBody.AddForce(mDirection);
+	mRigidBody.AddForce(mDirection);
 
-//	mRigidBody.UpdatePosition(fdt);
+	mRigidBody.UpdatePosition(fdt);
 	mDestRect.w = 64;
 	mDestRect.h = 64;
-	mDestRect.x += (int)mPosition.x*(int)fdt;
-	mDestRect.y += (int)mPosition.y*(int)fdt;
+	mDestRect.x = (int)mPosition.x;
+	mDestRect.y = (int)mPosition.y;
 
 	SDL_RenderCopy(mRenderer, mPlayerTex, NULL, &mDestRect);
 	return 0;
