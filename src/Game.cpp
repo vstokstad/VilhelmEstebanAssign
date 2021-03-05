@@ -83,11 +83,6 @@ int Game::GameLoop()
 	return 0;
 }
 
-double Game::Now()
-{
-	auto time = SDL_GetTicks();
-	return time;
-}
 
 int Game::HandleEvents()
 {
