@@ -74,30 +74,13 @@ int Game::GameLoop()
 			accumulator -= dt;
 		}
 		double alpha = accumulator / dt;
-		fdt = alpha;
-		Render(t, alpha);
+		fdt = fdt*alpha;
+		Render(t, fdt);
 
 		end = Now();
-		frameTime = end-start;
-
-	/*	std::cout << "frameTime: "<< frameTime << " accumulator: " << accumulator <<" deltaTime : "<< dt << std::endl;
-		std::cout << "alpha: "<< alpha << " time: " << t <<" fixedDeltaTime : "<< fdt << std::endl;*/
+		frameTime = end - start;
 
 	}
-
-	/*while (appRunning)
-	{
-		frameStart = SDL_GetTicks();
-
-		//Check for input;
-		HandleEvents();
-		Update();
-		Render();
-
-		// this will get how many ticks have gone by on one loop or frame
-		frameTime = SDL_GetTicks() - frameStart;
-		if (frameDelay > frameTime){ SDL_Delay(frameDelay - frameTime); }
-	}*/
 	return 0;
 }
 
