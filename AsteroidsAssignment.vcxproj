@@ -20,11 +20,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="src\Asteroids.cpp" />
+    <ClCompile Include="src\Asteroid.cpp" />
     <ClCompile Include="src\Game.cpp" />
-    <ClCompile Include="src\GameObject.cpp" />
     <ClCompile Include="src\Player.cpp" />
-    <ClCompile Include="src\TextureManager.cpp" />
+    <ClCompile Include="src\RigidBody.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dev\SDL2\include\begin_code.h" />
@@ -98,18 +97,17 @@
     <ClInclude Include="Dev\SDL2\include\SDL_version.h" />
     <ClInclude Include="Dev\SDL2\include\SDL_video.h" />
     <ClInclude Include="Dev\SDL2_image-2.0.1\include\SDL_image.h" />
-    <ClInclude Include="include\Actor.h" />
-    <ClInclude Include="include\Asteroids.h" />
-    <ClInclude Include="include\Enemy.h" />
-    <ClInclude Include="include\Game.h" />
-    <ClInclude Include="include\include.h" />
-    <ClInclude Include="include\Library.h" />
-    <ClInclude Include="include\Player.h" />
-    <ClInclude Include="include\Rock.h" />
-    <ClInclude Include="include\GameObject.h" />
-    <ClInclude Include="include\TextureManager.h" />
+    <ClInclude Include="src\Asteroid.h" />
+    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\GameObject.h" />
+    <ClInclude Include="src\include.h" />
+    <ClInclude Include="src\Library.h" />
+    <ClInclude Include="src\Player.h" />
+    <ClInclude Include="src\RigidBody.h" />
+    <ClInclude Include="src\TextureManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".gitignore" />
     <None Include="Dev\SDL2\lib\x64\SDL2.dll" />
     <None Include="Dev\SDL2_image-2.0.1\lib\x64\libjpeg-9.dll" />
     <None Include="Dev\SDL2_image-2.0.1\lib\x64\libpng16-16.dll" />
@@ -206,12 +204,12 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>Dev\SDL2\include;Dev\SDL2_image-2.0.1\include;include;$(IncludePath)</IncludePath>
+    <IncludePath>Dev\SDL2\include;Dev\SDL2_image-2.0.1\include;src;$(IncludePath)</IncludePath>
     <LibraryPath>Dev\SDL2\lib\x64;Dev\SDL2_image-2.0.1\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>Dev\SDL2\include;Dev\SDL2_image-2.0.1\include;include;$(IncludePath)</IncludePath>
+    <IncludePath>Dev\SDL2\include;Dev\SDL2_image-2.0.1\include;src;$(IncludePath)</IncludePath>
     <LibraryPath>Dev\SDL2\lib\x64;Dev\SDL2_image-2.0.1\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -254,7 +252,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>include;Dev\SDL2\include;Dev\SDL2_image-2.0.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Dev\SDL2\include;Dev\SDL2_image-2.0.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -271,7 +269,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>include;Dev\SDL2\include;Dev\SDL2_image-2.0.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Dev\SDL2\include;Dev\SDL2_image-2.0.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
