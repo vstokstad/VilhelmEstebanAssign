@@ -79,8 +79,9 @@ int Game::GameLoop()
 
 		end = Now();
 		frameTime = end-start;
-		std::cout << "frameTime: "<< frameTime << " accumulator: " << accumulator <<" deltaTime : "<< dt << std::endl;
-		std::cout << "alpha: "<< alpha << " time: " << t <<" fixedDeltaTime : "<< fdt << std::endl;
+
+	/*	std::cout << "frameTime: "<< frameTime << " accumulator: " << accumulator <<" deltaTime : "<< dt << std::endl;
+		std::cout << "alpha: "<< alpha << " time: " << t <<" fixedDeltaTime : "<< fdt << std::endl;*/
 
 	}
 
