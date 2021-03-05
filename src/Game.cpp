@@ -36,7 +36,7 @@ asteroid = new Asteroid(renderer);
 
 double Game::Now()
 {
-	double time = ((double)SDL_GetPerformanceCounter() / (double)SDL_GetPerformanceFrequency())*1000;
+	double time = ((double)SDL_GetPerformanceCounter() / (double)SDL_GetPerformanceFrequency());
 	return time;
 }
 
@@ -51,9 +51,9 @@ int Game::GameLoop()
 	const double dt = 0.01;
 	double fdt = 0.02;
 	double accumulator = 0.0;
-	double end;
-	double frameTime;
-	double currentTime = Now();
+	double end =.0;
+	double frameTime =.0;
+
 	while (appRunning) {
 
 		double newTime = Now();
@@ -71,10 +71,10 @@ int Game::GameLoop()
 		}
 		double alpha = accumulator / dt;
 
-		Render(t, fdt);
+		Render(t, alpha);
 
 		end = Now();
-		frameTime = end - newTime;
+		frameTime = (end - newTime);
 
 	}
 	return 0;
