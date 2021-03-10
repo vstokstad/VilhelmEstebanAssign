@@ -29,6 +29,7 @@ int Asteroid::Render(double t, double fdt)
 
 
 	SDL_RenderCopyEx(mRenderer, mTexture, NULL, mDestRect, angle, NULL, flip);
+
 	return 0;
 }
 
@@ -62,13 +63,12 @@ int Asteroid::Move()
 {
 	float speed = 1;
 
-	
-	
-
 	mDirection.x = speed *sin(randomDirX);
 	mDirection.y = speed *cos(randomDirY);
 	mPosition = mPosition + mDirection;
 
+
+	
 	return 0;
 }
 
