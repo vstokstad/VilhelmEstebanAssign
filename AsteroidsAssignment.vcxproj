@@ -121,11 +121,11 @@
     <None Include="zlib1.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="assets\bigAsteroid.png" />
-    <Image Include="assets\MediumAsteroid.png" />
+    <Image Include="assets\bigAsteroids.png" />
+    <Image Include="assets\mediumAsteroids.png" />
     <Image Include="assets\player.png" />
     <Image Include="assets\playerWhite.png" />
-    <Image Include="assets\smallAsteroid.png" />
+    <Image Include="assets\SmallAsteroids.png" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Dev\SDL2\lib\x64\SDL2.lib" />

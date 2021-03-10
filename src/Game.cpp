@@ -26,7 +26,7 @@ int Game::Init()
 	SDL_RenderClear(renderer);
 	//initialize the player//
 	player = new Player(renderer);
-asteroid = new Asteroid(renderer);
+    asteroid = new Asteroid(renderer);
 	//present the first render.
 	SDL_RenderPresent(renderer);
 
@@ -120,7 +120,8 @@ int Game::Update(double t, double dt)
 int Game::StartGame()
 {
 
-
+	asteroid->Spawn();
+	
 
 	return 0;
 }
