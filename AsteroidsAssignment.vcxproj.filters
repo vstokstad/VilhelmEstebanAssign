@@ -291,13 +291,13 @@
     <Image Include="assets\playerWhite.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="assets\MediumAsteroid.png">
+    <Image Include="assets\bigAsteroids.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="assets\bigAsteroid.png">
+    <Image Include="assets\mediumAsteroids.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="assets\smallAsteroid.png">
+    <Image Include="assets\SmallAsteroids.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

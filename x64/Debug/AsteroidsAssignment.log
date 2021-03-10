@@ -1,9 +1,553 @@
 ﻿  main.cpp
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16,17): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\cstdarg(21,1): error C2143: syntax error: missing ';' before '{'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\cstdarg(21,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(21,1): error C2059: syntax error: '=='
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(22,24): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(22,24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(12,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(12,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72,16): error C2143: syntax error: missing ';' before '+'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(73,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(73,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,16): error C2143: syntax error: missing ';' before '+'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(78,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(78,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(82,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(83,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(83,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,16): error C2143: syntax error: missing ';' before '-'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(90,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(90,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,16): error C2143: syntax error: missing ';' before '-'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,34): error C2146: syntax error: missing ')' before identifier 'current'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(96,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(96,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(100,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(101,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(101,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,16): error C2143: syntax error: missing ';' before '*'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(108,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(108,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(112,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(113,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(113,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,16): error C2143: syntax error: missing ';' before '*'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(120,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(120,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(124,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(125,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(125,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,17): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,14): error C2086: 'int src': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16): message : see declaration of 'src'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(194,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(194,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(42,1): error C2059: syntax error: '>>'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(20,1): error C2504: 'GameObject': base class undefined
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(20,1): error C2143: syntax error: missing ',' before '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(28,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(32,21): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(36,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(40,27): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(46,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(50,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(74,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(78,1): error C2143: syntax error: missing ';' before '}'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(78,1): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(61,6): error C3668: 'Player::Render': method with override specifier 'override' did not override any base class methods
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(63,6): error C3668: 'Player::Update': method with override specifier 'override' did not override any base class methods
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.h(10,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.h(10,17): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.h(10,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.h(10,14): error C2086: 'int src': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16): message : see declaration of 'src'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(11,1): error C2504: 'GameObject': base class undefined
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(15,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(19,21): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(28,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(30,16): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(35,1): error C2059: syntax error: '>>'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(36,35): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(44,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(45,43): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(42,6): error C3668: 'Asteroid::Update': method with override specifier 'override' did not override any base class methods
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(53,1): error C2059: syntax error: '=='
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(64,1): error C2059: syntax error: '}'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(64,1): error C2143: syntax error: missing ';' before '}'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(68,1): error C2059: syntax error: '>>'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.h(16,24): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.h(16,24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.h(16,17): error C2086: 'int include': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(22): message : see declaration of 'include'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.h(19,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.h(19,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\main.cpp(10,7): error C2079: 'game' uses undefined class 'Game'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\main.cpp(10,18): error C2027: use of undefined type 'Game'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\main.cpp(3): message : see declaration of 'Game'
   Asteroid.cpp
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16,17): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\cstdarg(21,1): error C2143: syntax error: missing ';' before '{'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\cstdarg(21,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(21,1): error C2059: syntax error: '=='
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(22,24): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(22,24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(12,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(12,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72,16): error C2143: syntax error: missing ';' before '+'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(73,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(73,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,16): error C2143: syntax error: missing ';' before '+'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(78,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(78,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(82,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(83,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(83,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,16): error C2143: syntax error: missing ';' before '-'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(90,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(90,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,16): error C2143: syntax error: missing ';' before '-'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,34): error C2146: syntax error: missing ')' before identifier 'current'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(96,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(96,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(100,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(101,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(101,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,16): error C2143: syntax error: missing ';' before '*'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(108,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(108,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(112,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(113,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(113,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,16): error C2143: syntax error: missing ';' before '*'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(120,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(120,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(124,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(125,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(125,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,17): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,14): error C2086: 'int src': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16): message : see declaration of 'src'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(194,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(194,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(42,1): error C2059: syntax error: '>>'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(11,1): error C2504: 'GameObject': base class undefined
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(15,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(19,21): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(28,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(30,16): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(35,1): error C2059: syntax error: '>>'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(36,35): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(44,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(45,43): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(42,6): error C3668: 'Asteroid::Update': method with override specifier 'override' did not override any base class methods
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(53,1): error C2059: syntax error: '=='
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(64,1): error C2059: syntax error: '}'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(64,1): error C2143: syntax error: missing ';' before '}'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(68,1): error C2059: syntax error: '>>'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(5,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(5,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(16,15): error C2039: 'Render': is not a member of 'Asteroid'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(10): message : see declaration of 'Asteroid'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(19,2): error C2065: 'mDestRect': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(20,2): error C2065: 'mDestRect': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(23,2): error C2065: 'mDestRect': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(23,22): error C2065: 'mPosition': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(24,2): error C2065: 'mDestRect': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(24,22): error C2065: 'mPosition': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(27,2): error C2065: 'angle': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(27,11): error C2065: 'angleSpeed': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(31,19): error C2065: 'mRenderer': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(31,30): error C2065: 'mTexture': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(31,46): error C2065: 'mDestRect': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(31,57): error C2065: 'angle': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(41,7): error C2660: 'Asteroid::Move': function does not take 0 arguments
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(49,6): message : see declaration of 'Asteroid::Move'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(45,44): error C2614: 'Asteroid': illegal member initialization: 'mRenderer' is not a base or member
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(50,2): error C2065: 'mRenderer': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(51,61): error C2440: '<function-style-cast>': cannot convert from 'initializer list' to 'RigidBody'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(51,61): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(53,63): error C2440: '<function-style-cast>': cannot convert from 'initializer list' to 'RigidBody'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(53,63): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(58,29): error C2039: 'LoadTexture': is not a member of 'TextureManager'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(4): message : see declaration of 'TextureManager'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(58,54): error C2065: 'mRenderer': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(58,40): error C3861: 'LoadTexture': identifier not found
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(63,1): error C2511: 'int Asteroid::Move(void)': overloaded member function not found in 'Asteroid'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(10): message : see declaration of 'Asteroid'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(66,28): error C2065: 'randomDirX': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(67,28): error C2597: illegal reference to non-static member 'Asteroid::randomDirY'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(31): message : see declaration of 'Asteroid::randomDirY'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(68,36): error C2597: illegal reference to non-static member 'Asteroid::mPosition'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(68,36): error C3867: 'Asteroid::mPosition': non-standard syntax; use '&' to create a pointer to member
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(68,36): error C2597: illegal reference to non-static member 'Asteroid::mDirection'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(68,36): error C3867: 'Asteroid::mDirection': non-standard syntax; use '&' to create a pointer to member
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(68,36): error C2568: '+': unable to resolve function overload
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(75,15): error C2039: 'Spawn': is not a member of 'Asteroid'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(10): message : see declaration of 'Asteroid'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(75,20): fatal error C1003: error count exceeds 100; stopping compilation
   Game.cpp
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.cpp(54,15): warning C4244: 'initializing': conversion from 'double' to 'uint64_t', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16,17): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\cstdarg(21,1): error C2143: syntax error: missing ';' before '{'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\cstdarg(21,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(21,1): error C2059: syntax error: '=='
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(22,24): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(22,24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(12,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(12,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72,16): error C2143: syntax error: missing ';' before '+'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(73,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(73,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,16): error C2143: syntax error: missing ';' before '+'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(78,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(78,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(82,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(83,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(83,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,16): error C2143: syntax error: missing ';' before '-'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(90,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(90,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,16): error C2143: syntax error: missing ';' before '-'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,34): error C2146: syntax error: missing ')' before identifier 'current'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(96,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(96,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(100,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(101,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(101,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,16): error C2143: syntax error: missing ';' before '*'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(108,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(108,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(112,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(113,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(113,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,16): error C2143: syntax error: missing ';' before '*'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(120,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(120,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(124,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(125,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(125,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,17): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,14): error C2086: 'int src': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16): message : see declaration of 'src'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(194,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(194,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(42,1): error C2059: syntax error: '>>'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(20,1): error C2504: 'GameObject': base class undefined
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(20,1): error C2143: syntax error: missing ',' before '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(28,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(32,21): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(36,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(40,27): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(46,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(50,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(74,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(78,1): error C2143: syntax error: missing ';' before '}'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(78,1): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(61,6): error C3668: 'Player::Render': method with override specifier 'override' did not override any base class methods
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(63,6): error C3668: 'Player::Update': method with override specifier 'override' did not override any base class methods
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.h(10,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.h(10,17): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.h(10,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.h(10,14): error C2086: 'int src': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16): message : see declaration of 'src'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(11,1): error C2504: 'GameObject': base class undefined
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(15,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(19,21): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(28,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(30,16): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(35,1): error C2059: syntax error: '>>'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(36,35): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(44,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(45,43): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(42,6): error C3668: 'Asteroid::Update': method with override specifier 'override' did not override any base class methods
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(53,1): error C2059: syntax error: '=='
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(64,1): error C2059: syntax error: '}'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(64,1): error C2143: syntax error: missing ';' before '}'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.h(68,1): error C2059: syntax error: '>>'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.h(16,24): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.h(16,24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.h(16,17): error C2086: 'int include': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(22): message : see declaration of 'include'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.h(19,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.h(19,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.cpp(11,5): error C2653: 'Game': is not a class or namespace name
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.cpp(18,35): error C2065: 'screenSize': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.cpp(18,49): error C2065: 'screenSize': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.cpp(18,90): error C2065: 'window': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.cpp(18,99): error C2065: 'renderer': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.cpp(18,5): error C2660: 'SDL_CreateWindowAndRenderer': function does not take 4 arguments
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\Dev\SDL2\include\SDL_render.h(172,29): message : see declaration of 'SDL_CreateWindowAndRenderer'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.cpp(21,7): error C2065: 'window': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.cpp(22,7): error C2065: 'renderer': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.cpp(25,25): error C2065: 'renderer': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.cpp(26,18): error C2065: 'renderer': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.cpp(28,2): error C2065: 'player': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.cpp(28,22): error C2065: 'renderer': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.cpp(28,30): fatal error C1003: error count exceeds 100; stopping compilation
   Player.cpp
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(45,35): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(9,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\Dev\SDL2\include\SDL_platform.h(169,12): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\Dev\SDL2\include\SDL_platform.h(169,12): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16,17): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\cstdarg(21,1): error C2143: syntax error: missing ';' before '{'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\cstdarg(21,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(21,1): error C2059: syntax error: '=='
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(22,24): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(22,24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(12,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(12,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72,16): error C2143: syntax error: missing ';' before '+'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(73,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(73,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,16): error C2143: syntax error: missing ';' before '+'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(78,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(78,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(82,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(83,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(83,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,16): error C2143: syntax error: missing ';' before '-'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(90,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(90,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,16): error C2143: syntax error: missing ';' before '-'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,34): error C2146: syntax error: missing ')' before identifier 'current'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(96,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(96,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(100,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(101,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(101,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,16): error C2143: syntax error: missing ';' before '*'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(108,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(108,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(112,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(113,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(113,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,16): error C2143: syntax error: missing ';' before '*'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(120,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(120,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(124,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(125,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(125,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,17): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,14): error C2086: 'int src': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16): message : see declaration of 'src'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(194,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(194,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(42,1): error C2059: syntax error: '>>'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(20,1): error C2504: 'GameObject': base class undefined
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(20,1): error C2143: syntax error: missing ',' before '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(28,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(32,21): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(36,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(40,27): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(46,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(50,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(74,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(78,1): error C2143: syntax error: missing ';' before '}'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(78,1): error C2238: unexpected token(s) preceding ';'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(61,6): error C3668: 'Player::Render': method with override specifier 'override' did not override any base class methods
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(63,6): error C3668: 'Player::Update': method with override specifier 'override' did not override any base class methods
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(17,26): error C2065: 'mUp': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(45,2): error C2065: 'mPosition': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(45,14): error C2065: 'mPosition': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(45,34): error C2676: binary '*': 'Vector2' does not define this operator or a conversion to a type acceptable to the predefined operator
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(63,21): error C2065: 'mPosition': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(64,21): error C2065: 'mPosition': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(84,46): error C2039: 'mPosition': is not a member of 'Player'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.h(19): message : see declaration of 'Player'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(84,61): error C2440: '<function-style-cast>': cannot convert from 'initializer list' to 'RigidBody'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(84,61): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(86,2): error C2065: 'mPosition': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(86,24): error C2676: binary '*': 'Vector2' does not define this operator or a conversion to a type acceptable to the predefined operator
   RigidBody.cpp
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16,17): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\cstdarg(21,1): error C2143: syntax error: missing ';' before '{'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\cstdarg(21,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(21,1): error C2059: syntax error: '=='
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(22,24): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(22,24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(12,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(12,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72,16): error C2143: syntax error: missing ';' before '+'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(73,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(73,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,16): error C2143: syntax error: missing ';' before '+'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(77,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(78,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(78,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(82,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(83,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(83,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,16): error C2143: syntax error: missing ';' before '-'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(89,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(90,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(90,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,16): error C2143: syntax error: missing ';' before '-'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(95,34): error C2146: syntax error: missing ')' before identifier 'current'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(96,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(96,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(100,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(101,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(101,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,16): error C2143: syntax error: missing ';' before '*'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(107,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(108,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(108,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(112,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(113,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(113,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,16): error C2143: syntax error: missing ';' before '*'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,8): error C2086: 'int Vector3': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(72): message : see declaration of 'Vector3'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(119,34): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(120,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(120,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(124,32): error C2146: syntax error: missing ')' before identifier 'lhs'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(125,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(125,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,1): error C2059: syntax error: '<<'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,17): error C2143: syntax error: missing ';' before '/'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(191,14): error C2086: 'int src': redefinition
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\include.h(16): message : see declaration of 'src'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(194,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Library.h(194,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(42,1): error C2059: syntax error: '>>'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(10,1): error C2653: 'RigidBody': is not a class or namespace name
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(11,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(11,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(18,6): error C2653: 'RigidBody': is not a class or namespace name
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(20,2): error C3861: 'AddForce': identifier not found
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(21,2): error C3861: 'UpdateVelocity': identifier not found
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(22,2): error C3861: 'UpdatePosition': identifier not found
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(26,6): error C2653: 'RigidBody': is not a class or namespace name
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(28,2): error C2065: 'mAcceleration': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(31,9): error C2653: 'RigidBody': is not a class or namespace name
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(32,1): error C2270: 'GetAcceleration': modifiers not allowed on nonmember functions
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(33,11): error C2065: 'mAcceleration': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(33,29): error C2065: 'mMass': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(34,11): error C2065: 'mAcceleration': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(34,29): error C2065: 'mMass': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(37,6): error C2653: 'RigidBody': is not a class or namespace name
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(39,2): error C2065: 'mVelocity': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(39,33): error C2676: binary '*': 'Vector2' does not define this operator or a conversion to a type acceptable to the predefined operator
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(42,6): error C2653: 'RigidBody': is not a class or namespace name
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(45,2): error C2065: 'mPosition': undeclared identifier
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\RigidBody.cpp(45,16): error C2065: 'mVelocity': undeclared identifier
   Generating Code...
-  AsteroidsAssignment.vcxproj -> C:\Users\Admin\Documents\GitHub\VilhemEsteban\VilhemEstebanSolution\x64\Debug\AsteroidsAssignment.exe

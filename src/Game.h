@@ -7,6 +7,7 @@
 #include "include.h"
 #include "Player.h"
 #include "GameObject.h"
+#include "Asteroid.h"
 
 #include "Asteroid.h"
 
@@ -21,9 +22,7 @@ public:
 
 	int Init();
 
-
 	Player* player{};
-
 
 	bool appRunning = true;
 
@@ -32,7 +31,6 @@ public:
 	int StartGame();
 
 	int HandleEvents();
-
 
 	int Render(double t, double fdt) const;
 
@@ -48,7 +46,6 @@ public:
 	Vector2Int screenSize = Vector2Int(1200, 800);
 
 	static uint64_t Now();
-
 };
 
 

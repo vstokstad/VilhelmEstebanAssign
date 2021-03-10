@@ -22,6 +22,11 @@ public:
 	Vector2 mPosition;
 	Vector2 mDirection;
 
+	int randomDirX;
+	int randomDirY;
+	float mRotation;
+	double angle = 0;
+	float angleSpeed = 0;
 	SDL_Renderer* mRenderer = nullptr;
 	RigidBody mRigidBody;
 	SDL_Texture* mTexture = nullptr;
@@ -30,11 +35,17 @@ public:
 
 	int Update(double t, double dt) override;
 
-	int Render(double t, double fdt) override;
+	int Render(double t, double fdt) ;
 
 	int Split();
 
-	int Move(double t, double fdt);
+	int Move();
+
+	int Spawn();
+
 
 
 };
+
+
+
