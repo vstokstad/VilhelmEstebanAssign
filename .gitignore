@@ -5,6 +5,7 @@
 
 /cmake/
 
+<<<<<<< HEAD
 
 .vs/
 .vs
@@ -22,3 +23,6 @@ VilhemEstebanSolution/.vs/VilhemEstebanSolution/v16/Browse.VC.db
 *.db
 *.ipch
 
+=======
+/.vs
+>>>>>>> Esteban

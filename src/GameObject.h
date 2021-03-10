@@ -22,7 +22,6 @@ friend class RigidBody;
 public:
 	virtual int Update(double t, double dt) = 0;
 
-	virtual int Update(double t, double dt) = 0;
 
 public:
 	virtual int Render(double t, double fdt) = 0;
