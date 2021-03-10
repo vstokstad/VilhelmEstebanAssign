@@ -27,6 +27,9 @@ public:
 	float mRotation;
 	double angle = 0;
 	float angleSpeed = 0;
+	int screenBordersX = 0;
+	int screenBordersY = 0;
+
 	SDL_Renderer* mRenderer = nullptr;
 	RigidBody mRigidBody;
 	SDL_Texture* mTexture = nullptr;
@@ -41,7 +44,7 @@ public:
 
 	int Move();
 
-	int Spawn();
+	int Spawn(int w, int h);
 
 
 

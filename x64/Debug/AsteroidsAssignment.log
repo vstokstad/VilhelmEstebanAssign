@@ -1,14 +1,10 @@
-﻿  main.cpp
-  Asteroid.cpp
+﻿  Asteroid.cpp
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(66,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(67,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(77,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(81,88): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  Game.cpp
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Game.cpp(54,15): warning C4244: 'initializing': conversion from 'double' to 'uint64_t', possible loss of data
-  Player.cpp
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(45,35): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-  RigidBody.cpp
-  Generating Code...
-  LINK : C:\Users\Admin\Documents\GitHub\VilhemEsteban\VilhemEstebanSolution\x64\Debug\AsteroidsAssignment.exe not found or not built by the last incremental link; performing full link
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(76,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(80,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(84,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(88,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(100,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(107,88): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   AsteroidsAssignment.vcxproj -> C:\Users\Admin\Documents\GitHub\VilhemEsteban\VilhemEstebanSolution\x64\Debug\AsteroidsAssignment.exe

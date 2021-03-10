@@ -120,7 +120,8 @@ int Game::Update(double t, double dt)
 int Game::StartGame()
 {
 
-	asteroid->Spawn();
+	int w, h; SDL_GetWindowSize(window, &w, &h);
+	asteroid->Spawn(w,h);
 	
 
 	return 0;

@@ -61,25 +61,52 @@ Asteroid::Asteroid(SDL_Renderer* renderer):mRenderer(renderer)
 
 int Asteroid::Move()
 {
-	float speed = 1;
+	float speed = 5;
 
 	mDirection.x = speed *sin(randomDirX);
 	mDirection.y = speed *cos(randomDirY);
+
+	int OffsetA = -100;
+
 	mPosition = mPosition + mDirection;
+	///*
+	
+	if (mPosition.x > (screenBordersX - OffsetA))
+	{
+		mPosition.x = OffsetA ;
+	}
+	if (mPosition.y > (screenBordersY - OffsetA))
+	{
+		mPosition.y = OffsetA ;
+	}
+	if (mPosition.x < OffsetA)
+	{
+		mPosition.x = (screenBordersX - OffsetA) ;
+	}
+	if (mPosition.y < OffsetA)
+	{
+		mPosition.y = (screenBordersY - OffsetA) ;
+	}
+	//*/
 
 
+	//mPosition = Vector2(-100, -100);
 	
 	return 0;
 }
 
-int Asteroid::Spawn()
+int Asteroid::Spawn(int w, int h)
 {
 	srand(time(NULL));
 	randomDirX = rand() % 360;
 	randomDirY = rand() % 360;
 
+	screenBordersX = w;
+	screenBordersY = h;
+
 	angleSpeed = (static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 0.05))) - 0.025;
-	std::cout << angleSpeed << std::endl;
+	std::cout << screenBordersX << std::endl;
+	std::cout << screenBordersY << std::endl;
 	Move();
 	return 0;
 }
