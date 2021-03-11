@@ -32,9 +32,10 @@ public:
 	SDL_Texture* mTexture{};
 	SDL_Renderer* mRenderer{};
 
-	Vector2 mPosition{};
-	Vector2 mDirection{};
-
+	double angle = 0.0;
+	SDL_RendererFlip flip = SDL_FLIP_NONE;
+	State currentState{};
+	State previousState{};
 	SDL_Rect mSrcRect{};
 	SDL_FRect mDestRect{};
 	int w = 0;
@@ -46,22 +47,42 @@ public:
 
 	virtual int Render(double alpha) = 0;
 
-	int ScreenWrap()
+	[[nodiscard]] State InterpolateState(double alpha)
+	{
+		State state = {};
+		state.acceleration = currentState.acceleration * alpha + previousState.acceleration * (1 - alpha);
+		state.velocityX = currentState.velocityX * alpha + previousState.velocityX * (1 - alpha);
+		state.velocityY = currentState.velocityY * alpha + previousState.velocityY * (1 - alpha);
+		ScreenWrap(state);
+		return state;
+	}
+
+	int Integrate(GameObject::State& state, time_point t)
+	{
+		using namespace std::literals;
+
+		state.velocityX += state.directionX + state.acceleration * dt / 1s;
+		state.velocityY += state.directionY + state.acceleration * dt / 1s;
+
+		return 0;
+	}
+
+	int ScreenWrap(State& state) const
 	{
 
-		int o = mDestRect.w;
+		int o = (int)(mDestRect.w*0.5)+ (int)(mDestRect.h * 0.5);
 
-		if (mPosition.x > w + o) {
-			mPosition.x = 0 - o;
+		if (state.positionX > w + o) {
+			state.positionX = 0 - o;
 		}
-		else if (mPosition.x < 0 - o) {
-			mPosition.x = w + o;
+		else if (state.positionX < 0.0 - o) {
+			state.positionX = w + o;
 		}
-		if (mPosition.y > h + o) {
-			mPosition.y = 0 - o;
+		if (state.positionY > h + o) {
+			state.positionY = 0 - o;
 		}
-		else if (mPosition.y < 0 - o) {
-			mPosition.y = h + o;
+		else if (state.positionY < 0.0 - o) {
+			state.positionX = h + o;
 		}
 		return 0;
 	}

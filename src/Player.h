@@ -22,13 +22,13 @@ public:
 	explicit Player(SDL_Renderer* renderer);
 
 
+
 	SDL_Keycode mUp = SDLK_UP;
 	SDL_Keycode mDown = SDLK_DOWN;
 	SDL_Keycode mLeft = SDLK_LEFT;
 	SDL_Keycode mRight = SDLK_RIGHT;
 	SDL_Keycode mSpace = SDLK_SPACE;
-	State currentState={};
-	State previousState={};
+
 
 
 	int Render(double alpha) override;
@@ -42,10 +42,10 @@ public:
 	int Move(time_point timePoint);
 
 
-	[[nodiscard]] State InterpolateState(double alpha) const;
 
 
-int Integrate(State& state, std::chrono::time_point<Clock, std::chrono::duration<double>>);
+
+
 };
 
 

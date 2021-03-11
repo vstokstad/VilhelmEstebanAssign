@@ -20,23 +20,22 @@ public:
 	explicit Asteroid(SDL_Renderer* renderer);
 
 
-	float randomDirX;
-	float randomDirY;
-
-	double angle = 0.0;
-	float angleSpeed = 0.0;
-	float speed = 0;
 
 
 
 
-	int Update(time_point dt) override;
+	float speed = 5;
+
+
+
+
+	int Update(time_point t) override;
 
 	int Render(double alpha) override;
 
 	int Split();
 
-	int Move();
+	int Move(time_point t);
 
 	int Spawn();
 
