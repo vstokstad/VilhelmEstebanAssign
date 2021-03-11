@@ -11,22 +11,22 @@
 
 int Player::HandleInput(SDL_KeyboardEvent event)
 {
-	const float moveModifier = 2.f;
+	const double moveModifier = 1.1;
 
 	if (event.keysym.sym == mUp) {
-		mDirection.y += -moveModifier;
+		currentState.directionY += -moveModifier;
 		std::cout << "up" << std::endl;
 	}
 	if (event.keysym.sym == mDown) {
-		mDirection.y += moveModifier;
+		currentState.directionY += moveModifier;
 		std::cout << "down" << std::endl;
 	}
 	if (event.keysym.sym == mLeft) {
-		mDirection.x += -moveModifier;
+		currentState.directionX += -moveModifier;
 		std::cout << "left" << std::endl;
 	}
 	if (event.keysym.sym == mRight) {
-		mDirection.x += moveModifier;
+		currentState.directionX += moveModifier;
 		std::cout << "right" << std::endl;
 	}
 	if (event.keysym.sym == mSpace) {
@@ -39,20 +39,29 @@ int Player::HandleInput(SDL_KeyboardEvent event)
 }
 
 
-int Player::Move(double t, double dt)
+int Player::Integrate(GameObject::State& state, time_point t)
 {
-	mDirection.x =Library::clamp(mDirection.x, -5.f, 5.f);
-	mDirection.y =Library::clamp(mDirection.y, -5.f, 5.f);
+	using namespace std::literals;
+
+	state.velocityX += state.directionX + state.acceleration * dt / 1s;
+	state.velocityY += state.directionY + state.acceleration * dt / 1s;
 
 
-	mDirection.x = mDirection.x;
-	mDirection.y = mDirection.y;
-	mPosition.x += mDirection.x;
-	mPosition.y += mDirection.y;
+	return 0;
+}
 
-	mDirection.x = Library::Lerp(mDirection.x, 0.0, 0.005);
-	mDirection.y = Library::Lerp(mDirection.y, 0.0, 0.005);
-ScreenWrap();
+int Player::Move(time_point t)
+{
+	using namespace std::literals;
+/*	mDirection.x = Library::clamp(mDirection.x, -1.f, 1.f);
+	mDirection.y = Library::clamp(mDirection.y, -1.f, 1.f);*/
+	Integrate(currentState, t);
+
+/*	currentState.velocityX = Library::Lerp(currentState.velocityX, 0.0, dt / 1s);
+	currentState.velocityY = Library::Lerp(currentState.velocityY, 0.0, dt / 1s);*/
+
+	ScreenWrap();
+	//previousState = currentState;
 	return 0;
 }
 
@@ -61,22 +70,34 @@ int Player::Fire()
 	return 0;
 }
 
-int Player::Render(double t, double fdt)
+int Player::Render(double alpha)
 {
-
+	State state = InterpolateState(alpha);
+	previousState = currentState;
 	double mAngle = 0;
-
-	mDestRect.x = mPosition.x;
-	mDestRect.y = mPosition.y;
-	SDL_RenderCopyEx(mRenderer, mTexture, NULL, &mDestRect, mAngle, NULL, SDL_FLIP_NONE);
+	state.positionX += state.velocityX;
+	state.positionY += state.velocityY;
+	mDestRect.x = state.positionX;
+	mDestRect.y = state.positionY;
+	SDL_RenderCopyExF(mRenderer, mTexture, NULL, &mDestRect, mAngle, NULL, SDL_FLIP_HORIZONTAL);
 
 
 	return 0;
 }
 
-int Player::Update(double t, double dt)
+Player::State Player::InterpolateState(double alpha) const
 {
-	Move(t, dt);
+	State state = {};
+	state.acceleration = currentState.acceleration * alpha + previousState.acceleration * (1 - alpha);
+	state.velocityX = currentState.velocityX * alpha + previousState.velocityX * (1 - alpha);
+	state.velocityY = currentState.velocityY * alpha + previousState.velocityY * (1 - alpha);
+
+	return state;
+}
+
+int Player::Update(time_point t)
+{
+	Move(t);
 
 	return 0;
 
@@ -85,12 +106,13 @@ int Player::Update(double t, double dt)
 
 Player::Player(SDL_Renderer* renderer)
 {
-	mSrcRect = SDL_Rect{ 64, 64, 64, 64 };
-	mDestRect = SDL_Rect{ 64, 64, 64, 64 };
-	mPosition = Vector2((64), (64));
-	mDirection = Vector2(0, 0);
-	mRenderer = renderer;
 
+	SDL_GetRendererOutputSize(renderer, &w, &h);
+	mRenderer = renderer;
+	mSrcRect = { w/2, h/2, w/2, h/2 };
+	mDestRect = { static_cast<float>(w/2), static_cast<float>(h/2), 64, 64 };
+	currentState = { 10, 0, 0, static_cast<double>(w/2),static_cast<double>(h/2) };
+	previousState = { 10, 0, 0, static_cast<double>(w/2),static_cast<double>(h/2) };
 	IMG_Init(IMG_INIT_PNG);
 	const char* playerWhite = "assets/playerWhite.png";
 

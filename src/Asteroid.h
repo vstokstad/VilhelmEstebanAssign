@@ -30,9 +30,9 @@ public:
 
 
 
-	int Update(double t, double dt) override;
+	int Update(time_point dt) override;
 
-	int Render(double t, double fdt) override ;
+	int Render(double alpha) override;
 
 	int Split();
 

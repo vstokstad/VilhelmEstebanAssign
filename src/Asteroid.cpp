@@ -12,7 +12,7 @@ int Asteroid::Split()
 }
 
 
-int Asteroid::Render(double t, double fdt)
+int Asteroid::Render(double alpha)
 {
 
 
@@ -24,14 +24,14 @@ int Asteroid::Render(double t, double fdt)
 	SDL_RendererFlip flip = SDL_FLIP_NONE;
 
 
-	SDL_RenderCopyEx(mRenderer, mTexture, NULL, &mDestRect, angle, NULL, flip);
+	SDL_RenderCopyExF(mRenderer, mTexture, NULL, &mDestRect, angle, NULL, flip);
 
 
 	return 0;
 }
 
 
-int Asteroid::Update(double t, double dt)
+int Asteroid::Update(time_point t)
 {
 
 	Move();
@@ -40,8 +40,8 @@ int Asteroid::Update(double t, double dt)
 
 Asteroid::Asteroid(SDL_Renderer* renderer)
 {
-	mSrcRect = SDL_Rect{ 256, 256, 128, 128 };
-	mDestRect = SDL_Rect{ 256, 256, 256, 256 };
+	mSrcRect = { 256, 256, 128, 128 };
+	mDestRect = { 256, 256, 256, 256 };
 	mPosition = Vector2(256, 256);
 	mRenderer = renderer;
 
@@ -50,12 +50,13 @@ Asteroid::Asteroid(SDL_Renderer* renderer)
 	const char* bigAsteroid = "assets/bigAsteroids.png";
 
 	mTexture = TextureManager::LoadTexture(bigAsteroid, mRenderer);
+	SDL_GetRendererOutputSize(mRenderer, &w, &h);
 
 }
 
 int Asteroid::Move()
 {
-	float speed = 5;
+	speed = 5;
 
 
 	mDirection.x = speed * sinf(randomDirX);
@@ -63,15 +64,15 @@ int Asteroid::Move()
 	mPosition.x += mDirection.x;
 	mPosition.y += mDirection.y;
 
-ScreenWrap();
+	ScreenWrap();
 	return 0;
 }
 
 int Asteroid::Spawn()
 {
-	srand(time(NULL));
-	randomDirX = rand() % 360;
-	randomDirY = rand() % 360;
+	srandom(time(nullptr));
+	randomDirX = random() % 360;
+	randomDirY = random() % 360;
 	angleSpeed = (static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 0.05))) - 0.025;
 	Move();
 	return 0;

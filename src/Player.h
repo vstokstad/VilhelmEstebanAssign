@@ -11,14 +11,11 @@
 #include "GameObject.h"
 
 
-class RigidBody;
 
 class Player : public virtual GameObject
-
 {
 
 public:
-
 
 	~Player() = default;
 
@@ -30,20 +27,25 @@ public:
 	SDL_Keycode mLeft = SDLK_LEFT;
 	SDL_Keycode mRight = SDLK_RIGHT;
 	SDL_Keycode mSpace = SDLK_SPACE;
+	State currentState={};
+	State previousState={};
 
-	int Render(double t, double fdt) override;
 
-	int Update(double t, double dt) override;
+	int Render(double alpha) override;
+
+	int Update(time_point t) override;
 
 	int HandleInput(SDL_KeyboardEvent event);
 
 	int Fire();
 
-	int Move(double t, double dt);
+	int Move(time_point timePoint);
 
 
+	[[nodiscard]] State InterpolateState(double alpha) const;
 
 
+int Integrate(State& state, std::chrono::time_point<Clock, std::chrono::duration<double>>);
 };
 
 
