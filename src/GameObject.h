@@ -32,7 +32,7 @@ public:
 
 	SDL_Texture* mTexture{};
 	SDL_Renderer* mRenderer{};
-	const double speed = 150.;
+	const double speed = 500.;
 	const float drag = .002f;
 	double angle = 0.0;
 	SDL_RendererFlip flip = SDL_FLIP_NONE;

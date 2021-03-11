@@ -14,7 +14,7 @@ int Asteroid::Split()
 
 int Asteroid::Render(double alpha)
 {
-
+//TODO fix this movement to match player in speed and such.
 	State state = InterpolateState(alpha);
 	previousState = currentState;
 
@@ -41,8 +41,8 @@ Asteroid::Asteroid(SDL_Renderer* renderer)
 	mRenderer = renderer;
 	mSrcRect = { 256, 256, 128, 128 };
 	mDestRect = { 256, 256, 256, 256 };
-	currentState = { 10, 0, 0, 256, 256 };
-	previousState = { 10, 0, 0, 256, 256 };
+	currentState = { 10, 10, 0, 256, 256 };
+	previousState = { 10, 10, 0, 256, 256 };
 	IMG_Init(IMG_INIT_PNG);
 	const char* bigAsteroid = "assets/bigAsteroids.png";
 
@@ -54,8 +54,8 @@ int Asteroid::Move(time_point t)
 {
 
 
-	currentState.accelerationX = speed * sinf(dt / 1s);
-	currentState.accelerationY = speed * cosf(dt / 1s);
+	currentState.directionX *=  sin(10*dt/1s);
+	currentState.directionY *=   cos(10*dt/1s);
 	currentState = previousState;
 	Integrate(currentState, t);
 
