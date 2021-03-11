@@ -13,7 +13,7 @@ int Game::Init()
 	SDL_Init(SDL_INIT_EVERYTHING);
 	IMG_Init(IMG_INIT_PNG);
 
-
+Vector2Int screenSize = Vector2Int(1200, 800);
 	//CONSTRUCTOR AND WINDOW GETS MADE HERE//
 	if (!SDL_CreateWindowAndRenderer(screenSize.x, screenSize.y, SDL_WINDOW_ALLOW_HIGHDPI, &window, &renderer)) {
 		// In the case that the window could not be made...

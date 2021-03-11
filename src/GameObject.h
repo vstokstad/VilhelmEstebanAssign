@@ -2,12 +2,14 @@
 
 #include "include.h"
 
-extern const Vector2Int screenSize;
+
+
 class TextureManager;
 
 class GameObject
 {
 	friend class Player;
+
 	friend class Asteroid;
 
 
@@ -27,26 +29,23 @@ public:
 	int ScreenWrap()
 	{
 
-		float OffsetA = float(-100-mDestRect.w);
-		
-	//This makes him move twice?!
-	//	mPosition = mPosition + mDirection;
+		int o = mDestRect.w;
+		int w = 1200*2;
+		int h = 800*2;
 
-		if (mPosition.x > (screenSize.x - OffsetA))
-		{
-			mPosition.x = OffsetA;
+
+		std::cout << mPosition.x << "< X Y >"<< mPosition.y << std::endl;
+
+		if (mPosition.x > w+o) {
+			mPosition.x = 0 - o;
 		}
-		if (mPosition.y > (screenSize.y - OffsetA))
-		{
-			mPosition.y = OffsetA;
+		else if (mPosition.x < 0-o) {
+			mPosition.x = w+o;
 		}
-		if (mPosition.x < OffsetA)
-		{
-			mPosition.x = (screenSize.x - OffsetA);
-		}
-		if (mPosition.y < OffsetA)
-		{
-			mPosition.y = (screenSize.y - OffsetA);
+		if (mPosition.y > h+o) {
+			mPosition.y = 0-o;
+		}else if (mPosition.y < 0-o) {
+			mPosition.y = h+o;
 		}
 		return 0;
 	}
