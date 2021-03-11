@@ -44,6 +44,7 @@ int Player::Move(double t, double dt)
 {
 	mPosition = mPosition+mDirection*dt;
 
+	ScreenWrap();
 
 	return 0;
 }
@@ -60,10 +61,10 @@ int Player::Render(double t, double fdt)
 	mRigidBody.UpdatePosition(fdt);
 	mDestRect.w = 64;
 	mDestRect.h = 64;
-	mDestRect.x = (int)mPosition.x;
-	mDestRect.y = (int)mPosition.y;
+	mDestRect.x = (int)mPosition.x * fdt;
+	mDestRect.y = (int)mPosition.y * fdt;
 
-	SDL_RenderCopy(mRenderer, mPlayerTex, NULL, &mDestRect);
+	SDL_RenderCopy(mRenderer, mTexture, NULL, &mDestRect);
 	return 0;
 }
 
@@ -76,7 +77,7 @@ int Player::Update(double t, double dt)
 }
 
 
-Player::Player(SDL_Renderer* renderer) : mRenderer(renderer)
+Player::Player(SDL_Renderer* renderer)
 {
 	mRenderer = renderer;
 	mSrcRect = SDL_Rect{ mSrcRect.w = 64, mSrcRect.h = 64 };
@@ -89,7 +90,7 @@ Player::Player(SDL_Renderer* renderer) : mRenderer(renderer)
 	}
 	const char* playerWhite = "assets/playerWhite.png";
 	//now using the Texture Manager
-	mPlayerTex = TextureManager::LoadTexture(playerWhite, mRenderer);
+	mTexture = TextureManager::LoadTexture(playerWhite, mRenderer);
 
 }
 

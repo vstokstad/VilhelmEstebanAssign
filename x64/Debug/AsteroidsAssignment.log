@@ -1,10 +1,9 @@
-﻿  Asteroid.cpp
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(66,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(67,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(76,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(80,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(84,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(88,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(100,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(107,88): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+﻿  Player.cpp
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(36,18): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(40,18): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(44,32): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(48,32): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(45,35): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(64,33): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(65,33): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   AsteroidsAssignment.vcxproj -> C:\Users\Admin\Documents\GitHub\VilhemEsteban\VilhemEstebanSolution\x64\Debug\AsteroidsAssignment.exe

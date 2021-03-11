@@ -32,14 +32,9 @@ public:
 	SDL_Keycode mSpace = SDLK_SPACE;
 
 
-	Vector2 mPosition;
-	Vector2 mDirection;
 	RigidBody mRigidBody;
-	SDL_Renderer* mRenderer = nullptr;
 
-	SDL_Texture* mPlayerTex = nullptr;
-	SDL_Rect mSrcRect;
-	SDL_Rect mDestRect;
+
 
 
 

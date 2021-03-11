@@ -16,19 +16,19 @@ int Asteroid::Split()
 int Asteroid::Render(double t, double fdt)
 {
 
-	mDestRect->w = 124;
-	mDestRect->h = 124;
+	mDestRect.w = 124;
+	mDestRect.h = 124;
 
 
-	mDestRect->x = (int)mPosition.x;
-	mDestRect->y = (int)mPosition.y;
+	mDestRect.x = (int)mPosition.x;
+	mDestRect.y = (int)mPosition.y;
 
 
 	angle += angleSpeed;
 	SDL_RendererFlip flip = SDL_FLIP_NONE;
 
 
-	SDL_RenderCopyEx(mRenderer, mTexture, NULL, mDestRect, angle, NULL, flip);
+	SDL_RenderCopyEx(mRenderer, mTexture, NULL, &mDestRect, angle, NULL, flip);
 
 	return 0;
 }
@@ -36,20 +36,20 @@ int Asteroid::Render(double t, double fdt)
 
 int Asteroid::Update(double t, double dt)
 {
-	mDestRect->w = 124;
-	mDestRect->h = 124;
+	mDestRect.w = 124;
+	mDestRect.h = 124;
 	Move();
 	return 0;
 }
 
-Asteroid::Asteroid(SDL_Renderer* renderer):mRenderer(renderer)
+Asteroid::Asteroid(SDL_Renderer* renderer)
 {
-	mSrcRect = new SDL_Rect{64,64};
-	mDestRect = new SDL_Rect{ 124, 124 };
+	mSrcRect = SDL_Rect{64,64};
+	mDestRect = SDL_Rect{ 124, 124 , 258, 258};
 	mPosition = Vector2(258, 258);
 	mRenderer = renderer;
 	mRigidBody = RigidBody(0, Vector2(), &this->mPosition, this);
-	Vector2 tempSize = { (float)mDestRect->w, (float)mDestRect->h};
+	Vector2 tempSize = { (float)mDestRect.w, (float)mDestRect.h};
 	mRigidBody =  RigidBody(1.f, tempSize, &this->mPosition, this);
 
 	IMG_Init(IMG_INIT_PNG);
@@ -68,29 +68,7 @@ int Asteroid::Move()
 
 	int OffsetA = -100;
 
-	mPosition = mPosition + mDirection;
-	///*
-	
-	if (mPosition.x > (screenBordersX - OffsetA))
-	{
-		mPosition.x = OffsetA ;
-	}
-	if (mPosition.y > (screenBordersY - OffsetA))
-	{
-		mPosition.y = OffsetA ;
-	}
-	if (mPosition.x < OffsetA)
-	{
-		mPosition.x = (screenBordersX - OffsetA) ;
-	}
-	if (mPosition.y < OffsetA)
-	{
-		mPosition.y = (screenBordersY - OffsetA) ;
-	}
-	//*/
-
-
-	//mPosition = Vector2(-100, -100);
+	ScreenWrap();
 	
 	return 0;
 }
