@@ -2,7 +2,7 @@
 #include "include.h"
 class Game;
 
-Vector2Int screenSize = Vector2Int(1200, 800);
+const auto screenSize = Vector2Int(1200, 800);
 int main(int argc, char** argv)
 {
 

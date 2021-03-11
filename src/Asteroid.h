@@ -2,7 +2,7 @@
 
 #include "include.h"
 #include "GameObject.h"
-#include "RigidBody.h"
+
 
 class TextureManager;
 class RigidBody;
@@ -20,26 +20,25 @@ public:
 	explicit Asteroid(SDL_Renderer* renderer);
 
 
-	int randomDirX;
-	int randomDirY;
-	float mRotation;
-	double angle = 0;
-	float angleSpeed = 0;
-	int screenBordersX = 0;
-	int screenBordersY = 0;
+	float randomDirX;
+	float randomDirY;
 
-	RigidBody mRigidBody;
+	double angle = 0.0;
+	float angleSpeed = 0.0;
+
+
+
 
 
 	int Update(double t, double dt) override;
 
-	int Render(double t, double fdt) ;
+	int Render(double t, double fdt) override ;
 
 	int Split();
 
 	int Move();
 
-	int Spawn(int w, int h);
+	int Spawn();
 
 
 

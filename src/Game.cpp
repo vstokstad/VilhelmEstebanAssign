@@ -15,8 +15,7 @@ int Game::Init()
 
 
 	//CONSTRUCTOR AND WINDOW GETS MADE HERE//
-	if (!SDL_CreateWindowAndRenderer(screenSize.x, screenSize.y, SDL_WINDOW_ALLOW_HIGHDPI, &window, &renderer))
-	{
+	if (!SDL_CreateWindowAndRenderer(screenSize.x, screenSize.y, SDL_WINDOW_ALLOW_HIGHDPI, &window, &renderer)) {
 		// In the case that the window could not be made...
 		if (window == nullptr) { return 1; }
 		if (renderer == nullptr) { return 1; }
@@ -26,7 +25,7 @@ int Game::Init()
 	SDL_RenderClear(renderer);
 	//initialize the player//
 	player = new Player(renderer);
-    asteroid = new Asteroid(renderer);
+	asteroid = new Asteroid(renderer);
 	//present the first render.
 	SDL_RenderPresent(renderer);
 
@@ -41,18 +40,17 @@ uint64_t Game::Now()
 }
 
 
-
 int Game::GameLoop()
 {
 	StartGame();
 
 //SET TIME START//
 	double t = 0.0;
-	const double dt = 0.01;
+	const double dt = 1.0/60.0;
 	double fdt = 0.02;
 	double accumulator = 0.0;
-	uint64_t end =.0;
-	double frameTime =.0;
+	uint64_t end = .0;
+	double frameTime = .0;
 
 	while (appRunning) {
 
@@ -71,10 +69,10 @@ int Game::GameLoop()
 		}
 		double alpha = accumulator / dt;
 
-		Render(t, 0.25);
+		Render(t, fdt);
 
 		end = Now();
-		frameTime = (double)((end - newTime))/(double)SDL_GetPerformanceFrequency();
+		frameTime = (double)((end - newTime)) / (double)SDL_GetPerformanceFrequency();
 
 	}
 	return 0;
@@ -85,11 +83,9 @@ int Game::HandleEvents()
 {
 	while (SDL_PollEvent(&events)) {
 		if (events.type == SDL_KEYDOWN) /*{ player->HandleInput(events); }*/
-		if (events.key.type == SDL_KEYDOWN) {
-			player->HandleInput(events.key);
-		}
-
-		//check if app is closing to quit.
+			if (events.key.type == SDL_KEYDOWN) {
+				player->HandleInput(events.key);
+			}
 		if (SDL_QUIT == events.type) { appRunning = false; }
 	}
 	return 0;
@@ -112,16 +108,15 @@ int Game::Update(double t, double dt)
 {
 
 	player->Update(t, dt);
-
-	asteroid->Update(t,dt);
+	asteroid->Update(t, dt);
 	return 0;
 }
 
 int Game::StartGame()
 {
 
-	
-	asteroid->Spawn(screenSize.x, screenSize.y);
+
+	asteroid->Spawn();
 
 	return 0;
 }

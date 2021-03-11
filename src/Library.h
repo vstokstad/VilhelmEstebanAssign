@@ -283,6 +283,11 @@ public:
 
 	};
 
+	float static Dot(Vector2 a, Vector2 b)
+	{
+		return a.x * b.x + a.y * b.y;
+	}
+
 	float static InverseLerp(float a, float b, float value)
 	{
 		return (value - a) / (b - a);

@@ -12,7 +12,7 @@
 #include "Asteroid.h"
 
 
-extern Vector2Int screenSize;
+
 
 class Game
 {

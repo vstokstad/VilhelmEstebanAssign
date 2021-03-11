@@ -9,7 +9,7 @@
 
 #include "include.h"
 #include "GameObject.h"
-#include "RigidBody.h"
+
 
 class RigidBody;
 
@@ -31,13 +31,6 @@ public:
 	SDL_Keycode mRight = SDLK_RIGHT;
 	SDL_Keycode mSpace = SDLK_SPACE;
 
-
-	RigidBody mRigidBody;
-
-
-
-
-
 	int Render(double t, double fdt) override;
 
 	int Update(double t, double dt) override;
@@ -49,7 +42,6 @@ public:
 	int Move(double t, double dt);
 
 
-	int cnt = 0;
 
 
 };

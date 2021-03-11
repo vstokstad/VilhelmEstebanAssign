@@ -2,20 +2,20 @@
 
 #include "include.h"
 
-extern Vector2Int screenSize;
+extern const Vector2Int screenSize;
 class TextureManager;
 
 class GameObject
 {
 	friend class Player;
 	friend class Asteroid;
-	friend class RigidBody;
+
 
 	SDL_Texture* mTexture{};
 	SDL_Renderer* mRenderer{};
 
-	Vector2 mPosition;
-	Vector2 mDirection;
+	Vector2 mPosition{};
+	Vector2 mDirection{};
 
 	SDL_Rect mSrcRect{};
 	SDL_Rect mDestRect{};
@@ -27,9 +27,10 @@ public:
 	int ScreenWrap()
 	{
 
-		int OffsetA = -100;
+		float OffsetA = float(-100-mDestRect.w);
 		
-		mPosition = mPosition + mDirection;
+	//This makes him move twice?!
+	//	mPosition = mPosition + mDirection;
 
 		if (mPosition.x > (screenSize.x - OffsetA))
 		{
