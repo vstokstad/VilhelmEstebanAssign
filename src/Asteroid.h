@@ -25,7 +25,7 @@ public:
 
 	double angle = 0.0;
 	float angleSpeed = 0.0;
-
+	float speed = 0;
 
 
 
