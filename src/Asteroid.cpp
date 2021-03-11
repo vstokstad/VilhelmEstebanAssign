@@ -36,8 +36,6 @@ int Asteroid::Render(double t, double fdt)
 
 int Asteroid::Update(double t, double dt)
 {
-	mDestRect.w = 124;
-	mDestRect.h = 124;
 	Move();
 	return 0;
 }
@@ -61,7 +59,7 @@ Asteroid::Asteroid(SDL_Renderer* renderer)
 
 int Asteroid::Move()
 {
-	float speed = 5;
+	speed = 5;
 
 	mDirection.x = speed *sin(randomDirX);
 	mDirection.y = speed *cos(randomDirY);

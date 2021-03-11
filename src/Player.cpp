@@ -61,8 +61,8 @@ int Player::Render(double t, double fdt)
 	mRigidBody.UpdatePosition(fdt);
 	mDestRect.w = 64;
 	mDestRect.h = 64;
-	mDestRect.x = (int)mPosition.x * fdt;
-	mDestRect.y = (int)mPosition.y * fdt;
+	mDestRect.x = (int)mPosition.x ;
+	mDestRect.y = (int)mPosition.y ;
 
 	SDL_RenderCopy(mRenderer, mTexture, NULL, &mDestRect);
 	return 0;

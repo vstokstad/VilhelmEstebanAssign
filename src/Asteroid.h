@@ -27,6 +27,7 @@ public:
 	float angleSpeed = 0;
 	int screenBordersX = 0;
 	int screenBordersY = 0;
+	int speed = 0;
 
 	RigidBody mRigidBody;
 
