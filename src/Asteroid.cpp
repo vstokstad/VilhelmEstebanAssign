@@ -52,12 +52,13 @@ Asteroid::Asteroid(SDL_Renderer* renderer)
 
 int Asteroid::Move(time_point t)
 {
-	speed = 5;
 
-	currentState.directionX = speed * sinf(dt / 1s);
-	currentState.directionY = speed * cosf(dt / 1s);
 
+	currentState.accelerationX = speed * sinf(dt / 1s);
+	currentState.accelerationY = speed * cosf(dt / 1s);
+	currentState = previousState;
 	Integrate(currentState, t);
+
 
 	return 0;
 }

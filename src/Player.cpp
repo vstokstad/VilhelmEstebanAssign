@@ -11,29 +11,30 @@
 
 int Player::HandleInput(SDL_KeyboardEvent event)
 {
-	const double moveModifier = 1.1;
+
 
 	if (event.keysym.sym == mUp) {
-		currentState.directionY = -moveModifier;
+		currentState.directionY += -.1;
 		std::cout << "up" << std::endl;
 	}
 	if (event.keysym.sym == mDown) {
-		currentState.directionY = moveModifier;
+		currentState.directionY += .1;
 		std::cout << "down" << std::endl;
 	}
 	if (event.keysym.sym == mLeft) {
-		currentState.directionX = -moveModifier;
+		currentState.directionX += -.1;
 		std::cout << "left" << std::endl;
 	}
 	if (event.keysym.sym == mRight) {
-		currentState.directionX = moveModifier;
+		currentState.directionX += .1;
 		std::cout << "right" << std::endl;
 	}
 	if (event.keysym.sym == mSpace) {
 		Fire();
 		std::cout << "fire" << std::endl;
 	}
-
+currentState.directionX=Library::clamp(currentState.directionX,-1., 1.);
+currentState.directionY=Library::clamp(currentState.directionY,-1., 1.);
 
 	return 0;
 }
@@ -43,8 +44,9 @@ int Player::Move(time_point t)
 {
 	using namespace std::literals;
 
-	Integrate(currentState, t);
+	previousState = currentState;
 
+	Integrate(currentState, t);
 	return 0;
 }
 
@@ -56,16 +58,14 @@ int Player::Fire()
 int Player::Render(double alpha)
 {
 	State state = InterpolateState(alpha);
-	previousState = currentState;
 
 
-	state.positionX += state.velocityX;
-	state.positionY += state.velocityY;
 	mDestRect.x = state.positionX;
 	mDestRect.y = state.positionY;
 
 	SDL_RenderCopyExF(mRenderer, mTexture, NULL, &mDestRect, angle, NULL, flip);
-
+	currentState.velocityX = Library::Lerp((float)currentState.velocityX, 0.0, drag*dt/1s);
+	currentState.velocityY = Library::Lerp((float)currentState.velocityY, 0.0, drag*dt/1s);
 	return 0;
 }
 

@@ -23,12 +23,6 @@ public:
 
 
 
-
-	float speed = 5;
-
-
-
-
 	int Update(time_point t) override;
 
 	int Render(double alpha) override;

@@ -32,8 +32,6 @@ int Game::Init()
 }
 
 
-
-
 int Game::GameLoop()
 {
 	StartGame();
@@ -46,26 +44,24 @@ int Game::GameLoop()
 	duration accumulator = 0s;
 
 
-
 	while (appRunning) {
 
 		time_point newTime = Clock::now();
 		auto frameTime = newTime - currentTime;
 		if (frameTime > 0.25s)
 			frameTime = 0.25s;
+
 		currentTime = newTime;
 
 		accumulator += frameTime;
 
 		while (accumulator >= dt) {
-
 			Update(t);
-
 			t += dt;
 			accumulator -= dt;
 		}
 
-		const double alpha = accumulator / dt;
+		const double alpha = std::chrono::duration<double>{ accumulator } / dt;
 
 		Render(alpha);
 
@@ -81,8 +77,9 @@ int Game::GameLoop()
 			frame_rate = frame_count;
 			frame_count = 0;
 		}
-		std::cout << "Frame rate is " << frame_rate << " frames per second.  Velocity = "
-		          << player->currentState.velocityX << " m/s\n";
+		std::cout << "Frame rate is " << frame_rate << " frames per second.  VelocityX = "
+		          << player->currentState.velocityX << " m/s\n"
+		          << " VelocityY = " << player->currentState.velocityY << " m/s\n";
 	}
 	return 0;
 }
