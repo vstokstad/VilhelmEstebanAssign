@@ -18,6 +18,8 @@ int Game::Init()
 		if (window == nullptr) { return 1; }
 		if (renderer == nullptr) { return 1; }
 	}
+	SDL_ShowWindow(window);
+	SDL_RaiseWindow(window);
 //draw the window//
 	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
 	SDL_RenderClear(renderer);

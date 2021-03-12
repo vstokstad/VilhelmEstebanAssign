@@ -5,8 +5,6 @@
 
 /cmake/
 
-<<<<<<< HEAD
-
 .vs/
 .vs
 /VilhemEstebanSolution/
@@ -19,10 +17,10 @@
 *.vcxproj.filters
 *.vcxproj.user
 /VilhemEstebanSolution/
-*.vs/VilhemEstebanSolution/v16/Browse.VC.db
+
+
+VilhemEstebanSolution
+VilhemEstebanSolution/.vs/VilhemEstebanSolution/v16/Browse.VC.db
 *.db
 *.ipch
 
-=======
-/.vs
->>>>>>> Esteban
