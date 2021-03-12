@@ -15,11 +15,11 @@
 /Debug/
 /.vs/
 /x64/
-AsteroidsAssignment.vcxproj
-AsteroidsAssignment.vcxproj.filters
-AsteroidsAssignment.vcxproj.user
-VilhemEstebanSolution/
-VilhemEstebanSolution/.vs/VilhemEstebanSolution/v16/Browse.VC.db
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+/VilhemEstebanSolution/
+*.vs/VilhemEstebanSolution/v16/Browse.VC.db
 *.db
 *.ipch
 
