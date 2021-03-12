@@ -9,9 +9,6 @@
 #include "Asteroid.h"
 
 
-
-
-
 class Game
 {
 public:
@@ -37,6 +34,10 @@ public:
 	int Update(time_point dt);
 
 	int Cleanup() const;
+
+	int RestartGame();
+
+	int ShowGameOverScreen();
 
 	Asteroid* asteroid{};
 	SDL_Window* window = nullptr;

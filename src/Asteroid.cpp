@@ -24,7 +24,7 @@ Asteroid::Asteroid(SDL_Renderer* renderer)
 	SDL_GetRendererOutputSize(renderer, &w, &h);
 	mRenderer = renderer;
 	mDestRect = { 256, 256, 256, 256 };
-	mCollider = { 256 - (256 / 4), 256 - (256 / 4), 192, 192 };
+	mCollider = { 256 - (256 / 4), 256 - (256 / 4), 128, 128 };
 	currentState = { 0, 0, 0, 0, 256, 256 };
 	previousState = { 0, 0, 0, 0, 256, 256 };
 	IMG_Init(IMG_INIT_PNG);

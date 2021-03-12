@@ -40,9 +40,7 @@ int Player::HandleInput(SDL_KeyboardEvent event)
 		};
 	}
 
-	currentState.directionX = Library::Lerp(currentState.directionX, 0., .1);
-	currentState.directionY = Library::Lerp(currentState.directionY, 0., .1);
-	std::cout << currentState.positionX << "<X  Y>" << currentState.positionY << std::endl;
+
 	return 0;
 }
 
@@ -52,8 +50,7 @@ int Player::Move(time_point t)
 	previousState = currentState;
 	Integrate(currentState, t);
 
-/*	currentState.velocityX = Library::Lerp((float)currentState.velocityX, 0.0, drag * dt / 1s);
-	currentState.velocityY = Library::Lerp((float)currentState.velocityY, 0.0, drag * dt / 1s);*/
+
 	return 0;
 }
 

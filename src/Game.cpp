@@ -10,10 +10,16 @@ int Game::Init()
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
 	IMG_Init(IMG_INIT_PNG);
+	SDL_SetHint(SDL_HINT_RENDER_VSYNC, "1");
+	SDL_SetHint(SDL_HINT_GRAB_KEYBOARD, "1");
+	SDL_SetHint(SDL_HINT_RENDER_BATCHING, "1");
+	SDL_SetHint(SDL_HINT_WINDOWS_ENABLE_MESSAGELOOP, "0");
+	SDL_SetHint(SDL_HINT_WINDOW_FRAME_USABLE_WHILE_CURSOR_HIDDEN, "1");
+
 
 	Vector2Int screenSize = Vector2Int(1200, 800);
 	//CONSTRUCTOR AND WINDOW GETS MADE HERE//
-	if (!SDL_CreateWindowAndRenderer(screenSize.x, screenSize.y, SDL_WINDOW_ALLOW_HIGHDPI, &window, &renderer)) {
+	if (!SDL_CreateWindowAndRenderer(screenSize.x, screenSize.y, SDL_WINDOW_ALLOW_HIGHDPI || SDL_WINDOW_FULLSCREEN, &window, &renderer)) {
 		// In the case that the window could not be made...
 		if (window == nullptr) { return 1; }
 		if (renderer == nullptr) { return 1; }
@@ -34,7 +40,7 @@ int Game::Init()
 
 int Game::GameLoop()
 {
-	StartGame();
+
 
 //SET TIME START//
 
@@ -65,7 +71,7 @@ int Game::GameLoop()
 
 		Render(alpha);
 
-		//Framerate stuff:
+
 
 
 	}
@@ -121,7 +127,7 @@ int Game::Update(time_point t)
 	player->Update(t);
 	asteroid->Update(t);
 	if (player->CollisionDetection(&asteroid->mCollider) == 1) {
-ShowGameOverScree()
+		ShowGameOverScreen();
 	}
 	return 0;
 }
@@ -129,6 +135,8 @@ ShowGameOverScree()
 int Game::StartGame()
 {
 
+this->Init();
+this->GameLoop();
 
 	asteroid->Spawn();
 
@@ -139,6 +147,17 @@ int Game::ShowGameOverScreen()
 {
 	//TODO add text or sprites for a gameOver screen;
 	std::cout << "GAME OVER" << std::endl;
+	RestartGame();
+	return 0;
+}
+
+int Game::RestartGame()
+{
+	SDL_Delay(1000);
+	player->~Player();
+	asteroid->~Asteroid();
+	SDL_RenderClear(renderer);
+	StartGame();
 	return 0;
 }
 

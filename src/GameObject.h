@@ -1,7 +1,6 @@
 #pragma once
 
-#include <vector>
-#include <array>
+#include <chrono>
 #include "include.h"
 
 using namespace std::literals;
@@ -67,6 +66,7 @@ public:
 
 		/*currentState.accelerationX = currentState.accelerationX * alpha + previousState.accelerationX * (1 - alpha);
 		currentState.accelerationY = currentState.accelerationY * alpha + previousState.accelerationY * (1 - alpha);*/
+
 		currentState.velocityX = currentState.velocityX * alpha + previousState.velocityX * (1 - alpha);
 		currentState.velocityY = currentState.velocityY * alpha + previousState.velocityY * (1 - alpha);
 		currentState.positionX += currentState.velocityX * alpha + previousState.velocityX * (1 - alpha);
@@ -85,7 +85,8 @@ public:
 
 		state.velocityX += state.directionX * (speed + state.accelerationX) * dt / 1s;
 		state.velocityY += state.directionY * (speed + state.accelerationY) * dt / 1s;
-
+		angle = ((atan2(currentState.velocityY, currentState.velocityX)) * 180 / 3.14159) * dt / 1s;
+		std::cout << angle << std::endl;
 		return 0;
 	}
 
