@@ -89,8 +89,7 @@ int Game::GameLoop()
 int Game::HandleEvents()
 {
 	while (SDL_PollEvent(&events)) {
-		if (events.type == SDL_KEYDOWN) /*{ player->HandleInput(events); }*/
-			if (events.key.type == SDL_KEYDOWN) {
+			if (events.key.type == SDL_KEYDOWN || events.key.type==SDL_KEYUP) {
 				player->HandleInput(events.key);
 			}
 		if (SDL_QUIT == events.type) { appRunning = false; }
@@ -103,19 +102,26 @@ int Game::Render(double alpha) const
 {
 
 
-	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
+/*	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);*/
 	SDL_RenderClear(renderer);
-
 
 	player->Render(alpha);
 	asteroid->Render(alpha);
 	SDL_RenderPresent(renderer);
 
 //DEBUG DRAWING
-	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+	/*SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 	SDL_RenderDrawRectF(renderer, &player->mDestRect);
 	SDL_RenderDrawRectF(renderer, &asteroid->mDestRect);
-	SDL_RenderPresent(renderer);
+	SDL_RenderDrawPointF(renderer, player->w / 2, player->h / 2);
+
+	SDL_RenderDrawRect(renderer, &player->mSrcRect);
+	SDL_RenderDrawRect(renderer, &asteroid->mSrcRect);
+
+	SDL_RenderDrawLine(renderer, 0, 0, player->w, player->h);
+	SDL_RenderDrawLine(renderer, player->w, 0, 0,player->h );
+
+	SDL_RenderPresent(renderer);*/
 
 
 	return 0;
@@ -145,6 +151,7 @@ int Game::Cleanup() const
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	player->~Player();
+	asteroid->~Asteroid();
 	IMG_Quit();
 	SDL_Quit();
 	return 0;
