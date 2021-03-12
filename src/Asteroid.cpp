@@ -63,7 +63,7 @@ int Asteroid::Move()
 	mPosition.x += mDirection.x;
 	mPosition.y += mDirection.y;
 
-ScreenWrap();
+    ScreenWrap();
 	return 0;
 }
 
