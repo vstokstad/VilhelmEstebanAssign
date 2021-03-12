@@ -12,9 +12,6 @@ int Asteroid::Split()
 }
 
 
-
-
-
 int Asteroid::Update(time_point t)
 {
 
@@ -39,9 +36,9 @@ Asteroid::Asteroid(SDL_Renderer* renderer)
 
 int Asteroid::Move(time_point t)
 {
-
-	currentState.directionX += speed * sin(0.1);
-	currentState.directionY += speed * cos(0.1);
+	speed = 1;
+	currentState.directionX = (speed * sin(0.1 * dt / 1s));
+	currentState.directionY = (speed * cos(0.1 * dt / 1s));
 
 	previousState = currentState;
 	Integrate(currentState, t);

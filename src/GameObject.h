@@ -33,7 +33,7 @@ public:
 
 	SDL_Texture* mTexture{};
 	SDL_Renderer* mRenderer{};
-	const double speed = 100.;
+	double speed = 100.;
 	const double drag = 5.;
 	double angle = 0.0;
 	SDL_RendererFlip flip = SDL_FLIP_NONE;
@@ -63,7 +63,6 @@ public:
 	void InterpolateState(double alpha)
 	{
 
-
 		/*currentState.accelerationX = currentState.accelerationX * alpha + previousState.accelerationX * (1 - alpha);
 		currentState.accelerationY = currentState.accelerationY * alpha + previousState.accelerationY * (1 - alpha);*/
 		currentState.velocityX = currentState.velocityX * alpha + previousState.velocityX * (1 - alpha);
@@ -88,7 +87,7 @@ public:
 	int ScreenWrap(State* state) const
 	{
 
-		int o = (int)(mDestRect.w * 0.5);
+		int o = mDestRect.w;
 
 		if (state->positionX > w + o) {
 			state->positionX = 0 - o;
@@ -100,7 +99,7 @@ public:
 			state->positionY = 0 - o;
 		}
 		else if (state->positionY < 0.0 - o) {
-			state->positionX = h + o;
+			state->positionY = h + o;
 		}
 		return 0;
 	}
