@@ -25,7 +25,7 @@ public:
 
 	int Update(time_point t) override;
 
-	int Render(double alpha) override;
+
 
 	int Split();
 

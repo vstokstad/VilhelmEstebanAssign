@@ -65,7 +65,8 @@ int Game::GameLoop()
 
 		Render(alpha);
 
-		using namespace std::chrono;
+		//Framerate stuff:
+		/*using namespace std::chrono;
 		static auto t = time_point_cast<seconds>(steady_clock::now());
 		static int frame_count = 0;
 		static int frame_rate = 0;
@@ -79,7 +80,7 @@ int Game::GameLoop()
 		}
 		std::cout << "Frame rate is " << frame_rate << " frames per second.  VelocityX = "
 		          << player->currentState.velocityX << " m/s\n"
-		          << " VelocityY = " << player->currentState.velocityY << " m/s\n";
+		          << " VelocityY = " << player->currentState.velocityY << " m/s\n";*/
 	}
 	return 0;
 }
@@ -102,11 +103,18 @@ int Game::Render(double alpha) const
 {
 
 
+	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
 	SDL_RenderClear(renderer);
+
+
 	player->Render(alpha);
 	asteroid->Render(alpha);
+	SDL_RenderPresent(renderer);
 
-	//present the first render.
+//DEBUG DRAWING
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+	SDL_RenderDrawRectF(renderer, &player->mDestRect);
+	SDL_RenderDrawRectF(renderer, &asteroid->mDestRect);
 	SDL_RenderPresent(renderer);
 
 

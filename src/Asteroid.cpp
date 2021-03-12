@@ -12,20 +12,7 @@ int Asteroid::Split()
 }
 
 
-int Asteroid::Render(double alpha)
-{
-//TODO fix this movement to match player in speed and such.
-	State state = InterpolateState(alpha);
-	previousState = currentState;
 
-	state.positionX += state.velocityX;
-	state.positionY += state.velocityY;
-	mDestRect.x = state.positionX;
-	mDestRect.y = state.positionY;
-
-	SDL_RenderCopyExF(mRenderer, mTexture, NULL, &mDestRect, angle, NULL, flip);
-	return 0;
-}
 
 
 int Asteroid::Update(time_point t)
@@ -53,13 +40,11 @@ Asteroid::Asteroid(SDL_Renderer* renderer)
 int Asteroid::Move(time_point t)
 {
 
+	currentState.directionX += speed * sin(3.14 * dt / 1s);
+	currentState.directionY += speed * cos(3.14 * dt / 1s);
 
-	currentState.directionX *=  sin(10*dt/1s);
-	currentState.directionY *=   cos(10*dt/1s);
-	currentState = previousState;
+	previousState = currentState;
 	Integrate(currentState, t);
-
-
 	return 0;
 }
 

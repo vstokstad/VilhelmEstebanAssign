@@ -33,8 +33,8 @@ int Player::HandleInput(SDL_KeyboardEvent event)
 		Fire();
 		std::cout << "fire" << std::endl;
 	}
-currentState.directionX=Library::clamp(currentState.directionX,-1., 1.);
-currentState.directionY=Library::clamp(currentState.directionY,-1., 1.);
+	currentState.directionX = Library::clamp(currentState.directionX, -1., 1.);
+	currentState.directionY = Library::clamp(currentState.directionY, -1., 1.);
 
 	return 0;
 }
@@ -42,10 +42,7 @@ currentState.directionY=Library::clamp(currentState.directionY,-1., 1.);
 
 int Player::Move(time_point t)
 {
-	using namespace std::literals;
-
 	previousState = currentState;
-
 	Integrate(currentState, t);
 	return 0;
 }
@@ -64,8 +61,8 @@ int Player::Render(double alpha)
 	mDestRect.y = state.positionY;
 
 	SDL_RenderCopyExF(mRenderer, mTexture, NULL, &mDestRect, angle, NULL, flip);
-	currentState.velocityX = Library::Lerp((float)currentState.velocityX, 0.0, drag*dt/1s);
-	currentState.velocityY = Library::Lerp((float)currentState.velocityY, 0.0, drag*dt/1s);
+	currentState.velocityX = Library::Lerp((float)currentState.velocityX, 0.0, drag * dt / 1s);
+	currentState.velocityY = Library::Lerp((float)currentState.velocityY, 0.0, drag * dt / 1s);
 	return 0;
 }
 

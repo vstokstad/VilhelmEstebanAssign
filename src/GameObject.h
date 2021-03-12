@@ -47,7 +47,19 @@ public:
 public:
 	virtual int Update(time_point dt) = 0;
 
-	virtual int Render(double alpha) = 0;
+
+	virtual int Render(double alpha)
+	{
+
+		State state = InterpolateState(alpha);
+
+		mDestRect.x = state.positionX;
+		mDestRect.y = state.positionY;
+
+		SDL_RenderCopyExF(mRenderer, mTexture, NULL, &mDestRect, angle, NULL, flip);
+
+		return 0;
+	}
 
 	[[nodiscard]] State InterpolateState(double alpha) const
 	{
@@ -68,7 +80,7 @@ public:
 		using namespace std::literals;
 
 		state.velocityX += state.directionX * ((speed + state.accelerationX) * dt / 1s);
-		state.velocityY += state.directionY * ((speed+ state.accelerationY) * dt / 1s);
+		state.velocityY += state.directionY * ((speed + state.accelerationY) * dt / 1s);
 
 		return 0;
 	}
