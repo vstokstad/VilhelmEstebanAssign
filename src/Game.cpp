@@ -110,7 +110,8 @@ int Game::Render(double alpha) const
 	SDL_RenderPresent(renderer);
 
 //DEBUG DRAWING
-	/*SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+/*
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 	SDL_RenderDrawRectF(renderer, &player->mDestRect);
 	SDL_RenderDrawRectF(renderer, &asteroid->mDestRect);
 	SDL_RenderDrawPointF(renderer, player->w / 2, player->h / 2);
@@ -121,7 +122,8 @@ int Game::Render(double alpha) const
 	SDL_RenderDrawLine(renderer, 0, 0, player->w, player->h);
 	SDL_RenderDrawLine(renderer, player->w, 0, 0,player->h );
 
-	SDL_RenderPresent(renderer);*/
+	SDL_RenderPresent(renderer);
+*/
 
 
 	return 0;

@@ -37,6 +37,7 @@ Asteroid::Asteroid(SDL_Renderer* renderer)
 int Asteroid::Move(time_point t)
 {
 	speed = 1;
+	if (currentState.directionX != 0)
 	currentState.directionX = (speed * sin(0.1 * dt / 1s));
 	currentState.directionY = (speed * cos(0.1 * dt / 1s));
 
