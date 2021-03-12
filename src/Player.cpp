@@ -11,48 +11,47 @@
 
 int Player::HandleInput(SDL_KeyboardEvent event)
 {
-	const float moveModifier = 2.f;
+ if (event.type == SDL_KEYUP) {
+		currentState.directionX = 0.0;
+		currentState.directionY = 0.0;
+	}else if (event.type==SDL_KEYDOWN) {
+		switch (event.keysym.sym) {
+		case SDLK_UP:
+			currentState.directionY += -.1;
+			std::cout << "up" << std::endl;
+			break;
+		case SDLK_DOWN:
+			currentState.directionY += .1;
+			std::cout << "down" << std::endl;
+			break;
+		case SDLK_LEFT:
+			currentState.directionX += -.1;
+			std::cout << "left" << std::endl;
+			break;
+		case SDLK_RIGHT:
+			currentState.directionX += .1;
+			std::cout << "right" << std::endl;
+			break;
+		case SDLK_SPACE:
+			Fire();
+			std::cout << "fire" << std::endl;
+			break;
+		};
+	}
 
-	if (event.keysym.sym == mUp) {
-		mDirection.y += -moveModifier;
-		std::cout << "up" << std::endl;
-	}
-	if (event.keysym.sym == mDown) {
-		mDirection.y += moveModifier;
-		std::cout << "down" << std::endl;
-	}
-	if (event.keysym.sym == mLeft) {
-		mDirection.x += -moveModifier;
-		std::cout << "left" << std::endl;
-	}
-	if (event.keysym.sym == mRight) {
-		mDirection.x += moveModifier;
-		std::cout << "right" << std::endl;
-	}
-	if (event.keysym.sym == mSpace) {
-		Fire();
-		std::cout << "fire" << std::endl;
-	}
-
-
+	currentState.directionX = Library::Lerp(currentState.directionX, 0., .1);
+	currentState.directionY = Library::Lerp(currentState.directionY, 0., .1);
+	std::cout << currentState.positionX << "<X  Y>" << currentState.positionY <<std::endl;
 	return 0;
 }
 
 
-int Player::Move(double t, double dt)
+int Player::Move(time_point t)
 {
-	mDirection.x =Library::clamp(mDirection.x, -5.f, 5.f);
-	mDirection.y =Library::clamp(mDirection.y, -5.f, 5.f);
-
-
-	mDirection.x = mDirection.x;
-	mDirection.y = mDirection.y;
-	mPosition.x += mDirection.x;
-	mPosition.y += mDirection.y;
-
-	mDirection.x = Library::Lerp(mDirection.x, 0.0, 0.005);
-	mDirection.y = Library::Lerp(mDirection.y, 0.0, 0.005);
-ScreenWrap();
+	previousState = currentState;
+	Integrate(currentState, t);
+/*	currentState.velocityX = Library::Lerp((float)currentState.velocityX, 0.0, drag * dt / 1s);
+	currentState.velocityY = Library::Lerp((float)currentState.velocityY, 0.0, drag * dt / 1s);*/
 	return 0;
 }
 
@@ -61,22 +60,10 @@ int Player::Fire()
 	return 0;
 }
 
-int Player::Render(double t, double fdt)
+
+int Player::Update(time_point t)
 {
-
-	double mAngle = 0;
-
-	mDestRect.x = mPosition.x;
-	mDestRect.y = mPosition.y;
-	SDL_RenderCopyEx(mRenderer, mTexture, NULL, &mDestRect, mAngle, NULL, SDL_FLIP_NONE);
-
-
-	return 0;
-}
-
-int Player::Update(double t, double dt)
-{
-	Move(t, dt);
+	Move(t);
 
 	return 0;
 
@@ -85,11 +72,13 @@ int Player::Update(double t, double dt)
 
 Player::Player(SDL_Renderer* renderer)
 {
-	mSrcRect = SDL_Rect{ 64, 64, 64, 64 };
-	mDestRect = SDL_Rect{ 64, 64, 64, 64 };
-	mPosition = Vector2((64), (64));
-	mDirection = Vector2(0, 0);
+
+	SDL_GetRendererOutputSize(renderer, &w, &h);
 	mRenderer = renderer;
+	mSrcRect = { 64, 64, 64, 64 };
+	mDestRect = { 64, 64, 64, 64 };
+	currentState = { 1, 0, 0, 0, static_cast<double>(w / 2) - 32, static_cast<double>(h / 2) - 32 };
+	previousState = { 1, 0, 0, 0, static_cast<double>(w / 2) - 32, static_cast<double>(h / 2) - 32 };
 
 	IMG_Init(IMG_INIT_PNG);
 	const char* playerWhite = "assets/playerWhite.png";

@@ -6,10 +6,8 @@
 
 #include "include.h"
 #include "Player.h"
-#include "GameObject.h"
 #include "Asteroid.h"
 
-#include "Asteroid.h"
 
 
 
@@ -34,19 +32,17 @@ public:
 
 	int HandleEvents();
 
-	int Render(double t, double fdt) const;
+	int Render(double alpha) const;
 
-	int Update(double t, double dt);
+	int Update(time_point dt);
 
 	int Cleanup() const;
-
 
 	Asteroid* asteroid{};
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
 	SDL_Event events = SDL_Event();
 
-	static uint64_t Now();
 };
 
 

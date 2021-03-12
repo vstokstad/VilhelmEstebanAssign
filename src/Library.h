@@ -132,6 +132,9 @@ static void operator*=(Vector3 lhs, const Vector3 rhs)
 struct Vector2
 {
 public:
+	float x;
+	float y;
+
 	Vector2()
 	{
 		x = 0.0f;
@@ -144,8 +147,7 @@ public:
 		this->y = y;
 	}
 
-	float x;
-	float y;
+
 
 	float sqrMagnitude()
 	{

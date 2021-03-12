@@ -12,40 +12,21 @@ int Asteroid::Split()
 }
 
 
-int Asteroid::Render(double t, double fdt)
+int Asteroid::Update(time_point t)
 {
 
-
-	mDestRect.x = mPosition.x;
-	mDestRect.y = mPosition.y;
-
-
-	angle += angleSpeed;
-	SDL_RendererFlip flip = SDL_FLIP_NONE;
-
-
-	SDL_RenderCopyEx(mRenderer, mTexture, NULL, &mDestRect, angle, NULL, flip);
-
-
-	return 0;
-}
-
-
-int Asteroid::Update(double t, double dt)
-{
-
-	Move();
+	Move(t);
 	return 0;
 }
 
 Asteroid::Asteroid(SDL_Renderer* renderer)
 {
-	mSrcRect = SDL_Rect{ 256, 256, 128, 128 };
-	mDestRect = SDL_Rect{ 256, 256, 256, 256 };
-	mPosition = Vector2(256, 256);
+	SDL_GetRendererOutputSize(renderer, &w, &h);
 	mRenderer = renderer;
-
-
+	mSrcRect = { 256, 256, 256, 256 };
+	mDestRect = { 256, 256, 256, 256 };
+	currentState = { 0, 0, 0, 0, 256, 256 };
+	previousState = { 0, 0, 0, 0, 256, 256 };
 	IMG_Init(IMG_INIT_PNG);
 	const char* bigAsteroid = "assets/bigAsteroids.png";
 
@@ -53,27 +34,20 @@ Asteroid::Asteroid(SDL_Renderer* renderer)
 
 }
 
-int Asteroid::Move()
+int Asteroid::Move(time_point t)
 {
-	float speed = 5;
+	speed = 1;
+	currentState.directionX = (speed * sin(0.1 * dt / 1s));
+	currentState.directionY = (speed * cos(0.1 * dt / 1s));
 
-
-	mDirection.x = speed * sinf(randomDirX);
-	mDirection.y = speed * cosf(randomDirY);
-	mPosition.x += mDirection.x;
-	mPosition.y += mDirection.y;
-
-ScreenWrap();
+	previousState = currentState;
+	Integrate(currentState, t);
 	return 0;
 }
 
 int Asteroid::Spawn()
 {
-	srand(time(NULL));
-	randomDirX = rand() % 360;
-	randomDirY = rand() % 360;
-	angleSpeed = (static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 0.05))) - 0.025;
-	Move();
+//TODO the stuff from the constructor that makes the thing appear on screen should move here. Or this should be a mehtod to place it in the correct vector that gets rendered on screen (in Game.Render())
 	return 0;
 }
 
