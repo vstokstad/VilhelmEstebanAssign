@@ -66,21 +66,8 @@ int Game::GameLoop()
 		Render(alpha);
 
 		//Framerate stuff:
-		/*using namespace std::chrono;
-		static auto t = time_point_cast<seconds>(steady_clock::now());
-		static int frame_count = 0;
-		static int frame_rate = 0;
-		auto pt = t;
 
-		t = time_point_cast<seconds>(steady_clock::now());
-		++frame_count;
-		if (t != pt) {
-			frame_rate = frame_count;
-			frame_count = 0;
-		}
-		std::cout << "Frame rate is " << frame_rate << " frames per second.  VelocityX = "
-		          << player->currentState.velocityX << " m/s\n"
-		          << " VelocityY = " << player->currentState.velocityY << " m/s\n";*/
+
 	}
 	return 0;
 }
@@ -134,20 +121,7 @@ int Game::Update(time_point t)
 	player->Update(t);
 	asteroid->Update(t);
 	if (player->CollisionDetection(&asteroid->mCollider) == 1) {
-		double pX = player->currentState.velocityX - asteroid->currentState.velocityX;
-		double pY = player->currentState.velocityY - asteroid->currentState.velocityY;
-		double aX = asteroid->currentState.velocityX - player->currentState.velocityX;
-		double aY = asteroid->currentState.velocityY - player->currentState.velocityY;
-		player->currentState.velocityX = aX;
-		player->currentState.velocityY = aY;
-		asteroid->currentState.velocityX = pX;
-		asteroid->currentState.velocityY = pY;
-
-		SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-		SDL_RenderDrawRect(renderer, &player->mCollider);
-		SDL_RenderDrawRect(renderer, &asteroid->mCollider);
-		SDL_RenderPresent(renderer);
-		SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
+ShowGameOverScree()
 	}
 	return 0;
 }
@@ -161,6 +135,12 @@ int Game::StartGame()
 	return 0;
 }
 
+int Game::ShowGameOverScreen()
+{
+	//TODO add text or sprites for a gameOver screen;
+	std::cout << "GAME OVER" << std::endl;
+	return 0;
+}
 
 int Game::Cleanup() const
 {
