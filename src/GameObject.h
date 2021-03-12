@@ -1,6 +1,8 @@
 #pragma once
 
 #include "include.h"
+#include "chrono"
+#include "SDL_rect.h"
 
 using namespace std::literals;
 auto constexpr dt = 1.0s / 60.0;
@@ -40,6 +42,7 @@ public:
 	State currentState;
 	State previousState;
 	SDL_Rect mSrcRect{};
+
 	SDL_FRect mDestRect{};
 	int w = 0;
 	int h = 0;
