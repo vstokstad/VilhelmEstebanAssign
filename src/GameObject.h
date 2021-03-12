@@ -1,8 +1,7 @@
 #pragma once
 
 #include "include.h"
-#include "chrono"
-#include "SDL_rect.h"
+#include <chrono>
 
 using namespace std::literals;
 auto constexpr dt = 1.0s / 60.0;
