@@ -1,6 +1,4 @@
-//
-// Created by Vilhelm Stokstad on 2021-02-17.
-//
+
 
 
 #include "Game.h"
@@ -13,7 +11,7 @@ int Game::Init()
 	SDL_Init(SDL_INIT_EVERYTHING);
 	IMG_Init(IMG_INIT_PNG);
 
-Vector2Int screenSize = Vector2Int(1200, 800);
+	Vector2Int screenSize = Vector2Int(1200, 800);
 	//CONSTRUCTOR AND WINDOW GETS MADE HERE//
 	if (!SDL_CreateWindowAndRenderer(screenSize.x, screenSize.y, SDL_WINDOW_ALLOW_HIGHDPI, &window, &renderer)) {
 		// In the case that the window could not be made...
@@ -33,47 +31,56 @@ Vector2Int screenSize = Vector2Int(1200, 800);
 	return 0;
 }
 
-uint64_t Game::Now()
-{
-	uint64_t time = SDL_GetPerformanceCounter();
-	return time;
-}
-
 
 int Game::GameLoop()
 {
 	StartGame();
 
 //SET TIME START//
-	double t = 0.0;
-	const double dt = 1.0/60.0;
-	double fdt = 0.02;
-	double accumulator = 0.0;
-	uint64_t end = .0;
-	double frameTime = .0;
+
+	using namespace std::literals;
+	time_point t = {};
+	time_point currentTime = Clock::now();
+	duration accumulator = 0s;
+
 
 	while (appRunning) {
 
-		uint64_t newTime = Now();
+		time_point newTime = Clock::now();
+		auto frameTime = newTime - currentTime;
+		if (frameTime > 0.25s)
+			frameTime = 0.25s;
 
-		if (frameTime > 0.25) {
-			frameTime = 0.25;
-		}
+		currentTime = newTime;
 
 		accumulator += frameTime;
+
 		while (accumulator >= dt) {
-			HandleEvents();
-			Update(t, dt);
+			Update(t);
 			t += dt;
 			accumulator -= dt;
 		}
-		double alpha = accumulator / dt;
 
-		Render(t, fdt);
+		const double alpha = std::chrono::duration<double>{ accumulator } / dt;
 
-		end = Now();
-		frameTime = (double)((end - newTime)) / (double)SDL_GetPerformanceFrequency();
+		Render(alpha);
 
+		//Framerate stuff:
+		/*using namespace std::chrono;
+		static auto t = time_point_cast<seconds>(steady_clock::now());
+		static int frame_count = 0;
+		static int frame_rate = 0;
+		auto pt = t;
+
+		t = time_point_cast<seconds>(steady_clock::now());
+		++frame_count;
+		if (t != pt) {
+			frame_rate = frame_count;
+			frame_count = 0;
+		}
+		std::cout << "Frame rate is " << frame_rate << " frames per second.  VelocityX = "
+		          << player->currentState.velocityX << " m/s\n"
+		          << " VelocityY = " << player->currentState.velocityY << " m/s\n";*/
 	}
 	return 0;
 }
@@ -82,8 +89,7 @@ int Game::GameLoop()
 int Game::HandleEvents()
 {
 	while (SDL_PollEvent(&events)) {
-		if (events.type == SDL_KEYDOWN) /*{ player->HandleInput(events); }*/
-			if (events.key.type == SDL_KEYDOWN) {
+			if (events.key.type == SDL_KEYDOWN || events.key.type==SDL_KEYUP) {
 				player->HandleInput(events.key);
 			}
 		if (SDL_QUIT == events.type) { appRunning = false; }
@@ -92,23 +98,41 @@ int Game::HandleEvents()
 }
 
 
-int Game::Render(double t, double fdt) const
+int Game::Render(double alpha) const
 {
-	SDL_RenderClear(renderer);
-	player->Render(t, fdt);
-	asteroid->Render(t, fdt);
 
-	//present the first render.
+
+/*	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);*/
+	SDL_RenderClear(renderer);
+
+	player->Render(alpha);
+	asteroid->Render(alpha);
 	SDL_RenderPresent(renderer);
+
+//DEBUG DRAWING
+	/*SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+	SDL_RenderDrawRectF(renderer, &player->mDestRect);
+	SDL_RenderDrawRectF(renderer, &asteroid->mDestRect);
+	SDL_RenderDrawPointF(renderer, player->w / 2, player->h / 2);
+
+	SDL_RenderDrawRect(renderer, &player->mSrcRect);
+	SDL_RenderDrawRect(renderer, &asteroid->mSrcRect);
+
+	SDL_RenderDrawLine(renderer, 0, 0, player->w, player->h);
+	SDL_RenderDrawLine(renderer, player->w, 0, 0,player->h );
+
+	SDL_RenderPresent(renderer);*/
+
 
 	return 0;
 }
 
-int Game::Update(double t, double dt)
+int Game::Update(time_point t)
 {
 
-	player->Update(t, dt);
-	asteroid->Update(t, dt);
+	HandleEvents();
+	player->Update(t);
+	asteroid->Update(t);
 	return 0;
 }
 
@@ -127,6 +151,7 @@ int Game::Cleanup() const
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	player->~Player();
+	asteroid->~Asteroid();
 	IMG_Quit();
 	SDL_Quit();
 	return 0;
