@@ -23,8 +23,8 @@ Asteroid::Asteroid(SDL_Renderer* renderer)
 {
 	SDL_GetRendererOutputSize(renderer, &w, &h);
 	mRenderer = renderer;
-	mSrcRect = { 256, 256, 256, 256 };
 	mDestRect = { 256, 256, 256, 256 };
+	mCollider = { 256 - (256 / 4), 256 - (256 / 4), 192, 192 };
 	currentState = { 0, 0, 0, 0, 256, 256 };
 	previousState = { 0, 0, 0, 0, 256, 256 };
 	IMG_Init(IMG_INIT_PNG);
@@ -37,9 +37,14 @@ Asteroid::Asteroid(SDL_Renderer* renderer)
 int Asteroid::Move(time_point t)
 {
 	speed = 1;
-	currentState.directionX = (speed * sin(0.1 * dt / 1s));
-	currentState.directionY = (speed * cos(0.1 * dt / 1s));
-
+	if (currentState.directionX != 0. || currentState.directionY != 0.) {
+		currentState.directionX = 0;
+		currentState.directionY = 0;
+	}
+	else {
+		currentState.directionX = speed * sin(0.1 * dt / 1s);
+		currentState.directionY = speed * cos(0.1 * dt / 1s);
+	}
 	previousState = currentState;
 	Integrate(currentState, t);
 	return 0;

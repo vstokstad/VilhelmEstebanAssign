@@ -89,9 +89,9 @@ int Game::GameLoop()
 int Game::HandleEvents()
 {
 	while (SDL_PollEvent(&events)) {
-			if (events.key.type == SDL_KEYDOWN || events.key.type==SDL_KEYUP) {
-				player->HandleInput(events.key);
-			}
+		if (events.key.type == SDL_KEYDOWN || events.key.type == SDL_KEYUP) {
+			player->HandleInput(events.key);
+		}
 		if (SDL_QUIT == events.type) { appRunning = false; }
 	}
 	return 0;
@@ -115,8 +115,8 @@ int Game::Render(double alpha) const
 	SDL_RenderDrawRectF(renderer, &asteroid->mDestRect);
 	SDL_RenderDrawPointF(renderer, player->w / 2, player->h / 2);
 
-	SDL_RenderDrawRect(renderer, &player->mSrcRect);
-	SDL_RenderDrawRect(renderer, &asteroid->mSrcRect);
+	SDL_RenderDrawRect(renderer, &player->mCollider);
+	SDL_RenderDrawRect(renderer, &asteroid->mCollider);
 
 	SDL_RenderDrawLine(renderer, 0, 0, player->w, player->h);
 	SDL_RenderDrawLine(renderer, player->w, 0, 0,player->h );
@@ -133,6 +133,22 @@ int Game::Update(time_point t)
 	HandleEvents();
 	player->Update(t);
 	asteroid->Update(t);
+	if (player->CollisionDetection(&asteroid->mCollider) == 1) {
+		double pX = player->currentState.velocityX - asteroid->currentState.velocityX;
+		double pY = player->currentState.velocityY - asteroid->currentState.velocityY;
+		double aX = asteroid->currentState.velocityX - player->currentState.velocityX;
+		double aY = asteroid->currentState.velocityY - player->currentState.velocityY;
+		player->currentState.velocityX = aX;
+		player->currentState.velocityY = aY;
+		asteroid->currentState.velocityX = pX;
+		asteroid->currentState.velocityY = pY;
+
+		SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+		SDL_RenderDrawRect(renderer, &player->mCollider);
+		SDL_RenderDrawRect(renderer, &asteroid->mCollider);
+		SDL_RenderPresent(renderer);
+		SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
+	}
 	return 0;
 }
 

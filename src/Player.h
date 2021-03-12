@@ -21,6 +21,7 @@ public:
 
 	explicit Player(SDL_Renderer* renderer);
 
+	int CollisionDetection(SDL_Rect* sdlRect);
 
 	int Update(time_point t) override;
 

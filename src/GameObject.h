@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+#include <array>
 #include "include.h"
 
 using namespace std::literals;
@@ -39,7 +41,7 @@ public:
 	SDL_RendererFlip flip = SDL_FLIP_NONE;
 	State currentState;
 	State previousState;
-	SDL_Rect mSrcRect{};
+	SDL_Rect mCollider{};
 	SDL_FRect mDestRect{};
 	int w = 0;
 	int h = 0;
@@ -71,6 +73,9 @@ public:
 		currentState.positionY += currentState.velocityY * alpha + previousState.velocityY * (1 - alpha);
 		mDestRect.x = currentState.positionX * alpha + previousState.positionX * (1 - alpha);
 		mDestRect.y = currentState.positionY * alpha + previousState.positionY * (1 - alpha);
+		mCollider.x = mDestRect.x+(mDestRect.w/4);
+		mCollider.y = mDestRect.y+(mDestRect.h/4);
+
 		ScreenWrap(&currentState);
 	}
 
