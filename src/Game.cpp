@@ -19,7 +19,7 @@ int Game::Init()
 	SDL_SetHint(SDL_HINT_GRAB_KEYBOARD, "1");
 	//CONSTRUCTOR AND WINDOW GETS MADE HERE//
 	if (SDL_CreateWindowAndRenderer(screenSize.x, screenSize.y,
-			SDL_WINDOW_ALLOW_HIGHDPI || SDL_WINDOW_FULLSCREEN_DESKTOP, &window,
+			SDL_WINDOW_ALLOW_HIGHDPI, &window,
 			&renderer) != 0) {
 		// In the case that the window could not be made...
 		if (window == nullptr || renderer == nullptr) {
@@ -111,7 +111,7 @@ int Game::HandleEvents()
 			}
 			if (events.key.keysym.sym == SDLK_r) {
 				appRunning = false;
-
+				RestartGame();
 			}
 			player->HandleInput(events.key);
 		}
@@ -194,7 +194,7 @@ int Game::RestartGame()
 	while (SDL_PollEvent(&events) != 0) {
 		SDL_FlushEvent(events.type);
 	}
-	SDL_Quit();
+
 	StartGame();
 	return 0;
 }

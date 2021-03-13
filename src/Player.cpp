@@ -126,8 +126,8 @@ Player::Player(SDL_Renderer* renderer)
 
 	mDestRect = { 64, 64, 64, 64 };
 	mCollider = { 64 - (64 / 4), 64 - (64 / 4), 48, 48 };
-	currentState = { 0, 0, 0, 0, static_cast<double>(w / 2) - 32, static_cast<double>(h / 2) - 32, 0 , static_cast<double>(w/2.0)*-10};
-	previousState = { 0, 0, 0, 0, static_cast<double>(w / 2) - 32, static_cast<double>(h / 2) - 32 , 0, static_cast<double>(w/2.0)*-10};
+	currentState = { 0, 0, 0, 0, static_cast<double>(w / 2.0) - 32, static_cast<double>(h / 2.0) - 32, 0 , static_cast<double>(w/2.0)*-100};
+	previousState = { 0, 0, 0, 0, static_cast<double>(w / 2.0) - 32, static_cast<double>(h / 2.0) - 32 , 0, static_cast<double>(w/2.0)*-100};
 
 	IMG_Init(IMG_INIT_PNG);
 	const char* playerWhite = "assets/playerWhite.png";
