@@ -194,6 +194,7 @@ int Game::RestartGame()
 	while (SDL_PollEvent(&events) != 0) {
 		SDL_FlushEvent(events.type);
 	}
+	SDL_Quit();
 
 	StartGame();
 	return 0;

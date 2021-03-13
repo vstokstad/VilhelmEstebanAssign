@@ -39,6 +39,7 @@ int Bullet::Move()
 int Bullet::Update()
 {
 	if (isActive) {
+	--mLifeTime;
 		if (mLifeTime <= 0) {
 			isActive = false;
 			mLifeTime = 1000;
@@ -54,9 +55,9 @@ int Bullet::OnGetFired()
 	isActive = true;
 	directionX = mPlayer->currentState.directionX;
 	directionY = mPlayer->currentState.directionY;
-	mDestRect.x = mPlayer->currentState.positionX + directionX;
-	mDestRect.y = mPlayer->currentState.positionY + directionY;
-	speed = speed + (mPlayer->currentState.velocityX + mPlayer->currentState.velocityY);
+	mDestRect.x = mPlayer->currentState.positionX ;
+	mDestRect.y = mPlayer->currentState.positionY ;
+
 	Update();
 
 	return 0;
@@ -84,17 +85,19 @@ int Bullet::ScreenWrap()
 
 Bullet::Bullet(SDL_Renderer* renderer, Player* player, SDL_Texture* texture) : mPlayer(player)
 {
+	IMG_Init(IMG_INIT_PNG);
 	isActive = false;
 	SDL_GetRendererOutputSize(renderer, &w, &h);
 	mRenderer = renderer;
 	mTexture = texture;
+	mPlayer = player;
 }
 
 int Bullet::Render(double alpha)
 {
-	speed = 100;
+	speed = 1;
 	mDestRect.x += (directionX * speed) * dt / 1s;
 	mDestRect.y += (directionY * speed) * dt / 1s;
-	SDL_RenderCopy(mRenderer, mTexture, NULL, &mDestRect);
+	SDL_RenderCopy(mRenderer, mPlayer->bulletTexture, NULL, &mDestRect);
 	return 0;
 }
