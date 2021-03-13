@@ -37,7 +37,7 @@ Asteroid::Asteroid(SDL_Renderer* renderer)
 int Asteroid::Move(time_point t)
 {
 	speed = 1;
-	if (currentState.directionX != 0. || currentState.directionY != 0.) {
+	if (currentState.directionX != 0.0 || currentState.directionY != 0.0) {
 		currentState.directionX = 0;
 		currentState.directionY = 0;
 	}
@@ -58,4 +58,3 @@ int Asteroid::Spawn()
 
 
 
-//std::cout << "up" << std::endl;

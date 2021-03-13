@@ -5,35 +5,42 @@
 #include "Player.h"
 #include "GameObject.h"
 #include "Asteroid.h"
+#include "Bullet.h"
 
 int Game::Init()
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
 	IMG_Init(IMG_INIT_PNG);
-	SDL_SetHint(SDL_HINT_RENDER_VSYNC, "1");
-	SDL_SetHint(SDL_HINT_GRAB_KEYBOARD, "1");
-	SDL_SetHint(SDL_HINT_RENDER_BATCHING, "1");
-	SDL_SetHint(SDL_HINT_WINDOWS_ENABLE_MESSAGELOOP, "0");
-	SDL_SetHint(SDL_HINT_WINDOW_FRAME_USABLE_WHILE_CURSOR_HIDDEN, "1");
 
-
+	appRunning = true;
 	Vector2Int screenSize = Vector2Int(1200, 800);
+
 	//CONSTRUCTOR AND WINDOW GETS MADE HERE//
-	if (!SDL_CreateWindowAndRenderer(screenSize.x, screenSize.y, SDL_WINDOW_ALLOW_HIGHDPI || SDL_WINDOW_FULLSCREEN, &window, &renderer)) {
+	if (SDL_CreateWindowAndRenderer(screenSize.x, screenSize.y,
+			SDL_WINDOW_ALLOW_HIGHDPI, &window,
+			&renderer) != 0) {
 		// In the case that the window could not be made...
-		if (window == nullptr) { return 1; }
-		if (renderer == nullptr) { return 1; }
+		if (window == nullptr || renderer == nullptr) {
+			SDL_Quit();
+			appRunning = false;
+			return 1;
+		}
+
 	}
-//draw the window//
+
+
+	//draw the window//
 	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
 	SDL_RenderClear(renderer);
+
 	//initialize the player//
 	player = new Player(renderer);
 	asteroid = new Asteroid(renderer);
+
 	//present the first render.
 	SDL_RenderPresent(renderer);
 
-	appRunning = true;
+
 	return 0;
 }
 
@@ -71,9 +78,6 @@ int Game::GameLoop()
 
 		Render(alpha);
 
-
-
-
 	}
 	return 0;
 }
@@ -81,12 +85,24 @@ int Game::GameLoop()
 
 int Game::HandleEvents()
 {
+
+	//SDL_SetEventFilter(eventFilter(this, &events), this);
+
 	while (SDL_PollEvent(&events)) {
 		if (events.key.type == SDL_KEYDOWN || events.key.type == SDL_KEYUP) {
+			if (events.key.keysym.sym == SDLK_q) {
+				appRunning = false;
+			}
+			if (events.key.keysym.sym == SDLK_r) {
+				appRunning = false;
+
+			}
 			player->HandleInput(events.key);
 		}
 		if (SDL_QUIT == events.type) { appRunning = false; }
+
 	}
+
 	return 0;
 }
 
@@ -95,26 +111,16 @@ int Game::Render(double alpha) const
 {
 
 
-/*	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);*/
 	SDL_RenderClear(renderer);
 
 	player->Render(alpha);
 	asteroid->Render(alpha);
+	for (auto b : player->bullets) {
+		if (b.isActive) {
+			b.Render(alpha);
+		}
+	}
 	SDL_RenderPresent(renderer);
-
-//DEBUG DRAWING
-	/*SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-	SDL_RenderDrawRectF(renderer, &player->mDestRect);
-	SDL_RenderDrawRectF(renderer, &asteroid->mDestRect);
-	SDL_RenderDrawPointF(renderer, player->w / 2, player->h / 2);
-
-	SDL_RenderDrawRect(renderer, &player->mCollider);
-	SDL_RenderDrawRect(renderer, &asteroid->mCollider);
-
-	SDL_RenderDrawLine(renderer, 0, 0, player->w, player->h);
-	SDL_RenderDrawLine(renderer, player->w, 0, 0,player->h );
-
-	SDL_RenderPresent(renderer);*/
 
 
 	return 0;
@@ -129,16 +135,20 @@ int Game::Update(time_point t)
 	if (player->CollisionDetection(&asteroid->mCollider) == 1) {
 		ShowGameOverScreen();
 	}
+	for (auto& b : player->bullets) {
+		if (b.CollisionDetection(asteroid)) {
+			b.OnHit(asteroid);
+		}
+	}
 	return 0;
 }
 
 int Game::StartGame()
 {
 
-this->Init();
-this->GameLoop();
+	this->Init();
+	this->GameLoop();
 
-	asteroid->Spawn();
 
 	return 0;
 }
@@ -147,22 +157,29 @@ int Game::ShowGameOverScreen()
 {
 	//TODO add text or sprites for a gameOver screen;
 	std::cout << "GAME OVER" << std::endl;
+
 	RestartGame();
 	return 0;
 }
 
 int Game::RestartGame()
 {
-	SDL_Delay(1000);
+	std::cout << "RESTARTING" << std::endl;
 	player->~Player();
 	asteroid->~Asteroid();
 	SDL_RenderClear(renderer);
+	SDL_PumpEvents();
+	while (SDL_PollEvent(&events) != 0) {
+		SDL_FlushEvent(events.type);
+	}
+	SDL_Quit();
 	StartGame();
 	return 0;
 }
 
 int Game::Cleanup() const
 {
+	std::cout << "QUITTING" << std::endl;
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	player->~Player();

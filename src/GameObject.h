@@ -10,14 +10,14 @@ using Clock = std::chrono::steady_clock;
 using time_point = std::chrono::time_point<Clock, duration>;
 struct State
 {
-	double accelerationX = 1.;
-	double accelerationY = 1.;
-	double velocityX = 0.;
-	double velocityY = 0.;
-	double positionX = 0.;
-	double positionY = 0.;
-	double directionX = 0.;
-	double directionY = 0.;
+	double accelerationX = 1.0;
+	double accelerationY = 1.0;
+	double velocityX = 0.0;
+	double velocityY = 0.0;
+	double positionX = 0.0;
+	double positionY = 0.0;
+	double directionX = 0.0;
+	double directionY = 0.0;
 
 };
 
@@ -25,21 +25,17 @@ class TextureManager;
 
 class GameObject
 {
-	friend class Player;
-
-	friend class Asteroid;
 
 public:
 
 
 	SDL_Texture* mTexture{};
 	SDL_Renderer* mRenderer{};
-	double speed = 100.;
-	const double drag = 5.;
+	double speed = 10.;
 	double angle = 0.0;
 	SDL_RendererFlip flip = SDL_FLIP_NONE;
-	State currentState;
-	State previousState;
+	State currentState{};
+	State previousState{};
 	SDL_Rect mCollider{};
 	SDL_FRect mDestRect{};
 	int w = 0;
@@ -85,8 +81,7 @@ public:
 
 		state.velocityX += state.directionX * (speed + state.accelerationX) * dt / 1s;
 		state.velocityY += state.directionY * (speed + state.accelerationY) * dt / 1s;
-		angle = ((atan2(currentState.velocityY, currentState.velocityX)) * 180 / 3.14159) * dt / 1s;
-		std::cout << angle << std::endl;
+
 		return 0;
 	}
 

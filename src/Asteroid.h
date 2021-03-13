@@ -5,7 +5,6 @@
 
 
 class TextureManager;
-class RigidBody;
 
 class Asteroid : public virtual GameObject
 {

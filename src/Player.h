@@ -6,20 +6,25 @@
 
 #pragma once
 
-
 #include "include.h"
 #include "GameObject.h"
+#include <vector>
 
-
-
+class GameObject;
+class Bullet;
 class Player : public virtual GameObject
 {
 
 public:
 
-	~Player() = default;
+
+	~Player();
 
 	explicit Player(SDL_Renderer* renderer);
+
+	std::vector<Bullet> bullets;
+
+	int Render(double alpha) override;
 
 	int CollisionDetection(SDL_Rect* sdlRect);
 
@@ -30,11 +35,6 @@ public:
 	int Fire();
 
 	int Move(time_point timePoint);
-
-
-
-
-
 
 };
 

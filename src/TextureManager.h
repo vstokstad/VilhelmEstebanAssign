@@ -1,7 +1,13 @@
 #pragma once
-#include "include.h"
 
-class TextureManager 
+#include "SDL_image.h"
+#include <filesystem>
+
+#include <unordered_map>
+
+namespace fs = std::filesystem;
+
+class TextureManager
 {
 public:
 	static SDL_Texture* LoadTexture(const char* texture, SDL_Renderer* ren)
@@ -9,9 +15,33 @@ public:
 		SDL_Surface* tempSurface = IMG_Load(texture);
 		SDL_Texture* tex = SDL_CreateTextureFromSurface(ren, tempSurface);
 		SDL_FreeSurface(tempSurface);
-
 		return tex;
 	}
+
+
+	//STARTED DOING SOME STUFF TO DYNAMICALLY LOAD ALL TEXTURES AT START OF GAME:::
+
+	static SDL_Texture*	GetTexture(const char* name, SDL_Renderer* renderer, std::unordered_map<std::string, SDL_Surface> surfaces)
+	{
+		SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, &surfaces.at(name));
+		return texture;
+
+	}
+
+	static std::unordered_map<std::string, SDL_Surface> LoadAssets()
+	{
+		auto path = "./assets/";
+		std::unordered_map<std::string, SDL_Surface> surfaces;
+		for (const auto& entry : fs::directory_iterator(path)) {
+			auto* localPath = new char[entry.path().string().size() + 1];
+			memcpy(localPath, entry.path().c_str(), entry.path().string().size() + 1);
+			SDL_Surface* surf = IMG_Load(localPath);
+			surfaces.emplace(localPath, *surf);
+			std::cout << path << std::endl;
+		}
+		return surfaces;
+	}
+
 };
 
 
