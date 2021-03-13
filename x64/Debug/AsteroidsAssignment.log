@@ -1,22 +1,115 @@
 ﻿  main.cpp
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(75,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(76,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(93,9): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(70,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(71,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(72,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(73,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(91,9): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+  The contents of <filesystem> are available only with C++17 or later.
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(8,21): error C2039: 'filesystem': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\unordered_map(24): message : see declaration of 'std'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(8,31): error C2878: 'filesystem': a namespace or class of this name does not exist
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,28): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,32): error C3861: 'directory_iterator': identifier not found
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,50): error C2672: 'begin': no matching overloaded function found
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): error C2893: Failed to specialize function template 'unknown-type std::begin(_Container &)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xutility(2169): message : see declaration of 'std::begin'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): message : With the following template arguments:
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): message : '_Container=unknown-type'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): error C2784: 'const _Elem *std::begin(std::initializer_list<_Elem>) noexcept': could not deduce template argument for 'std::initializer_list<_Elem>' from 'unknown-type'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\initializer_list(57): message : see declaration of 'std::begin'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,50): error C2672: 'end': no matching overloaded function found
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): error C2893: Failed to specialize function template 'unknown-type std::end(_Container &)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xutility(2179): message : see declaration of 'std::end'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): message : With the following template arguments:
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): message : '_Container=unknown-type'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): error C2784: 'const _Elem *std::end(std::initializer_list<_Elem>) noexcept': could not deduce template argument for 'std::initializer_list<_Elem>' from 'unknown-type'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\initializer_list(63): message : see declaration of 'std::end'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): error C3536: '<begin>$L0': cannot be used before it is initialized
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): error C3536: '<end>$L0': cannot be used before it is initialized
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,56): error C2100: illegal indirection
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(36,1): error C3078: array size must be specified in new expressions without an initializer
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(37,1): error C3536: 'localPath': cannot be used before it is initialized
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(37,1): error C2660: 'memcpy': function does not take 1 arguments
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\vcruntime_string.h(43,15): message : see declaration of 'memcpy'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(38,1): error C2664: 'SDL_Surface *IMG_Load(const char *)': cannot convert argument 1 from 'int' to 'const char *'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(38,33): message : Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+C:\SDL2\SDL2_image-2.0.1\include\SDL_image.h(85,39): message : see declaration of 'IMG_Load'
   Asteroid.cpp
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(75,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(76,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(93,9): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(70,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(71,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(72,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(73,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(91,9): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+  The contents of <filesystem> are available only with C++17 or later.
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(8,21): error C2039: 'filesystem': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\unordered_map(24): message : see declaration of 'std'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(8,31): error C2878: 'filesystem': a namespace or class of this name does not exist
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,28): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,32): error C3861: 'directory_iterator': identifier not found
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,50): error C2672: 'begin': no matching overloaded function found
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): error C2893: Failed to specialize function template 'unknown-type std::begin(_Container &)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xutility(2169): message : see declaration of 'std::begin'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): message : With the following template arguments:
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): message : '_Container=unknown-type'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): error C2784: 'const _Elem *std::begin(std::initializer_list<_Elem>) noexcept': could not deduce template argument for 'std::initializer_list<_Elem>' from 'unknown-type'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\initializer_list(57): message : see declaration of 'std::begin'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,50): error C2672: 'end': no matching overloaded function found
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): error C2893: Failed to specialize function template 'unknown-type std::end(_Container &)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xutility(2179): message : see declaration of 'std::end'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): message : With the following template arguments:
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): message : '_Container=unknown-type'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): error C2784: 'const _Elem *std::end(std::initializer_list<_Elem>) noexcept': could not deduce template argument for 'std::initializer_list<_Elem>' from 'unknown-type'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\initializer_list(63): message : see declaration of 'std::end'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): error C3536: '<begin>$L0': cannot be used before it is initialized
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): error C3536: '<end>$L0': cannot be used before it is initialized
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,56): error C2100: illegal indirection
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(36,1): error C3078: array size must be specified in new expressions without an initializer
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(37,1): error C3536: 'localPath': cannot be used before it is initialized
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(37,1): error C2660: 'memcpy': function does not take 1 arguments
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\vcruntime_string.h(43,15): message : see declaration of 'memcpy'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(38,1): error C2664: 'SDL_Surface *IMG_Load(const char *)': cannot convert argument 1 from 'int' to 'const char *'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(38,33): message : Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+C:\SDL2\SDL2_image-2.0.1\include\SDL_image.h(85,39): message : see declaration of 'IMG_Load'
   Game.cpp
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(75,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(76,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(93,9): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(70,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(71,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(72,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(73,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(91,9): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
   Player.cpp
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(75,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(76,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(93,9): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(42,73): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(42,54): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(43,73): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(43,54): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(70,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(71,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(72,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(73,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(91,9): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+  The contents of <filesystem> are available only with C++17 or later.
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(8,21): error C2039: 'filesystem': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\unordered_map(24): message : see declaration of 'std'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(8,31): error C2878: 'filesystem': a namespace or class of this name does not exist
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,28): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,32): error C3861: 'directory_iterator': identifier not found
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,50): error C2672: 'begin': no matching overloaded function found
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): error C2893: Failed to specialize function template 'unknown-type std::begin(_Container &)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xutility(2169): message : see declaration of 'std::begin'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): message : With the following template arguments:
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): message : '_Container=unknown-type'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): error C2784: 'const _Elem *std::begin(std::initializer_list<_Elem>) noexcept': could not deduce template argument for 'std::initializer_list<_Elem>' from 'unknown-type'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\initializer_list(57): message : see declaration of 'std::begin'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,50): error C2672: 'end': no matching overloaded function found
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): error C2893: Failed to specialize function template 'unknown-type std::end(_Container &)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xutility(2179): message : see declaration of 'std::end'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): message : With the following template arguments:
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): message : '_Container=unknown-type'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): error C2784: 'const _Elem *std::end(std::initializer_list<_Elem>) noexcept': could not deduce template argument for 'std::initializer_list<_Elem>' from 'unknown-type'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\initializer_list(63): message : see declaration of 'std::end'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): error C3536: '<begin>$L0': cannot be used before it is initialized
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,1): error C3536: '<end>$L0': cannot be used before it is initialized
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(35,56): error C2100: illegal indirection
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(36,1): error C3078: array size must be specified in new expressions without an initializer
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(37,1): error C3536: 'localPath': cannot be used before it is initialized
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(37,1): error C2660: 'memcpy': function does not take 1 arguments
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\vcruntime_string.h(43,15): message : see declaration of 'memcpy'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(38,1): error C2664: 'SDL_Surface *IMG_Load(const char *)': cannot convert argument 1 from 'int' to 'const char *'
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(38,33): message : Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+C:\SDL2\SDL2_image-2.0.1\include\SDL_image.h(85,39): message : see declaration of 'IMG_Load'
   Generating Code...
-  AsteroidsAssignment.vcxproj -> C:\Users\Admin\Documents\GitHub\VilhemEsteban\VilhemEstebanSolution\x64\Debug\AsteroidsAssignment.exe
