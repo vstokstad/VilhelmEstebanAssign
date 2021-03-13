@@ -9,9 +9,6 @@
 #include "Asteroid.h"
 
 
-
-
-
 class Game
 {
 public:
@@ -22,9 +19,6 @@ public:
 
 	int Init();
 
-	Player* player{};
-
-	bool appRunning = true;
 
 	int GameLoop();
 
@@ -38,11 +32,30 @@ public:
 
 	int Cleanup() const;
 
+	int RestartGame();
+
+	int ShowGameOverScreen();
+
+	bool appRunning = true;
+	Player* player{};
 	Asteroid* asteroid{};
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
 	SDL_Event events = SDL_Event();
 
+/*	int eventFilter(void* pthis, const SDL_Event* event) const
+	{
+
+		if (event->type == SDL_WINDOWEVENT &&
+		    event->window.event == SDL_WINDOWEVENT_SIZE_CHANGED) {
+			Game* app = (Game*)pthis;
+			// Note: NULL rectangle is the entire window
+			SDL_RenderSetViewport(this->renderer, NULL);
+			app->Render(0.02);
+		}
+		return 1;
+
+	}*/
 };
 
 

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "include.h"
 #include <chrono>
+#include "include.h"
 
 using namespace std::literals;
 auto constexpr dt = 1.0s / 60.0;
@@ -10,14 +10,14 @@ using Clock = std::chrono::steady_clock;
 using time_point = std::chrono::time_point<Clock, duration>;
 struct State
 {
-	double accelerationX = 1.;
-	double accelerationY = 1.;
-	double velocityX = 0.;
-	double velocityY = 0.;
-	double positionX = 0.;
-	double positionY = 0.;
-	double directionX = 0.;
-	double directionY = 0.;
+	double accelerationX = 1.0;
+	double accelerationY = 1.0;
+	double velocityX = 0.0;
+	double velocityY = 0.0;
+	double positionX = 0.0;
+	double positionY = 0.0;
+	double directionX = 0.0;
+	double directionY = 0.0;
 
 };
 
@@ -25,23 +25,18 @@ class TextureManager;
 
 class GameObject
 {
-	friend class Player;
-
-	friend class Asteroid;
 
 public:
 
 
 	SDL_Texture* mTexture{};
 	SDL_Renderer* mRenderer{};
-	double speed = 100.;
-	const double drag = 5.;
+	double speed = 10.;
 	double angle = 0.0;
 	SDL_RendererFlip flip = SDL_FLIP_NONE;
-	State currentState;
-	State previousState;
-	SDL_Rect mSrcRect{};
-
+	State currentState{};
+	State previousState{};
+	SDL_Rect mCollider{};
 	SDL_FRect mDestRect{};
 	int w = 0;
 	int h = 0;
@@ -67,12 +62,16 @@ public:
 
 		/*currentState.accelerationX = currentState.accelerationX * alpha + previousState.accelerationX * (1 - alpha);
 		currentState.accelerationY = currentState.accelerationY * alpha + previousState.accelerationY * (1 - alpha);*/
+
 		currentState.velocityX = currentState.velocityX * alpha + previousState.velocityX * (1 - alpha);
 		currentState.velocityY = currentState.velocityY * alpha + previousState.velocityY * (1 - alpha);
 		currentState.positionX += currentState.velocityX * alpha + previousState.velocityX * (1 - alpha);
 		currentState.positionY += currentState.velocityY * alpha + previousState.velocityY * (1 - alpha);
 		mDestRect.x = currentState.positionX * alpha + previousState.positionX * (1 - alpha);
 		mDestRect.y = currentState.positionY * alpha + previousState.positionY * (1 - alpha);
+		mCollider.x = mDestRect.x+(mDestRect.w/4);
+		mCollider.y = mDestRect.y+(mDestRect.h/4);
+
 		ScreenWrap(&currentState);
 	}
 
