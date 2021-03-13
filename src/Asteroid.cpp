@@ -13,7 +13,6 @@ int Asteroid::Split()
 
 int Asteroid::Update(time_point t)
 {
-	std::cout << RandomWithUpper() << std::endl;
 	Move(t);
 	return 0;
 }

@@ -11,7 +11,9 @@
 #include <vector>
 
 class GameObject;
+
 class Bullet;
+
 class Player : public virtual GameObject
 {
 
@@ -20,9 +22,11 @@ public:
 
 	~Player();
 
+
 	explicit Player(SDL_Renderer* renderer);
 
 	std::vector<Bullet> bullets;
+	SDL_Texture* bulletTexture;
 
 	int Render(double alpha) override;
 
