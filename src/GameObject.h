@@ -68,8 +68,8 @@ public:
 		currentState.velocityY = currentState.velocityY * alpha + previousState.velocityY * (1 - alpha);
 		currentState.positionX += currentState.velocityX * alpha + previousState.velocityX * (1 - alpha);
 		currentState.positionY += currentState.velocityY * alpha + previousState.velocityY * (1 - alpha);
-		mDestRect.x = currentState.positionX * alpha + previousState.positionX * (1 - alpha);
-		mDestRect.y = currentState.positionY * alpha + previousState.positionY * (1 - alpha);
+		mDestRect.x = (currentState.positionX+(mDestRect.w / 4)) * alpha + (previousState.positionX+(mDestRect.w / 4)) * (1 - alpha);
+		mDestRect.y = (currentState.positionY+(mDestRect.h / 4)) * alpha + (previousState.positionY+(mDestRect.h / 4)) * (1 - alpha);
 		mCollider.x = mDestRect.x+(mDestRect.w/4);
 		mCollider.y = mDestRect.y+(mDestRect.h/4);
 

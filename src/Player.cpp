@@ -20,27 +20,27 @@ int Player::HandleInput(SDL_KeyboardEvent event)
 		UP:
 		case SDLK_UP:
 			currentState.accelerationY -= 0.2;
-			currentState.directionY += -.1;
+			currentState.directionY += -1;
 			std::cout << "up" << std::endl;
 			break;
 		DOWN:
 		case SDLK_DOWN:
 			currentState.accelerationY += 0.2;
-			currentState.directionY += .1;
+			currentState.directionY += 1;
 
 			std::cout << "down" << std::endl;
 			break;
 		LEFT:
 		case SDLK_LEFT:
 			currentState.accelerationX -= 0.2;
-			currentState.directionX += -.1;
+			currentState.directionX += -1;
 
 			std::cout << "left" << std::endl;
 			break;
 		RIGHT:
 		case SDLK_RIGHT:
 			currentState.accelerationX += 0.2;
-			currentState.directionX += .1;
+			currentState.directionX += 1;
 
 			std::cout << "right" << std::endl;
 			break;
@@ -126,8 +126,8 @@ Player::Player(SDL_Renderer* renderer)
 
 	mDestRect = { 64, 64, 64, 64 };
 	mCollider = { 64 - (64 / 4), 64 - (64 / 4), 48, 48 };
-	currentState = { 0, 0, 0, 0, static_cast<double>(w / 2) - 32, static_cast<double>(h / 2) - 32 };
-	previousState = { 0, 0, 0, 0, static_cast<double>(w / 2) - 32, static_cast<double>(h / 2) - 32 };
+	currentState = { 0, 0, 0, 0, static_cast<double>(w / 2) - 32, static_cast<double>(h / 2) - 32, 0 , static_cast<double>(w/2.0)*-10};
+	previousState = { 0, 0, 0, 0, static_cast<double>(w / 2) - 32, static_cast<double>(h / 2) - 32 , 0, static_cast<double>(w/2.0)*-10};
 
 	IMG_Init(IMG_INIT_PNG);
 	const char* playerWhite = "assets/playerWhite.png";

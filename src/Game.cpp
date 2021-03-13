@@ -14,7 +14,6 @@ int Game::Init()
 
 	appRunning = true;
 	Vector2Int screenSize = Vector2Int(1200, 800);
-	SDL_SetHint(SDL_HINT_WINDOWS_ENABLE_MESSAGELOOP, "0");
 	SDL_SetHint(SDL_HINT_RENDER_BATCHING, "1");
 	SDL_SetHint(SDL_HINT_RENDER_VSYNC, "1");
 	SDL_SetHint(SDL_HINT_GRAB_KEYBOARD, "1");
@@ -35,9 +34,10 @@ int Game::Init()
 	//draw the window//
 	SDL_ShowWindow(window);
 	SDL_RaiseWindow(window);
-//draw the window//
+
 	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
 	SDL_RenderClear(renderer);
+	SDL_RenderPresent(renderer);
 
 	//initialize the player//
 	player = new Player(renderer);
@@ -45,7 +45,6 @@ int Game::Init()
 
 	//present the first render.
 	SDL_RenderPresent(renderer);
-
 
 	return 0;
 }
@@ -137,10 +136,11 @@ int Game::Render(double alpha) const
 			b.Render(alpha);
 		}
 	}
+	SDL_SetRenderDrawColor(renderer, 255, 20, 40, 250);
 	SDL_RenderDrawLine(renderer, player->currentState.positionX, player->currentState.positionY,
 			player->currentState.directionX, player->currentState.directionY);
 	SDL_RenderPresent(renderer);
-
+	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
 
 	return 0;
 }
