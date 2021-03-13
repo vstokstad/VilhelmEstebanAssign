@@ -18,7 +18,6 @@ int Game::Init()
 	SDL_SetHint(SDL_HINT_RENDER_BATCHING, "1");
 	SDL_SetHint(SDL_HINT_RENDER_VSYNC, "1");
 	SDL_SetHint(SDL_HINT_GRAB_KEYBOARD, "1");
-	SDL_SetHint(SDL_HINT_WINDOW_FRAME_USABLE_WHILE_CURSOR_HIDDEN, "0");
 	//CONSTRUCTOR AND WINDOW GETS MADE HERE//
 	if (SDL_CreateWindowAndRenderer(screenSize.x, screenSize.y,
 			SDL_WINDOW_ALLOW_HIGHDPI, &window,
@@ -36,7 +35,6 @@ int Game::Init()
 	//draw the window//
 	SDL_ShowWindow(window);
 	SDL_RaiseWindow(window);
-	SDL_ShowCursor(0);
 //draw the window//
 	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
 	SDL_RenderClear(renderer);
