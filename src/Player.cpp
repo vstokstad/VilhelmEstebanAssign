@@ -79,7 +79,7 @@ int Player::Render(double alpha)
 {
 
 	InterpolateState(alpha);
-	SDL_RenderCopyExF(mRenderer, mTexture, NULL, &mDestRect, angle, NULL, flip);
+	SDL_RenderCopyExF(mRenderer, mTexture, NULL, &mDestRect, currentState.angle, NULL, flip);
 
 	for (auto& b:bullets) {
 		if (b.isActive) {

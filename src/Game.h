@@ -43,19 +43,7 @@ public:
 	SDL_Renderer* renderer = nullptr;
 	SDL_Event events = SDL_Event();
 
-/*	int eventFilter(void* pthis, const SDL_Event* event) const
-	{
 
-		if (event->type == SDL_WINDOWEVENT &&
-		    event->window.event == SDL_WINDOWEVENT_SIZE_CHANGED) {
-			Game* app = (Game*)pthis;
-			// Note: NULL rectangle is the entire window
-			SDL_RenderSetViewport(this->renderer, NULL);
-			app->Render(0.02);
-		}
-		return 1;
-
-	}*/
 };
 
 

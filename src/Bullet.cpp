@@ -28,7 +28,7 @@ int Bullet::OnHit(Asteroid* asteroid)
 
 int Bullet::Move()
 {
-	speed = 50;
+	speed = 100;
 	mDestRect.x += (directionX * speed) * dt / 1s;
 	mDestRect.y += (directionY * speed) * dt / 1s;
 
@@ -39,10 +39,9 @@ int Bullet::Move()
 int Bullet::Update()
 {
 	if (isActive) {
-		std::cout << --mLifeTime << std::endl;
 		if (mLifeTime <= 0) {
 			isActive = false;
-			mLifeTime = 5000;
+			mLifeTime = 1000;
 			return 0;
 		}
 		Move();
@@ -93,6 +92,9 @@ Bullet::Bullet(SDL_Renderer* renderer, Player* player, SDL_Texture* texture) : m
 
 int Bullet::Render(double alpha)
 {
+	speed = 100;
+	mDestRect.x += (directionX * speed) * dt / 1s;
+	mDestRect.y += (directionY * speed) * dt / 1s;
 	SDL_RenderCopy(mRenderer, mTexture, NULL, &mDestRect);
 	return 0;
 }

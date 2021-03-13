@@ -19,7 +19,7 @@ struct State
 	double positionY = 0.0;
 	double directionX = 0.0;
 	double directionY = 0.0;
-
+	double angle = 0.0;
 };
 
 class TextureManager;
@@ -38,7 +38,6 @@ public:
 	State previousState{};
 	SDL_Rect mCollider{};
 	SDL_FRect mDestRect{};
-	double angle;
 	int w = 0;
 	int h = 0;
 
@@ -53,7 +52,7 @@ public:
 		InterpolateState(alpha);
 
 
-		SDL_RenderCopyExF(mRenderer, mTexture, NULL, &mDestRect, angle, NULL, flip);
+		SDL_RenderCopyExF(mRenderer, mTexture, NULL, &mDestRect, currentState.angle, NULL, flip);
 
 		return 0;
 	}
@@ -68,10 +67,13 @@ public:
 		currentState.velocityY = currentState.velocityY * alpha + previousState.velocityY * (1 - alpha);
 		currentState.positionX += currentState.velocityX * alpha + previousState.velocityX * (1 - alpha);
 		currentState.positionY += currentState.velocityY * alpha + previousState.velocityY * (1 - alpha);
-		mDestRect.x = (currentState.positionX+(mDestRect.w / 4)) * alpha + (previousState.positionX+(mDestRect.w / 4)) * (1 - alpha);
-		mDestRect.y = (currentState.positionY+(mDestRect.h / 4)) * alpha + (previousState.positionY+(mDestRect.h / 4)) * (1 - alpha);
-		mCollider.x = mDestRect.x+(mDestRect.w/4);
-		mCollider.y = mDestRect.y+(mDestRect.h/4);
+		currentState.angle += currentState.angle * alpha + previousState.angle * (1 - alpha);
+		mDestRect.x = (currentState.positionX + (mDestRect.w / 4)) * alpha +
+		              (previousState.positionX + (mDestRect.w / 4)) * (1 - alpha);
+		mDestRect.y = (currentState.positionY + (mDestRect.h / 4)) * alpha +
+		              (previousState.positionY + (mDestRect.h / 4)) * (1 - alpha);
+		mCollider.x = mDestRect.x + (mDestRect.w / 4);
+		mCollider.y = mDestRect.y + (mDestRect.h / 4);
 
 		ScreenWrap(&currentState);
 	}
@@ -83,7 +85,7 @@ public:
 		state.velocityX += speed * state.accelerationX * dt / 1s;
 		state.velocityY += speed * state.accelerationY * dt / 1s;
 
-		angle = (atan2(state.directionY, state.directionX) * 180 / 3.14519)*dt/1s;
+		state.angle += (atan2(state.directionY, state.directionX) * 180.0 / 3.14) * dt / 1s;
 		return 0;
 	}
 

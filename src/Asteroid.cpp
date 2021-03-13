@@ -24,8 +24,10 @@ Asteroid::Asteroid(SDL_Renderer* renderer)
 	SDL_GetRendererOutputSize(renderer, &w, &h);
 	mRenderer = renderer;
 	mDestRect = { 256, 256, 256, 256 };
-	mCollider = { 256 - (256 / 4), 256 - (256 / 4), 128, 128 };
-	currentState = { 0, 0, 0, 0, 256, 256 };
+	mCollider = { 256 - (256 / 6), 256 - (256 / 6), 128, 128 };
+	currentState = { static_cast<double>(arc4random_uniform(1)), static_cast<double>(arc4random_uniform(1)), 0, 0,
+	                 static_cast<double>(arc4random_uniform(w)), static_cast<double>(arc4random_uniform(h)),
+	                 static_cast<double>(arc4random_uniform(1)), static_cast<double>(arc4random_uniform(1)) };
 	previousState = { 0, 0, 0, 0, 256, 256 };
 	IMG_Init(IMG_INIT_PNG);
 	const char* bigAsteroid = "assets/bigAsteroids.png";
@@ -36,15 +38,11 @@ Asteroid::Asteroid(SDL_Renderer* renderer)
 
 int Asteroid::Move(time_point t)
 {
-	speed = 1;
-	if (currentState.directionX != 0.0 || currentState.directionY != 0.0) {
-		currentState.directionX = 0;
-		currentState.directionY = 0;
-	}
-	else {
-		currentState.directionX = speed * sin(0.1 * dt / 1s);
-		currentState.directionY = speed * cos(0.1 * dt / 1s);
-	}
+	speed = arc4random_uniform(3);
+	currentState.accelerationX = arc4random_uniform(2);
+	arc4random_stir();
+	currentState.accelerationY = arc4random_uniform(2);
+
 	previousState = currentState;
 	Integrate(currentState, t);
 	return 0;

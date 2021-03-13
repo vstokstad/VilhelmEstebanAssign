@@ -38,7 +38,7 @@ public:
 	float directionX;
 	float directionY;
 	float speed = 10;
-	SDL_Rect mDestRect = { 32, 32, 32, 32 };
+	SDL_Rect mDestRect = { 0, 0, 32, 32 };
 	SDL_Renderer* mRenderer;
 	SDL_Texture* mTexture;
 	int w{};
