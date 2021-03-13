@@ -27,6 +27,9 @@
     <ClCompile Include="src\Asteroid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Bullet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dev\SDL2_image-2.0.1\include\SDL_image.h">
@@ -309,6 +312,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Dev\SDL2\include\SDL_vulkan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Bullet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
