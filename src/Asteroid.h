@@ -24,7 +24,7 @@ public:
 
 	int Update(time_point t) override;
 
-
+	int RandomNumb(float Max);
 
 	int Split();
 
