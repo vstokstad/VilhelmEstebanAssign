@@ -8,7 +8,7 @@
 #include "GameObject.h"
 
 class Player;
-
+class Asteroid;
 class TextureManager;
 
 class Bullet
@@ -27,9 +27,9 @@ public:
 
 	int Move();
 
-	int CollisionDetection(GameObject* gameObject);
+	int CollisionDetection(Asteroid* asteroid);
 
-	int OnHit(GameObject* gameObject);
+	int OnHit(Asteroid* asteroid);
 
 	bool isActive = false;
 

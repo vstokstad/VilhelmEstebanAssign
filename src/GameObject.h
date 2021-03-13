@@ -2,6 +2,7 @@
 
 #include <chrono>
 #include "include.h"
+#include <cmath>
 
 using namespace std::literals;
 auto constexpr dt = 1.0s / 60.0;
@@ -31,13 +32,13 @@ public:
 
 	SDL_Texture* mTexture{};
 	SDL_Renderer* mRenderer{};
-	double speed = 10.;
-	double angle = 0.0;
+	double speed = 10.0;
 	SDL_RendererFlip flip = SDL_FLIP_NONE;
 	State currentState{};
 	State previousState{};
 	SDL_Rect mCollider{};
 	SDL_FRect mDestRect{};
+	double angle;
 	int w = 0;
 	int h = 0;
 
@@ -79,9 +80,10 @@ public:
 	{
 		using namespace std::literals;
 
-		state.velocityX += state.directionX * (speed + state.accelerationX) * dt / 1s;
-		state.velocityY += state.directionY * (speed + state.accelerationY) * dt / 1s;
+		state.velocityX += speed * state.accelerationX * dt / 1s;
+		state.velocityY += speed * state.accelerationY * dt / 1s;
 
+		angle = (atan2(state.directionY, state.directionX) * 180 / 3.14519);
 		return 0;
 	}
 

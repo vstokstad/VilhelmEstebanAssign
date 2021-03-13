@@ -1,11 +1,13 @@
 #pragma once
 
 #include "SDL_image.h"
+#if __cplusplus == 201703L
+#define CXX17 = TRUE
 #include <filesystem>
-
-#include <unordered_map>
-
 namespace fs = std::filesystem;
+#include <unordered_map>
+#endif
+
 
 class TextureManager
 {
@@ -20,7 +22,7 @@ public:
 
 
 	//STARTED DOING SOME STUFF TO DYNAMICALLY LOAD ALL TEXTURES AT START OF GAME:::
-
+#ifdef CXX17
 	static SDL_Texture*	GetTexture(const char* name, SDL_Renderer* renderer, std::unordered_map<std::string, SDL_Surface> surfaces)
 	{
 		SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, &surfaces.at(name));
@@ -41,7 +43,7 @@ public:
 		}
 		return surfaces;
 	}
-
+#endif
 };
 
 

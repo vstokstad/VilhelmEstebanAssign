@@ -12,35 +12,51 @@
 int Player::HandleInput(SDL_KeyboardEvent event)
 {
 	if (event.type == SDL_KEYUP) {
-		currentState.directionX = 0.0;
-		currentState.directionY = 0.0;
+		currentState.accelerationX = 0.0;
+		currentState.accelerationY = 0.0;
 	}
-	else if (event.type == SDL_KEYDOWN) {
+	else if (event.type == SDL_KEYDOWN || event.state == SDL_PRESSED) {
 		switch (event.keysym.sym) {
+		UP:
 		case SDLK_UP:
+			currentState.accelerationY -= 0.2;
 			currentState.directionY += -.1;
-			angle = 0.0;
 			std::cout << "up" << std::endl;
 			break;
+		DOWN:
 		case SDLK_DOWN:
+			currentState.accelerationY += 0.2;
 			currentState.directionY += .1;
-			angle = 180.0;
+
 			std::cout << "down" << std::endl;
 			break;
+		LEFT:
 		case SDLK_LEFT:
+			currentState.accelerationX -= 0.2;
 			currentState.directionX += -.1;
-			angle = 270.0;
+
 			std::cout << "left" << std::endl;
 			break;
+		RIGHT:
 		case SDLK_RIGHT:
+			currentState.accelerationX += 0.2;
 			currentState.directionX += .1;
-			angle = 90.0;
+
 			std::cout << "right" << std::endl;
 			break;
+		SHOOT:
 		case SDLK_SPACE:
 			Fire();
 			std::cout << "fire" << std::endl;
 			break;
+		case SDLK_w:
+			goto UP;
+		case SDLK_s:
+			goto DOWN;
+		case SDLK_a:
+			goto LEFT;
+		case SDLK_d:
+			goto RIGHT;
 
 		};
 	}

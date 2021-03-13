@@ -17,6 +17,7 @@ int Game::Init()
 	SDL_SetHint(SDL_HINT_WINDOWS_ENABLE_MESSAGELOOP, "1");
 	SDL_SetHint(SDL_HINT_RENDER_BATCHING, "1");
 	SDL_SetHint(SDL_HINT_RENDER_VSYNC, "1");
+	SDL_SetHint(SDL_HINT_GRAB_KEYBOARD, "1");
 	//CONSTRUCTOR AND WINDOW GETS MADE HERE//
 	if (SDL_CreateWindowAndRenderer(screenSize.x, screenSize.y,
 			SDL_WINDOW_ALLOW_HIGHDPI, &window,
@@ -95,10 +96,8 @@ int Game::GameLoop()
 		if (t != pt) {
 			frame_rate = frame_count;
 			frame_count = 0;
+			std::cout << "Frame rate is " << frame_rate << " frames per second." << std::endl;
 		}
-		std::cout << "Frame rate is " << frame_rate << " frames per second.  VelocityX = "
-		          << player->currentState.velocityX << " m/s\n"
-		          << " VelocityY = " << player->currentState.velocityY << " m/s\n";
 	}
 	return 0;
 }
@@ -138,6 +137,8 @@ int Game::Render(double alpha) const
 			b.Render(alpha);
 		}
 	}
+	SDL_RenderDrawLine(renderer, player->currentState.positionX, player->currentState.positionY,
+			player->currentState.directionX, player->currentState.directionY);
 	SDL_RenderPresent(renderer);
 
 
@@ -154,9 +155,9 @@ int Game::Update(time_point t)
 		ShowGameOverScreen();
 	}
 	for (auto& b : player->bullets) {
-		b.Update();
-		if (b.CollisionDetection(asteroid)) {
-			b.OnHit(asteroid);
+		if (b.isActive) {
+			b.Update();
+			b.CollisionDetection(asteroid);
 		}
 	}
 
