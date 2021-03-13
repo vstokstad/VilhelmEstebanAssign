@@ -33,7 +33,7 @@ public:
 	int Spawn();
 
 
-
+	static double RandomWithUpper();
 };
 
 
