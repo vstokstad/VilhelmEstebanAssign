@@ -77,7 +77,9 @@ int Player::Fire()
 {
 
 	if (bullets.empty()) {
-		bullets.emplace_back(mRenderer, this);
+		const char* bullet = "assets/player.png";
+		SDL_Texture* bulletTexture = TextureManager::LoadTexture(bullet, mRenderer);
+		bullets.emplace_back(mRenderer, this, bulletTexture);
 	}
 	for (auto& i : bullets) {
 
@@ -113,11 +115,12 @@ Player::Player(SDL_Renderer* renderer)
 
 	IMG_Init(IMG_INIT_PNG);
 	const char* playerWhite = "assets/playerWhite.png";
-
+	const char* bullet = "assets/player.png";
+	SDL_Texture* bulletTexture = TextureManager::LoadTexture(bullet, mRenderer);
 	mTexture = TextureManager::LoadTexture(playerWhite, mRenderer);
 	bullets.reserve(20);
 	for (int i = 0; i < 10; ++i) {
-		bullets.emplace_back(mRenderer, this);
+		bullets.emplace_back(mRenderer, this, bulletTexture);
 	}
 
 

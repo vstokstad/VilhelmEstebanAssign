@@ -3,13 +3,12 @@
 //
 
 #include "Bullet.h"
-#include "TextureManager.h"
 #include "Player.h"
 
 int Bullet::CollisionDetection(GameObject* gameObject)
 {
 	SDL_Rect* sdlRect = &gameObject->mCollider;
-	if (SDL_HasIntersection(&mCollider, sdlRect) == SDL_TRUE) {
+	if (SDL_HasIntersection(&mDestRect, sdlRect) == SDL_TRUE) {
 		std::cout << "collision" << std::endl;
 		OnHit(gameObject);
 		return 1;
@@ -24,18 +23,17 @@ int Bullet::OnHit(GameObject* gameObject)
 	return 0;
 }
 
-int Bullet::Move(time_point t)
+int Bullet::Move()
 {
-	speed = 5;
 
-	previousState = currentState;
-	Integrate(currentState, t);
+	mDestRect.x = (directionX * speed) * dt / 1s;
+	mDestRect.y = (directionY * speed) * dt / 1s;
 
-
+ScreenWrap();
 	return 0;
 }
 
-int Bullet::Update(time_point t)
+int Bullet::Update()
 {
 	if (isActive) {
 		mLifeTime--;
@@ -43,8 +41,7 @@ int Bullet::Update(time_point t)
 			this->Bullet::~Bullet();
 			return 0;
 		}
-
-		Move(t);
+		Move();
 	}
 	return 0;
 }
@@ -52,31 +49,45 @@ int Bullet::Update(time_point t)
 int Bullet::OnGetFired()
 {
 	isActive = true;
-	currentState = { 10, 10, mPlayer->currentState.velocityX * 2, mPlayer->currentState.velocityY * 2,
-	                 mPlayer->currentState.positionX, mPlayer->currentState.positionY };
-	previousState = { 10, 10, mPlayer->previousState.velocityX, mPlayer->previousState.velocityY,
-	                  mPlayer->previousState.positionX, mPlayer->previousState.positionY };
-	mDestRect.x = currentState.positionX;
-	mDestRect.y = currentState.positionY;
+	directionX = mPlayer->currentState.directionX;
+	directionY = mPlayer->currentState.directionY;
+	mDestRect.x = mPlayer->currentState.positionX + mPlayer->currentState.directionX;
+	mDestRect.y = mPlayer->currentState.positionY + mPlayer->currentState.directionY;;
 
-	mCollider.x = mDestRect.x;
-	mCollider.y = mDestRect.y;
 
 	return 0;
 }
 
-Bullet::Bullet(SDL_Renderer* renderer, Player* player) : mPlayer(player)
+int Bullet::ScreenWrap()
 {
-	flip = SDL_FLIP_HORIZONTAL;
+
+	int o = mDestRect.w;
+
+	if (mDestRect.x > w + o) {
+		mDestRect.x = 0 - o;
+	}
+	else if (mDestRect.x < 0.0 - o) {
+		mDestRect.x = w + o;
+	}
+	if (mDestRect.y > h + o) {
+		mDestRect.y = 0 - o;
+	}
+	else if (mDestRect.y < 0.0 - o) {
+		mDestRect.y = h + o;
+	}
+	return 0;
+}
+
+Bullet::Bullet(SDL_Renderer* renderer, Player* player, SDL_Texture* texture) : mPlayer(player)
+{
 	isActive = false;
 	SDL_GetRendererOutputSize(renderer, &w, &h);
 	mRenderer = renderer;
-	mDestRect = { 16, 16, 16, 16 };
-	mCollider = { 16, 64, 16, 16 };
-	currentState = { 0, 0, 0, 0, mPlayer->currentState.positionX, mPlayer->currentState.positionY };
-	previousState = { 0, 0, 0, 0, mPlayer->currentState.positionX, mPlayer->currentState.positionY };
+	mTexture = texture;
+}
 
-	const char* bullet = "assets/player.png";
-
-	mTexture = TextureManager::LoadTexture(bullet, mRenderer);
+int Bullet::Render(double alpha)
+{
+	SDL_RenderCopy(mRenderer, mTexture, NULL, &mDestRect);
+	return 0;
 }

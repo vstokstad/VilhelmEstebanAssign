@@ -14,7 +14,9 @@ int Game::Init()
 
 	appRunning = true;
 	Vector2Int screenSize = Vector2Int(1200, 800);
-
+	SDL_SetHint(SDL_HINT_WINDOWS_ENABLE_MESSAGELOOP, "1");
+	SDL_SetHint(SDL_HINT_RENDER_BATCHING, "1");
+	SDL_SetHint(SDL_HINT_RENDER_VSYNC, "1");
 	//CONSTRUCTOR AND WINDOW GETS MADE HERE//
 	if (SDL_CreateWindowAndRenderer(screenSize.x, screenSize.y,
 			SDL_WINDOW_ALLOW_HIGHDPI, &window,
@@ -82,7 +84,7 @@ int Game::GameLoop()
 		Render(alpha);
 
 		//Framerate stuff:
-		/*using namespace std::chrono;
+		using namespace std::chrono;
 		static auto t = time_point_cast<seconds>(steady_clock::now());
 		static int frame_count = 0;
 		static int frame_rate = 0;
@@ -96,7 +98,7 @@ int Game::GameLoop()
 		}
 		std::cout << "Frame rate is " << frame_rate << " frames per second.  VelocityX = "
 		          << player->currentState.velocityX << " m/s\n"
-		          << " VelocityY = " << player->currentState.velocityY << " m/s\n";*/
+		          << " VelocityY = " << player->currentState.velocityY << " m/s\n";
 	}
 	return 0;
 }
@@ -152,10 +154,13 @@ int Game::Update(time_point t)
 		ShowGameOverScreen();
 	}
 	for (auto& b : player->bullets) {
+		b.Update();
 		if (b.CollisionDetection(asteroid)) {
 			b.OnHit(asteroid);
 		}
 	}
+
+
 	return 0;
 }
 
