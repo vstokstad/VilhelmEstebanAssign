@@ -95,7 +95,7 @@ int Game::GameLoop()
 		if (t != pt) {
 			frame_rate = frame_count;
 			frame_count = 0;
-			std::cout << "Frame rate is " << frame_rate << " frames per second." << std::endl;
+			//std::cout << "Frame rate is " << frame_rate << " frames per second." << std::endl;
 		}
 	}
 	return 0;

@@ -13,7 +13,6 @@ int Asteroid::Split()
 
 int Asteroid::Update(time_point t)
 {
-	std::cout << RandomWithUpper() << std::endl;
 	Move(t);
 	return 0;
 }
@@ -40,9 +39,10 @@ double Asteroid::RandomWithUpper()
 
 int Asteroid::Move(time_point t)
 {
-	speed = RandomWithUpper()*10;
-	currentState.accelerationX = RandomWithUpper();
-	currentState.accelerationY = RandomWithUpper();
+
+	currentState.accelerationX = 0;
+	currentState.accelerationY = 0;
+	
 
 	previousState = currentState;
 	Integrate(currentState, t);
@@ -51,6 +51,9 @@ int Asteroid::Move(time_point t)
 
 int Asteroid::Spawn()
 {
+	
+
+
 //TODO the stuff from the constructor that makes the thing appear on screen should move here. Or this should be a mehtod to place it in the correct vector that gets rendered on screen (in Game.Render())
 	return 0;
 }

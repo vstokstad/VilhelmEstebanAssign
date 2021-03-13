@@ -4,6 +4,4 @@ C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(73,70): warning C
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(75,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(76,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(95,9): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(29,86): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(60,33): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
   AsteroidsAssignment.vcxproj -> C:\Users\Admin\Documents\GitHub\VilhemEsteban\VilhemEstebanSolution\x64\Debug\AsteroidsAssignment.exe

@@ -146,7 +146,7 @@ int Player::CollisionDetection(SDL_Rect* sdlRect)
 {
 
 	if (SDL_HasIntersection(&mCollider, sdlRect) == SDL_TRUE) {
-		std::cout << "collision" << std::endl;
+		//std::cout << "collision" << std::endl;
 
 		return 1;
 	}
