@@ -70,12 +70,18 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.2
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(38,1): error C2664: 'SDL_Surface *IMG_Load(const char *)': cannot convert argument 1 from 'int' to 'const char *'
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\TextureManager.h(38,33): message : Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
 C:\SDL2\SDL2_image-2.0.1\include\SDL_image.h(85,39): message : see declaration of 'IMG_Load'
-  Game.cpp
+  Bullet.cpp
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(70,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(71,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(72,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(73,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(91,9): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Bullet.cpp(29,42): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Bullet.cpp(30,42): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Bullet.cpp(52,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Bullet.cpp(53,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Bullet.cpp(54,48): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Bullet.cpp(55,48): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   Player.cpp
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(70,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(71,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data

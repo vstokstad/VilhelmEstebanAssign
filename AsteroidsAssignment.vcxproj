@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\Asteroid.cpp" />
+    <ClCompile Include="src\Bullet.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\Player.cpp" />
   </ItemGroup>
@@ -113,6 +114,7 @@
     <ClInclude Include="Dev\SDL2\include\SDL_vulkan.h" />
     <ClInclude Include="Dev\SDL2_image-2.0.1\include\SDL_image.h" />
     <ClInclude Include="src\Asteroid.h" />
+    <ClInclude Include="src\Bullet.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\GameObject.h" />
     <ClInclude Include="src\include.h" />
