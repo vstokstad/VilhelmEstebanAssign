@@ -83,7 +83,7 @@ public:
 		state.velocityX += speed * state.accelerationX * dt / 1s;
 		state.velocityY += speed * state.accelerationY * dt / 1s;
 
-		angle = (atan2(state.directionY, state.directionX) * 180 / 3.14519);
+		angle = (atan2(state.directionY, state.directionX) * 180 / 3.14519)*dt/1s;
 		return 0;
 	}
 
