@@ -37,10 +37,12 @@ public:
 
 	int Move(time_point t);
 
-	int Spawn(int initialPosX, int initialPosY);
+	int Spawn();
 
 	int randomNumberx = 0;
 	int randomNumbery = 0;
+	int velocity1 = 0;
+	int velocity2 = 0;
 
 };
 

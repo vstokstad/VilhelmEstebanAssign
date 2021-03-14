@@ -10,6 +10,7 @@
 
 int Game::Init()
 {
+	srand(time(0));
 	SDL_Init(SDL_INIT_EVERYTHING);
 	IMG_Init(IMG_INIT_PNG);
 
@@ -78,9 +79,9 @@ int Game::GameLoop()
 
 	//asteroid->Spawn();
 	for (auto& i : ActiveAst) {
-		float randomNumber1 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 400));
-		float randomNumber2 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 500));
-		i->Spawn(randomNumber1, randomNumber2);
+
+
+		i->Spawn();
 	}
 	while (appRunning) {
 

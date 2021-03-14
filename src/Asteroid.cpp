@@ -43,8 +43,8 @@ Asteroid::Asteroid(SDL_Renderer* renderer, AsteroidSize size)
 	int rectSize;
 	double velocityX = 0;
 	double velocityY = 0;
-	double postitionX = 200;
-	double postitionY = 200;
+	double postitionX = 10;
+	double postitionY = 10;
 	const char* texture;
 	switch (size) {
 	case BIG:
@@ -85,25 +85,52 @@ int Asteroid::Move(time_point t)
 	
 	currentState.accelerationX = 0;
 	currentState.accelerationY = 0;
-	currentState.velocityX = randomNumberx;
-	currentState.velocityY = randomNumbery;
+	currentState.velocityX = velocity1;
+	currentState.velocityY = velocity2;
 
 	previousState = currentState;
 	Integrate(currentState, t);
 	return 0;
 }
 
-int Asteroid::Spawn(int initialPosX, int initialPosY)
+int Asteroid::Spawn()
 {
-	srand(static_cast <unsigned> (time(0)));
+	srand(time(0)*3);
 	isActive = true;
-	currentState.positionX = initialPosX;
-	currentState.positionY = initialPosY;
-	randomNumberx = static_cast <int> (rand()) / (static_cast <int> (RAND_MAX / 2) - 1);
-	randomNumbery = static_cast <int> (rand()) / (static_cast <int> (RAND_MAX / 2) - 1);
+	int randomNumber1 = 0;
+	int randomNumber2 = 0;
 
-	std::cout << randomNumberx << std::endl;
-	std::cout << randomNumbery << std::endl;
+	int wall = rand() % 2;
+
+	std::cout << wall << std::endl;
+	if (wall == 0)
+	{
+		srand(time(0)*6);
+		randomNumber1 = 200;
+		randomNumber2 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 300) + 200);
+		std::cout << randomNumber2 << std::endl;
+	}
+	if (wall == 1)
+	{
+		srand(time(0)*2);
+		randomNumber1 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 600) + 200);
+		randomNumber2 = 200;
+		std::cout << randomNumber1 << std::endl;
+	}
+
+
+	currentState.positionX = randomNumber1;
+	currentState.positionY = randomNumber2;
+	velocity1 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 2)-1);
+	velocity2 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 2)-1);
+	while (velocity1 == 0)
+	{
+		velocity1 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 2) - 1);
+	}while (velocity2 == 0)
+	{
+		velocity2 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 2) - 1);
+	}
+
 
 //TODO the stuff from the constructor that makes the thing appear on screen should move here. Or this should be a mehtod to place it in the correct vector that gets rendered on screen (in Game.Render())
 	return 0;
