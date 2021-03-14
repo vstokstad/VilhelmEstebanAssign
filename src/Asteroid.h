@@ -2,9 +2,16 @@
 
 #include "include.h"
 #include "GameObject.h"
-
+#include <array>
 
 class TextureManager;
+
+enum AsteroidSize
+{
+	BIG,
+	MID,
+	SMALL
+};
 
 class Asteroid : public virtual GameObject
 {
@@ -12,19 +19,20 @@ class Asteroid : public virtual GameObject
 public:
 
 
-	Asteroid() = delete;
+	explicit Asteroid(SDL_Renderer* renderer, AsteroidSize size);
 
+	Asteroid() = delete;
 	~Asteroid() = default;
 
-	explicit Asteroid(SDL_Renderer* renderer);
+	AsteroidSize size;
 
 
+	int Render(double alpha) override;
 
-
+	std::array<Asteroid*, 4> children{};
 
 	int Update(time_point t) override;
 
-	int RandomNumb(float Max);
 
 	int Split();
 
@@ -33,7 +41,6 @@ public:
 	int Spawn();
 
 
-	static double RandomWithUpper();
 };
 
 

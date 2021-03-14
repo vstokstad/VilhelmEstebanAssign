@@ -5,10 +5,11 @@
 #pragma once
 
 #include "include.h"
-#include "GameObject.h"
 
 class Player;
+
 class Asteroid;
+
 class TextureManager;
 
 class Bullet
@@ -23,7 +24,7 @@ public:
 
 	Player* mPlayer{};
 
-	int mLifeTime = 200;
+	int mLifeTime = 500;
 
 	int Move();
 
@@ -37,7 +38,7 @@ public:
 
 	float directionX;
 	float directionY;
-	float speed = 10;
+	float speed = 3;
 	SDL_Rect mDestRect = { 32, 32, 32, 32 };
 	SDL_Renderer* mRenderer;
 	SDL_Texture* mTexture;

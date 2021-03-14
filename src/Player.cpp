@@ -40,7 +40,7 @@ int Player::HandleInput(SDL_KeyboardEvent event)
 		SHOOT:
 		case SDLK_SPACE:
 			Fire();
-			std::cout <<"angle "<< currentState.angle <<" dirX: "<< currentState.directionX <<" dirY: "<< currentState.directionY << std::endl;
+			std::cout << "right" << std::endl;
 			break;
 		case SDLK_w:
 			goto UP;
@@ -113,7 +113,7 @@ int Player::Update(time_point t)
 
 Player::Player(SDL_Renderer* renderer)
 {
-
+isActive = true;
 	SDL_GetRendererOutputSize(renderer, &w, &h);
 	mRenderer = renderer;
 

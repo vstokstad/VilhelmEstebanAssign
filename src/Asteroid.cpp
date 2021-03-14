@@ -4,38 +4,113 @@
 #include "TextureManager.h"
 #include "GameObject.h"
 
+
 int Asteroid::Split()
 {
+	std::cout << "splitting" << std::endl;
+	isActive = false;
+	for (auto& c:children) {
+		if (!c->isActive) {
+			c->isActive = true;
+			c->currentState.positionX = this->currentState.positionX;
+			c->currentState.positionY = this->currentState.positionY;
+			c->currentState.velocityX = random() / RAND_MAX;
+			srandom(time(NULL));
+			c->currentState.velocityY = random() / RAND_MAX;
+			c->speed += 1;
+		}
+		else{
 
+		}
+	}
+	this->~Asteroid();
+	return 0;
+}
+
+int Asteroid::Render(double alpha)
+{
+	if (isActive) {
+		InterpolateState(alpha);
+		SDL_RenderCopyExF(mRenderer, mTexture, NULL, &mDestRect, currentState.angle, NULL, flip);
+	}
+	for (auto c:children) {
+		{
+			if (c->isActive) {
+				c->Render(alpha);
+			}
+		}
+	}
 	return 0;
 }
 
 
 int Asteroid::Update(time_point t)
 {
-	Move(t);
+	if (isActive) {
+		Move(t);
+	}
+	for (auto c:children) {
+		if (c->isActive) {
+			c->Move(t);
+		}
+	}
 	return 0;
 }
 
-Asteroid::Asteroid(SDL_Renderer* renderer)
+Asteroid::Asteroid(SDL_Renderer* renderer, AsteroidSize size)
 {
+	this->size = size;
+	isActive = false;
 	SDL_GetRendererOutputSize(renderer, &w, &h);
 	mRenderer = renderer;
-	mDestRect = { 256, 256, 256, 256 };
-	mCollider = { 256 - (256 / 6), 256 - (256 / 6), 128, 128 };
-	currentState = { RandomWithUpper(), 0, 0, 0, RandomWithUpper()*100, RandomWithUpper()*100 ,RandomWithUpper(), RandomWithUpper() };
-	previousState = { 0, 0, 0, 0, 256, 256 };
+	int rectSize;
+	double velocityX = random() / RAND_MAX;
+	srandom(time(NULL));
+	double velocityY = random() / RAND_MAX;
+	double postitionX = w / 2 * (random() / RAND_MAX);
+	double postitionY = h / 2 * (random() / RAND_MAX);
+	const char* texture;
+	switch (size) {
+	case BIG:
+		rectSize = 256;
+		texture = "/assets/bigAsteroids.png";
+		hasChildren = true;
+		for (auto& c:children) {
+			c = new Asteroid(renderer, MID);
+		}
+		break;
+	case MID:
+		rectSize = 128;
+		texture = "/assets/mediumAsteroids.png";
+		hasChildren = true;
+		for (auto& c:children) {
+			c = new Asteroid(renderer, SMALL);
+		}
+		break;
+	case SMALL:
+		rectSize = 64;
+		texture = "/assets/smallAsteroids.png";
+		hasChildren = false;
+		for (auto& c:children) {
+			delete c;
+		}
+		break;
+	default:
+		rectSize = 128;
+	}
+
+	mDestRect = { static_cast<float>(postitionX), static_cast<float>(postitionY), static_cast<float>(rectSize),
+	              static_cast<float>(rectSize) };
+	mCollider = { static_cast<int>(postitionX), static_cast<int>(postitionY), rectSize / 2, rectSize / 2 };
+	currentState = { 0, 0, velocityX, velocityY, postitionX, postitionY, 0, 0, 0 };
+	previousState = { 0, 0, 0, 0, postitionX, postitionY, 0, 0, 0 };
 	IMG_Init(IMG_INIT_PNG);
-	const char* bigAsteroid = "assets/bigAsteroids.png";
 
-	mTexture = TextureManager::LoadTexture(bigAsteroid, mRenderer);
+	mTexture = TextureManager::LoadTexture(texture, mRenderer);
+
 
 }
 
-double Asteroid::RandomWithUpper()
-{
-	return static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-}
 
 int Asteroid::Move(time_point t)
 {
@@ -52,7 +127,9 @@ int Asteroid::Move(time_point t)
 
 int Asteroid::Spawn()
 {
-	
+	isActive = true;
+	currentState.positionX = rand() / w;
+	currentState.positionY = rand() / h;
 
 
 //TODO the stuff from the constructor that makes the thing appear on screen should move here. Or this should be a mehtod to place it in the correct vector that gets rendered on screen (in Game.Render())

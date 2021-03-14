@@ -9,6 +9,8 @@ auto constexpr dt = 1.0s / 60.0;
 using duration = std::chrono::duration<double>;
 using Clock = std::chrono::steady_clock;
 using time_point = std::chrono::time_point<Clock, duration>;
+
+
 struct State
 {
 	double accelerationX = 0.0;
@@ -24,12 +26,14 @@ struct State
 
 class TextureManager;
 
+
 class GameObject
 {
 
 public:
+	bool hasChildren = false;
 
-
+	bool isActive = false;
 	SDL_Texture* mTexture{};
 	SDL_Renderer* mRenderer{};
 	double speed = 10.0;
@@ -46,16 +50,15 @@ public:
 	virtual int Update(time_point dt) = 0;
 
 
-	virtual int Render(double alpha)
-	{
+	virtual int Render(double alpha){
+		if (isActive) {
+			InterpolateState(alpha);
+			SDL_RenderCopyExF(mRenderer, mTexture, NULL, &mDestRect, currentState.angle, NULL, flip);
+		}
 
-		InterpolateState(alpha);
-
-
-		SDL_RenderCopyExF(mRenderer, mTexture, NULL, &mDestRect, currentState.angle, NULL, flip);
 
 		return 0;
-	}
+	};
 
 	void InterpolateState(double alpha)
 	{
@@ -72,20 +75,21 @@ public:
 		              (previousState.positionX - (mDestRect.w / 2)) * (1 - alpha);
 		mDestRect.y = (currentState.positionY - (mDestRect.h / 2)) * alpha +
 		              (previousState.positionY - (mDestRect.h / 2)) * (1 - alpha);
-		mCollider.x = mDestRect.x - (mDestRect.w / 2);
-		mCollider.y = mDestRect.y - (mDestRect.h / 2);
+		mCollider.x = mDestRect.x + (mDestRect.w / 2);
+		mCollider.y = mDestRect.y + (mDestRect.h / 2);
 
 		ScreenWrap(&currentState);
 	}
 
 	int Integrate(State& state, std::chrono::time_point<Clock, std::chrono::duration<double>>)
-	{;
+	{
+
 		using namespace std::literals;
 		state.velocityX += speed * state.accelerationX * dt / 1s;
 		state.velocityY += speed * state.accelerationY * dt / 1s;
-		state.directionX = (state.velocityX* (h / 2.0));
-		state.directionY = (state.velocityY* (w / 2.0));
-		state.angle = (atan2(state.directionY, state.directionX) * (180 / 3.14))+90;
+		state.directionX = (state.velocityX * (h / 2.0));
+		state.directionY = (state.velocityY * (w / 2.0));
+		state.angle = (atan2(state.directionY, state.directionX) * (180 / 3.14)) + 90;
 		return 0;
 	}
 
@@ -109,6 +113,8 @@ public:
 		return 0;
 	}
 };
+
+
 
 
 

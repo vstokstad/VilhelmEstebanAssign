@@ -30,7 +30,6 @@ int Game::Init()
 
 	}
 
-
 	//draw the window//
 	SDL_ShowWindow(window);
 	SDL_RaiseWindow(window);
@@ -41,10 +40,13 @@ int Game::Init()
 
 	//initialize the player//
 	player = new Player(renderer);
-	asteroid = new Asteroid(renderer);
+	asteroid = new Asteroid(renderer, BIG);
 
 	//present the first render.
 	SDL_RenderPresent(renderer);
+	for (auto& i : bigAst) {
+		i = new Asteroid(renderer, BIG);
+	}
 
 	return 0;
 }
@@ -61,6 +63,7 @@ int Game::GameLoop()
 	time_point currentTime = Clock::now();
 	duration accumulator = 0s;
 
+	asteroid->Spawn();
 
 	while (appRunning) {
 
@@ -136,12 +139,18 @@ int Game::Render(double alpha) const
 			b.Render(alpha);
 		}
 	}
-	SDL_SetRenderDrawColor(renderer, 255, 20, 40, 250);
-	SDL_RenderDrawLine(renderer, player->currentState.positionX, player->currentState.positionY,
-			player->h/2.0*player->currentState.velocityX,
-			player->w/2.0*player->currentState.velocityY);
+	for (auto a:bigAst) {
+		a->Render(alpha);
+		if (a->hasChildren) {
+			for (auto c:a->children) {
+				c->Render(alpha);
+			}
+
+		}
+
+	}
+
 	SDL_RenderPresent(renderer);
-	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
 
 	return 0;
 }
@@ -152,13 +161,16 @@ int Game::Update(time_point t)
 	HandleEvents();
 	player->Update(t);
 	asteroid->Update(t);
-	if (player->CollisionDetection(&asteroid->mCollider) == 1) {
-		ShowGameOverScreen();
-	}
-	for (auto& b : player->bullets) {
-		if (b.isActive) {
-			b.Update();
-			b.CollisionDetection(asteroid);
+	for (auto ast : bigAst) {
+		if (player->CollisionDetection(&ast->mCollider) == 1 || player->CollisionDetection(&asteroid->mCollider) == 1) {
+			ShowGameOverScreen();
+		}
+		for (auto& b : player->bullets) {
+			if (b.isActive) {
+				b.Update();
+				b.CollisionDetection(ast);
+				b.CollisionDetection(asteroid);
+			}
 		}
 	}
 

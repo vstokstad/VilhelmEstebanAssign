@@ -19,16 +19,16 @@ int Bullet::CollisionDetection(Asteroid* gameObject)
 
 int Bullet::OnHit(Asteroid* asteroid)
 {
-	std::cout << "HIT!" << std::endl;
 	asteroid->Split();
-	mLifeTime = 5000;
+	std::cout << "HIT!" << std::endl;
+	mLifeTime = 500;
 	this->isActive = false;
 	return 0;
 }
 
 int Bullet::Move()
 {
-	speed = 100;
+	speed = 2;
 	mDestRect.x += (directionX * speed) * dt / 1s;
 	mDestRect.y += (directionY * speed) * dt / 1s;
 
@@ -42,7 +42,7 @@ int Bullet::Update()
 	--mLifeTime;
 		if (mLifeTime <= 0) {
 			isActive = false;
-			mLifeTime = 1000;
+			mLifeTime = 500;
 			return 0;
 		}
 		Move();
@@ -55,8 +55,8 @@ int Bullet::OnGetFired()
 	isActive = true;
 	directionX = mPlayer->currentState.directionX;
 	directionY = mPlayer->currentState.directionY;
-	mDestRect.x = mPlayer->currentState.positionX ;
-	mDestRect.y = mPlayer->currentState.positionY ;
+	mDestRect.x = mPlayer->currentState.positionX;
+	mDestRect.y = mPlayer->currentState.positionY;
 
 	Update();
 
@@ -69,16 +69,16 @@ int Bullet::ScreenWrap()
 	int o = mDestRect.w;
 
 	if (mDestRect.x > w + o) {
-		Bullet::~Bullet();
+		this->isActive = false;
 	}
 	else if (mDestRect.x < 0.0 - o) {
-		Bullet::~Bullet();
+		this->isActive = false;
 	}
 	if (mDestRect.y > h + o) {
-		Bullet::~Bullet();
+		this->isActive = false;
 	}
 	else if (mDestRect.y < 0.0 - o) {
-		Bullet::~Bullet();
+		this->isActive = false;
 	}
 	return 0;
 }
@@ -96,8 +96,8 @@ Bullet::Bullet(SDL_Renderer* renderer, Player* player, SDL_Texture* texture) : m
 int Bullet::Render(double alpha)
 {
 	speed = 1;
-	mDestRect.x += (directionX * speed) * dt / 1s;
-	mDestRect.y += (directionY * speed) * dt / 1s;
+	mDestRect.x += (directionX * speed)*dt/1s;
+	mDestRect.y += (directionX * speed)*dt/1s;
 	SDL_RenderCopy(mRenderer, mTexture, NULL, &mDestRect);
 	return 0;
 }
