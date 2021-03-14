@@ -37,7 +37,7 @@ public:
 
 	int Move(time_point t);
 
-	int Spawn();
+	int Spawn(int initialPosX, int initialPosY);
 
 
 };
