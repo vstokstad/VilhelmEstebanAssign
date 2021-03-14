@@ -7,6 +7,7 @@
 #include "Asteroid.h"
 #include "Bullet.h"
 #include "TextureManager.h"
+
 int Game::Init()
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
@@ -52,12 +53,12 @@ int Game::Init()
 		counter += 1;
 		i = new Asteroid(renderer, BIG);
 		ActiveAst[counter] = i;
-	}	
+	}
 	for (auto& i : midAst) {
-		i = new Asteroid(renderer, );
+		i = new Asteroid(renderer, MID);
 	}
 	for (auto& i : smallAst) {
-		i = new Asteroid(renderer, BIG);
+		i = new Asteroid(renderer, SMALL);
 	}
 
 	return 0;
@@ -156,13 +157,7 @@ int Game::Render(double alpha) const
 	for (auto a:bigAst) {
 		a->Render(alpha);
 		SDL_RenderDrawRect(renderer, &a->mCollider);
-		if (a->hasChildren) {
-			for (auto c:a->children) {
-				c->Render(alpha);
-				SDL_RenderDrawRect(renderer, &c->mCollider);
-			}
 
-		}
 
 	}
 
@@ -233,7 +228,7 @@ int Game::Cleanup() const
 
 int Game::CollisonCheck()
 {
-	for (auto ast : bigAst) {
+	for (auto& ast : bigAst) {
 		if (player->CollisionDetection(&ast->mCollider) == 1 || player->CollisionDetection(&asteroid->mCollider) == 1) {
 
 			std::cout << "ded" << std::endl;
@@ -244,17 +239,11 @@ int Game::CollisonCheck()
 				b.Update();
 				b.CollisionDetection(ast);
 				b.CollisionDetection(asteroid);
-				for (auto& c : ast->children) {
-					b.CollisionDetection(c);
-				}
 			}
 		}
 	}
-	for (int i = 0; i < bigAst.size(); ++i) {
-		player->CollisionDetection(&bigAst[i]->mCollider);
-		for (int j = 0; j < bigAst[i]->children.size(); ++j) {
-			player->CollisionDetection(&bigAst[i]->children[j]->mCollider);
-		}
+	for (auto & i : bigAst) {
+		player->CollisionDetection(&i->mCollider);
 
 	}
 	return 0;

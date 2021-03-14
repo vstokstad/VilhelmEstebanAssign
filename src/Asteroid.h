@@ -30,8 +30,6 @@ public:
 
 	int Render(double alpha) override;
 
-	std::array<Asteroid*, 4> children{};
-
 	int Update(time_point t) override;
 
 
