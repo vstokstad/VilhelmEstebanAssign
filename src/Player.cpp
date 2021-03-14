@@ -63,12 +63,12 @@ int Player::Move(time_point t)
 {
 	currentState.accelerationX = Library::clamp(currentState.accelerationX, -3.0, 3.0);
 	currentState.accelerationY = Library::clamp(currentState.accelerationY, -3.0, 3.0);
+	currentState.velocityX = Library::clamp(currentState.velocityX, -10.0, 10.0);
+	currentState.velocityY = Library::clamp(currentState.velocityY, -10.0, 10.0);
 
 	previousState = currentState;
 
 	Integrate(currentState, t);
-	currentState.velocityX = Library::clamp(currentState.velocityX, -10.0, 10.0);
-	currentState.velocityY = Library::clamp(currentState.velocityY, -10.0, 10.0);
 /*	currentState.velocityX = Library::Lerp(currentState.velocityX,0.0, 0.001);
 	currentState.velocityY = Library::Lerp(currentState.velocityY,0.0, 0.001);*/
 

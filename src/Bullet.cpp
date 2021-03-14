@@ -28,10 +28,10 @@ int Bullet::OnHit(Asteroid* asteroid)
 
 int Bullet::Move()
 {
-	speed = 0.01;
+	speed = 1;
 
-	mDestRect.x += (directionX * speed) * dt / 1s;
-	mDestRect.y += (directionY * speed) * dt / 1s;
+	mDestRect.x += directionX * dt / 1s;
+	mDestRect.y += directionY * dt / 1s;
 
 	ScreenWrap();
 	return 0;
@@ -56,6 +56,7 @@ int Bullet::OnGetFired()
 	isActive = true;
 	directionX = mPlayer->currentState.directionX;
 	directionY = mPlayer->currentState.directionY;
+
 	mDestRect.x = mPlayer->currentState.positionX;
 	mDestRect.y = mPlayer->currentState.positionY;
 

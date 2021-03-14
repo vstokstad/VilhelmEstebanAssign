@@ -87,7 +87,7 @@ Asteroid::Asteroid(SDL_Renderer* renderer, AsteroidSize size)
 		}
 		break;
 	default:
-		texture = "assets/bigAsteroids.png";
+		texture = "assets/mediumAsteroids.png";
 		rectSize = 128;
 	}
 

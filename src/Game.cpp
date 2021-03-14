@@ -6,7 +6,7 @@
 #include "GameObject.h"
 #include "Asteroid.h"
 #include "Bullet.h"
-
+#include "TextureManager.h"
 int Game::Init()
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
@@ -29,13 +29,15 @@ int Game::Init()
 		}
 
 	}
-
+	const char* bg = "assets/background.png";
+	backgroundTexture = TextureManager::LoadTexture(bg, renderer);
 	//draw the window//
 	SDL_ShowWindow(window);
 	SDL_RaiseWindow(window);
 
 	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
 	SDL_RenderClear(renderer);
+	SDL_RenderCopy(renderer, backgroundTexture, NULL, NULL);
 	SDL_RenderPresent(renderer);
 
 	//initialize the player//
@@ -141,7 +143,7 @@ int Game::Render(double alpha) const
 
 // ALL THE DrawRects below are for debugging and draws the respective objects collider;
 	SDL_RenderClear(renderer);
-
+	SDL_RenderCopy(renderer, backgroundTexture, NULL, NULL);
 	SDL_SetRenderDrawColor(renderer, 255, 20, 40, 250);
 	player->Render(alpha);
 	asteroid->Render(alpha);
