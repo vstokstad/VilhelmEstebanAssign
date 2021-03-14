@@ -95,7 +95,6 @@ int Asteroid::Move(time_point t)
 
 int Asteroid::Spawn()
 {
-	srand(time(0)*3);
 	isActive = true;
 	int randomNumber1 = 0;
 	int randomNumber2 = 0;
@@ -105,14 +104,14 @@ int Asteroid::Spawn()
 	std::cout << wall << std::endl;
 	if (wall == 0)
 	{
-		srand(time(0)*6);
 		randomNumber1 = 200;
+		randomNumber2 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 300) + 200);
+		randomNumber2 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 300) + 200);
 		randomNumber2 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 300) + 200);
 		std::cout << randomNumber2 << std::endl;
 	}
 	if (wall == 1)
 	{
-		srand(time(0)*2);
 		randomNumber1 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 600) + 200);
 		randomNumber2 = 200;
 		std::cout << randomNumber1 << std::endl;
