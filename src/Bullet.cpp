@@ -58,7 +58,6 @@ int Bullet::OnGetFired()
 	mDestRect.x = mPlayer->currentState.positionX;
 	mDestRect.y = mPlayer->currentState.positionY;
 
-	Update();
 
 	return 0;
 }

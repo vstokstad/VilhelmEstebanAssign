@@ -9,13 +9,16 @@
 #include <array>
 
 class Player;
+
 class Asteroid;
+
 class Bullet;
+
 class Game
 {
 public:
 
-	Game()= default;
+	Game() = default;
 
 	int Init();
 
@@ -35,6 +38,8 @@ public:
 
 	int ShowGameOverScreen();
 
+	int CollisonCheck();
+
 	bool appRunning = true;
 	Player* player{};
 	Asteroid* asteroid{};
@@ -42,8 +47,6 @@ public:
 	SDL_Renderer* renderer = nullptr;
 	SDL_Event events = SDL_Event();
 	std::array<Asteroid*, 5> bigAst{};
-
-
 
 
 };

@@ -9,21 +9,11 @@ int Asteroid::Split()
 {
 	std::cout << "splitting" << std::endl;
 	isActive = false;
-	for (auto& c:children) {
-		if (!c->isActive) {
-			c->isActive = true;
-			c->currentState.positionX = this->currentState.positionX;
-			c->currentState.positionY = this->currentState.positionY;
-			c->currentState.velocityX = random() / RAND_MAX;
-			srandom(time(NULL));
-			c->currentState.velocityY = random() / RAND_MAX;
-			c->speed += 1;
-		}
-		else{
-
+	if (hasChildren) {
+		for (int i = 0; i < children.size(); ++i) {
+children[i]->Spawn();
 		}
 	}
-	this->~Asteroid();
 	return 0;
 }
 
@@ -67,8 +57,8 @@ Asteroid::Asteroid(SDL_Renderer* renderer, AsteroidSize size)
 	double velocityX = random() / RAND_MAX;
 	srandom(time(NULL));
 	double velocityY = random() / RAND_MAX;
-	double postitionX = w / 2 * (random() / RAND_MAX);
-	double postitionY = h / 2 * (random() / RAND_MAX);
+	double postitionX = (w / 2 * (random() / RAND_MAX)) * 10;
+	double postitionY = (h / 2 * (random() / RAND_MAX)) * 10;
 	const char* texture;
 	switch (size) {
 	case BIG:

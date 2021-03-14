@@ -11,7 +11,6 @@ class Player;
 class Asteroid;
 
 class TextureManager;
-
 class Bullet
 {
 

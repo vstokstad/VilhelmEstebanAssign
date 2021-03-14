@@ -161,18 +161,7 @@ int Game::Update(time_point t)
 	HandleEvents();
 	player->Update(t);
 	asteroid->Update(t);
-	for (auto ast : bigAst) {
-		if (player->CollisionDetection(&ast->mCollider) == 1 || player->CollisionDetection(&asteroid->mCollider) == 1) {
-			ShowGameOverScreen();
-		}
-		for (auto& b : player->bullets) {
-			if (b.isActive) {
-				b.Update();
-				b.CollisionDetection(ast);
-				b.CollisionDetection(asteroid);
-			}
-		}
-	}
+	CollisonCheck();
 
 
 	return 0;
@@ -223,6 +212,33 @@ int Game::Cleanup() const
 	SDL_ShowCursor(1);
 	IMG_Quit();
 	SDL_Quit();
+	return 0;
+}
+
+int Game::CollisonCheck()
+{
+	for (auto ast : bigAst) {
+		if (player->CollisionDetection(&ast->mCollider) == 1 || player->CollisionDetection(&asteroid->mCollider) == 1) {
+			ShowGameOverScreen();
+		}
+		for (auto& b : player->bullets) {
+			if (b.isActive) {
+				b.Update();
+				b.CollisionDetection(ast);
+				b.CollisionDetection(asteroid);
+				for (auto& c : ast->children) {
+					b.CollisionDetection(c);
+				}
+			}
+		}
+	}
+	for (int i = 0; i < bigAst.size(); ++i) {
+		player->CollisionDetection(&bigAst[i]->mCollider);
+		for (int j = 0; j < bigAst[i]->children.size(); ++j) {
+			player->CollisionDetection(&bigAst[i]->children[j]->mCollider);
+		}
+
+	}
 	return 0;
 }
 
