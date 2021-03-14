@@ -9,11 +9,7 @@ int Asteroid::Split()
 {
 	std::cout << "splitting" << std::endl;
 	isActive = false;
-	if (hasChildren) {
-		for (int i = 0; i < children.size(); ++i) {
-			children[i]->Spawn();
-		}
-	}
+
 	return 0;
 }
 
@@ -24,13 +20,7 @@ int Asteroid::Render(double alpha)
 
 		SDL_RenderCopyExF(mRenderer, mTexture, NULL, &mDestRect, currentState.angle, NULL, flip);
 	}
-	for (auto c:children) {
-		{
-			if (c->isActive) {
-				c->Render(alpha);
-			}
-		}
-	}
+
 	return 0;
 }
 
@@ -40,11 +30,7 @@ int Asteroid::Update(time_point t)
 	if (isActive) {
 		Move(t);
 	}
-	for (auto c:children) {
-		if (c->isActive) {
-			c->Move(t);
-		}
-	}
+
 	return 0;
 }
 
@@ -55,36 +41,23 @@ Asteroid::Asteroid(SDL_Renderer* renderer, AsteroidSize size)
 	SDL_GetRendererOutputSize(renderer, &w, &h);
 	mRenderer = renderer;
 	int rectSize;
-	double velocityX = rand() / RAND_MAX;
-	srand(time(NULL));
-	double velocityY = rand() / RAND_MAX;
-	double postitionX = (w / 2 * (rand() / RAND_MAX)) * 10;
-	double postitionY = (h / 2 * (rand() / RAND_MAX)) * 10;
+	double velocityX = 0;
+	double velocityY = 0;
+	double postitionX = 200;
+	double postitionY = 200;
 	const char* texture;
 	switch (size) {
 	case BIG:
 		rectSize = 256;
 		texture = "assets/bigAsteroids.png";
-		hasChildren = true;
-		for (auto& c:children) {
-			c = new Asteroid(renderer, MID);
-		}
 		break;
 	case MID:
 		rectSize = 128;
 		texture = "assets/mediumAsteroids.png";
-		hasChildren = true;
-		for (auto& c:children) {
-			c = new Asteroid(renderer, SMALL);
-		}
 		break;
 	case SMALL:
 		rectSize = 64;
 		texture = "assets/smallAsteroids.png";
-		hasChildren = false;
-		for (auto& c:children) {
-			delete c;
-		}
 		break;
 	default:
 		texture = "assets/mediumAsteroids.png";
@@ -121,8 +94,8 @@ int Asteroid::Move(time_point t)
 int Asteroid::Spawn()
 {
 	isActive = true;
-	currentState.positionX = rand() / w;
-	currentState.positionY = rand() / h;
+	currentState.positionX = 400;
+	currentState.positionY = 500;
 
 
 //TODO the stuff from the constructor that makes the thing appear on screen should move here. Or this should be a mehtod to place it in the correct vector that gets rendered on screen (in Game.Render())
