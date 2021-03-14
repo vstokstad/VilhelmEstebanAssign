@@ -43,7 +43,7 @@ public:
 
 	bool appRunning = true;
 	Player* player{};
-	Asteroid* asteroid{};
+	//Asteroid* asteroid{};
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
 	SDL_Texture* backgroundTexture{};

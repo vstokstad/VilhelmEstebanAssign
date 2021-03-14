@@ -43,7 +43,7 @@ int Game::Init()
 
 	//initialize the player//
 	player = new Player(renderer);
-	asteroid = new Asteroid(renderer, BIG);
+	//asteroid = new Asteroid(renderer, BIG);
 
 	//present the first render.
 	SDL_RenderPresent(renderer);
@@ -76,10 +76,12 @@ int Game::GameLoop()
 	time_point currentTime = Clock::now();
 	duration accumulator = 0s;
 
-	for (auto& a:ActiveAst) {
-		a->Spawn();
+	//asteroid->Spawn();
+	for (auto& i : ActiveAst) {
+		float randomNumber1 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 400));
+		float randomNumber2 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 500));
+		i->Spawn(randomNumber1, randomNumber2);
 	}
-
 	while (appRunning) {
 
 		time_point newTime = Clock::now();
@@ -207,7 +209,11 @@ int Game::RestartGame()
 {
 	std::cout << "RESTARTING" << std::endl;
 	player->~Player();
-	asteroid->~Asteroid();
+
+	//asteroid->~Asteroid();
+	for (auto& i : ActiveAst) {
+		i->~Asteroid();
+	}
 	SDL_RenderClear(renderer);
 	SDL_PumpEvents();
 	while (SDL_PollEvent(&events) != 0) {
@@ -225,7 +231,9 @@ int Game::Cleanup() const
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	player->~Player();
-	asteroid->~Asteroid();
+	for (auto& i : ActiveAst) {
+		i->~Asteroid();
+	}
 	SDL_ShowCursor(1);
 	IMG_Quit();
 	SDL_Quit();
