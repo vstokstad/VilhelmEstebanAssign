@@ -156,8 +156,10 @@ int Game::Render(double alpha) const
 		}
 	}
 	for (auto a:ActiveAst) {
-		a->Render(alpha);
-		SDL_RenderDrawRect(renderer, &a->mCollider);
+		if (a->isActive) {
+			a->Render(alpha);
+			SDL_RenderDrawRect(renderer, &a->mCollider);
+		}
 
 
 	}
@@ -233,16 +235,20 @@ int Game::Cleanup() const
 int Game::CollisonCheck()
 {
 	for (auto& ast : ActiveAst) {
-		if (player->CollisionDetection(&ast->mCollider) == 1) {
+		if (ast->isActive) {
 
-			std::cout << "ded" << std::endl;
-			ShowGameOverScreen();
-		}
-		for (auto& b : player->bullets) {
-			if (b.isActive) {
-				b.Update();
-				b.CollisionDetection(ast);
-				b.CollisionDetection(asteroid);
+			if (player->CollisionDetection(&ast->mCollider) == 1) {
+				std::cout << "ded" << std::endl;
+				ShowGameOverScreen();
+			}
+			for (auto& b : player->bullets) {
+				if (b.isActive) {
+					b.Update();
+					if (ast->isActive) {
+						b.CollisionDetection(ast);
+					}
+
+				}
 			}
 		}
 	}
