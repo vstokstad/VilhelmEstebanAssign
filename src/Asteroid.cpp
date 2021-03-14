@@ -21,6 +21,7 @@ int Asteroid::Render(double alpha)
 {
 	if (isActive) {
 		InterpolateState(alpha);
+
 		SDL_RenderCopyExF(mRenderer, mTexture, NULL, &mDestRect, currentState.angle, NULL, flip);
 	}
 	for (auto c:children) {
@@ -96,6 +97,7 @@ Asteroid::Asteroid(SDL_Renderer* renderer, AsteroidSize size)
 	currentState = { 0, 0, velocityX, velocityY, postitionX, postitionY, 0, 0, 0 };
 	previousState = { 0, 0, 0, 0, postitionX, postitionY, 0, 0, 0 };
 	IMG_Init(IMG_INIT_PNG);
+
 
 	mTexture = TextureManager::LoadTexture(texture, mRenderer);
 
