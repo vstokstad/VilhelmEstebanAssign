@@ -96,7 +96,9 @@ Bullet::Bullet(SDL_Renderer* renderer, Player* player, SDL_Texture* texture) : m
 
 int Bullet::Render(double alpha)
 {
-
+	if (isActive){
 	SDL_RenderCopy(mRenderer, mTexture, NULL, &mDestRect);
+
+	}
 	return 0;
 }

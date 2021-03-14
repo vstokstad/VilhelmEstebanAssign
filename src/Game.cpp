@@ -52,7 +52,7 @@ int Game::Init()
 		i = new Asteroid(renderer, BIG);
 		std::cout << i << std::endl;
 		ActiveAst.push_front(i);
-	}	
+	}
 
 	for (auto& i : midAst) {
 		i = new Asteroid(renderer, MID);
@@ -151,26 +151,19 @@ int Game::Render(double alpha) const
 	SDL_RenderCopy(renderer, backgroundTexture, NULL, NULL);
 	SDL_SetRenderDrawColor(renderer, 255, 20, 40, 250);
 	player->Render(alpha);
-	//asteroid->Render(alpha);
 	for (auto b : player->bullets) {
 		if (b.isActive) {
 			b.Render(alpha);
 			SDL_RenderDrawRect(renderer, &b.mDestRect);
 		}
 	}
-	/*
-		for (auto a:bigAst) {
-		a->Render(alpha);
-		SDL_RenderDrawRect(renderer, &a->mCollider);
-
+	for (auto a:ActiveAst) {
+		if (a->isActive) {
+			a->Render(alpha);
+			SDL_RenderDrawRect(renderer, &a->mCollider);
 		}
 
-	}
-	*/
-		
-	for (auto& i : ActiveAst) {
-		i->Render(alpha);
-		SDL_RenderDrawRect(renderer, &i->mCollider);
+
 	}
 
 	SDL_RenderPresent(renderer);
@@ -249,24 +242,25 @@ int Game::Cleanup() const
 
 int Game::CollisonCheck()
 {
-
 	for (auto& ast : ActiveAst) {
-		if (player->CollisionDetection(&ast->mCollider) == 1 )
-		{
+		if (ast->isActive) {
 
-			ShowGameOverScreen();
-		}
-		for (auto& b : player->bullets) {
-			if (b.isActive) {
-				b.Update();
-				b.CollisionDetection(ast);
+			if (player->CollisionDetection(&ast->mCollider) == 1) {
+				std::cout << "ded" << std::endl;
+				ShowGameOverScreen();
+			}
+			for (auto& b : player->bullets) {
+				if (b.isActive) {
+					b.Update();
+					if (ast->isActive) {
+						b.CollisionDetection(ast);
+					}
+
+				}
 			}
 		}
 	}
-	for (auto & i : bigAst) {
-		player->CollisionDetection(&i->mCollider);
 
-	}
 	return 0;
 }
 
