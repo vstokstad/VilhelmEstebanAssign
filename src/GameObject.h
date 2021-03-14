@@ -96,19 +96,19 @@ public:
 	int ScreenWrap(State* state) const
 	{
 
-		int o = mDestRect.w;
+		int offset = mDestRect.w;
 
-		if (state->positionX > w + o) {
-			state->positionX = 0 - o;
+		if (state->positionX > w + offset) {
+			state->positionX = 0 - offset;
 		}
-		else if (state->positionX < 0.0 - o) {
-			state->positionX = w + o;
+		else if (state->positionX < 0.0 - offset) {
+			state->positionX = w + offset;
 		}
-		if (state->positionY > h + o) {
-			state->positionY = 0 - o;
+		if (state->positionY > h + offset) {
+			state->positionY = 0 - offset;
 		}
-		else if (state->positionY < 0.0 - o) {
-			state->positionY = h + o;
+		else if (state->positionY < 0.0 - offset) {
+			state->positionY = h + offset;
 		}
 		return 0;
 	}

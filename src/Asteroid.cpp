@@ -54,11 +54,11 @@ Asteroid::Asteroid(SDL_Renderer* renderer, AsteroidSize size)
 	SDL_GetRendererOutputSize(renderer, &w, &h);
 	mRenderer = renderer;
 	int rectSize;
-	double velocityX = random() / RAND_MAX;
-	srandom(time(NULL));
-	double velocityY = random() / RAND_MAX;
-	double postitionX = (w / 2 * (random() / RAND_MAX)) * 10;
-	double postitionY = (h / 2 * (random() / RAND_MAX)) * 10;
+	double velocityX = rand() / RAND_MAX;
+	srand(time(NULL));
+	double velocityY = rand() / RAND_MAX;
+	double postitionX = (w / 2 * (rand() / RAND_MAX)) * 10;
+	double postitionY = (h / 2 * (rand() / RAND_MAX)) * 10;
 	const char* texture;
 	switch (size) {
 	case BIG:
@@ -86,6 +86,7 @@ Asteroid::Asteroid(SDL_Renderer* renderer, AsteroidSize size)
 		}
 		break;
 	default:
+		texture = "/assets/bigAsteroids.png";
 		rectSize = 128;
 	}
 

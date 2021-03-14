@@ -1,7 +1,42 @@
-﻿  Asteroid.cpp
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(71,70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(73,70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(75,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(76,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(95,9): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+﻿  main.cpp
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(74,70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(76,70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(78,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(79,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(99,9): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+  Asteroid.cpp
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(74,70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(76,70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(78,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(79,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(99,9): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Asteroid.cpp(58,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Bullet.cpp
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(74,70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(76,70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(78,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(79,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(99,9): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Bullet.cpp(32,47): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Bullet.cpp(33,47): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Bullet.cpp(56,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Bullet.cpp(57,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Bullet.cpp(58,37): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Bullet.cpp(59,37): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Bullet.cpp(98,43): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Bullet.cpp(99,43): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  Game.cpp
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(74,70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(76,70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(78,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(79,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(99,9): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+  Player.cpp
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(74,70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(76,70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(78,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(79,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\GameObject.h(99,9): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\VilhemEsteban\src\Player.cpp(40,8): warning C4102: 'SHOOT': unreferenced label
+  Generating Code...
   AsteroidsAssignment.vcxproj -> C:\Users\Admin\Documents\GitHub\VilhemEsteban\VilhemEstebanSolution\x64\Debug\AsteroidsAssignment.exe
