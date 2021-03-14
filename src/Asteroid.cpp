@@ -80,12 +80,13 @@ Asteroid::Asteroid(SDL_Renderer* renderer, AsteroidSize size)
 
 int Asteroid::Move(time_point t)
 {
+
 	
 	
 	currentState.accelerationX = 0;
 	currentState.accelerationY = 0;
-	currentState.velocityX = 1;
-	currentState.velocityY = 1;
+	currentState.velocityX = randomNumberx;
+	currentState.velocityY = randomNumbery;
 
 	previousState = currentState;
 	Integrate(currentState, t);
@@ -94,10 +95,15 @@ int Asteroid::Move(time_point t)
 
 int Asteroid::Spawn(int initialPosX, int initialPosY)
 {
+	srand(static_cast <unsigned> (time(0)));
 	isActive = true;
 	currentState.positionX = initialPosX;
 	currentState.positionY = initialPosY;
+	randomNumberx = static_cast <int> (rand()) / (static_cast <int> (RAND_MAX / 2) - 1);
+	randomNumbery = static_cast <int> (rand()) / (static_cast <int> (RAND_MAX / 2) - 1);
 
+	std::cout << randomNumberx << std::endl;
+	std::cout << randomNumbery << std::endl;
 
 //TODO the stuff from the constructor that makes the thing appear on screen should move here. Or this should be a mehtod to place it in the correct vector that gets rendered on screen (in Game.Render())
 	return 0;

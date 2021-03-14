@@ -246,7 +246,6 @@ int Game::CollisonCheck()
 		if (ast->isActive) {
 
 			if (player->CollisionDetection(&ast->mCollider) == 1) {
-				std::cout << "ded" << std::endl;
 				ShowGameOverScreen();
 			}
 			for (auto& b : player->bullets) {

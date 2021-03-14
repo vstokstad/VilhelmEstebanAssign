@@ -39,6 +39,8 @@ public:
 
 	int Spawn(int initialPosX, int initialPosY);
 
+	int randomNumberx = 0;
+	int randomNumbery = 0;
 
 };
 
