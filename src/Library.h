@@ -304,6 +304,12 @@ public:
 	{
 		return a + t * (b - a);
 	}
+	float static NegLerp(float a, float b, float t)
+	{
+		return a - t * (b + a);
+	}
 
 
 };
+
+

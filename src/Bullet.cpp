@@ -83,7 +83,7 @@ int Bullet::ScreenWrap()
 	return 0;
 }
 
-Bullet::Bullet(SDL_Renderer* renderer, Player* player, SDL_Texture* texture) : mPlayer(player)
+Bullet::Bullet(SDL_Renderer* renderer, Player* player, SDL_Texture* texture) : mPlayer(player), mTexture(texture), mRenderer(renderer)
 {
 	IMG_Init(IMG_INIT_PNG);
 	isActive = false;
@@ -98,6 +98,6 @@ int Bullet::Render(double alpha)
 	speed = 1;
 	mDestRect.x += (directionX * speed) * dt / 1s;
 	mDestRect.y += (directionY * speed) * dt / 1s;
-	SDL_RenderCopy(mRenderer, mPlayer->bulletTexture, NULL, &mDestRect);
+	SDL_RenderCopy(mRenderer, mTexture, NULL, &mDestRect);
 	return 0;
 }

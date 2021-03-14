@@ -11,8 +11,8 @@ using Clock = std::chrono::steady_clock;
 using time_point = std::chrono::time_point<Clock, duration>;
 struct State
 {
-	double accelerationX = 1.0;
-	double accelerationY = 1.0;
+	double accelerationX = 0.0;
+	double accelerationY = 0.0;
 	double velocityX = 0.0;
 	double velocityY = 0.0;
 	double positionX = 0.0;
@@ -67,25 +67,25 @@ public:
 		currentState.velocityY = currentState.velocityY * alpha + previousState.velocityY * (1 - alpha);
 		currentState.positionX += currentState.velocityX * alpha + previousState.velocityX * (1 - alpha);
 		currentState.positionY += currentState.velocityY * alpha + previousState.velocityY * (1 - alpha);
-		currentState.angle += currentState.angle * alpha + previousState.angle * (1 - alpha);
-		mDestRect.x = (currentState.positionX + (mDestRect.w / 4)) * alpha +
-		              (previousState.positionX + (mDestRect.w / 4)) * (1 - alpha);
-		mDestRect.y = (currentState.positionY + (mDestRect.h / 4)) * alpha +
-		              (previousState.positionY + (mDestRect.h / 4)) * (1 - alpha);
-		mCollider.x = mDestRect.x + (mDestRect.w / 4);
-		mCollider.y = mDestRect.y + (mDestRect.h / 4);
+		currentState.angle = currentState.angle * alpha + previousState.angle * (1 - alpha);
+		mDestRect.x = (currentState.positionX - (mDestRect.w / 2)) * alpha +
+		              (previousState.positionX - (mDestRect.w / 2)) * (1 - alpha);
+		mDestRect.y = (currentState.positionY - (mDestRect.h / 2)) * alpha +
+		              (previousState.positionY - (mDestRect.h / 2)) * (1 - alpha);
+		mCollider.x = mDestRect.x - (mDestRect.w / 2);
+		mCollider.y = mDestRect.y - (mDestRect.h / 2);
 
 		ScreenWrap(&currentState);
 	}
 
 	int Integrate(State& state, std::chrono::time_point<Clock, std::chrono::duration<double>>)
-	{
+	{;
 		using namespace std::literals;
-
 		state.velocityX += speed * state.accelerationX * dt / 1s;
 		state.velocityY += speed * state.accelerationY * dt / 1s;
-
-		state.angle = (atan2(state.directionY, state.directionX) * 180.0 / 3.14) * dt / 1s;
+		state.directionX = (state.velocityX* (h / 2.0));
+		state.directionY = (state.velocityY* (w / 2.0));
+		state.angle = (atan2(state.directionY, state.directionX) * (180 / 3.14))+90;
 		return 0;
 	}
 

@@ -42,7 +42,8 @@ int Asteroid::Move(time_point t)
 
 	currentState.accelerationX = 0;
 	currentState.accelerationY = 0;
-	
+	currentState.velocityX = 1;
+	currentState.velocityY = 1;
 
 	previousState = currentState;
 	Integrate(currentState, t);

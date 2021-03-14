@@ -20,34 +20,27 @@ int Player::HandleInput(SDL_KeyboardEvent event)
 		UP:
 		case SDLK_UP:
 			currentState.accelerationY -= 0.2;
-			currentState.directionY += -1;
 			std::cout << "up" << std::endl;
 			break;
 		DOWN:
 		case SDLK_DOWN:
 			currentState.accelerationY += 0.2;
-			currentState.directionY += 1;
-
 			std::cout << "down" << std::endl;
 			break;
 		LEFT:
 		case SDLK_LEFT:
 			currentState.accelerationX -= 0.2;
-			currentState.directionX += -1;
-
 			std::cout << "left" << std::endl;
 			break;
 		RIGHT:
 		case SDLK_RIGHT:
 			currentState.accelerationX += 0.2;
-			currentState.directionX += 1;
-
 			std::cout << "right" << std::endl;
 			break;
 		SHOOT:
 		case SDLK_SPACE:
 			Fire();
-			std::cout << "fire" << std::endl;
+			std::cout <<"angle "<< currentState.angle <<" dirX: "<< currentState.directionX <<" dirY: "<< currentState.directionY << std::endl;
 			break;
 		case SDLK_w:
 			goto UP;
@@ -68,7 +61,9 @@ int Player::HandleInput(SDL_KeyboardEvent event)
 
 int Player::Move(time_point t)
 {
+
 	previousState = currentState;
+
 	Integrate(currentState, t);
 
 
@@ -80,21 +75,19 @@ int Player::Render(double alpha)
 
 	InterpolateState(alpha);
 	SDL_RenderCopyExF(mRenderer, mTexture, NULL, &mDestRect, currentState.angle, NULL, flip);
-
 	for (auto& b:bullets) {
 		if (b.isActive) {
 			b.Render(alpha);
 		}
 	}
 	return 0;
+
 }
 
 int Player::Fire()
 {
 
 	if (bullets.empty()) {
-		const char* bullet = "assets/player.png";
-		SDL_Texture* bulletTexture = TextureManager::LoadTexture(bullet, mRenderer);
 		bullets.emplace_back(mRenderer, this, bulletTexture);
 	}
 	for (auto& i : bullets) {
@@ -126,8 +119,10 @@ Player::Player(SDL_Renderer* renderer)
 
 	mDestRect = { 64, 64, 64, 64 };
 	mCollider = { 64 - (64 / 4), 64 - (64 / 4), 48, 48 };
-	currentState = { 0, 0, 0, 0, static_cast<double>(w / 2.0) - 32, static_cast<double>(h / 2.0) - 32, 0 , static_cast<double>(w/2.0)*-100};
-	previousState = { 0, 0, 0, 0, static_cast<double>(w / 2.0) - 32, static_cast<double>(h / 2.0) - 32 , 0, static_cast<double>(w/2.0)*-100};
+	currentState = { 0, 0, 0, 0, static_cast<double>(w / 2.0) - 32, static_cast<double>(h / 2.0) - 32, 1,
+	                 1, 90 };
+	previousState = { 0, 0, 0, 0, static_cast<double>(w / 2.0) - 32, static_cast<double>(h / 2.0) - 32, 1,
+	                  1, 90};
 
 	IMG_Init(IMG_INIT_PNG);
 	const char* playerWhite = "assets/playerWhite.png";

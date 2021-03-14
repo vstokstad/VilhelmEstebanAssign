@@ -138,7 +138,8 @@ int Game::Render(double alpha) const
 	}
 	SDL_SetRenderDrawColor(renderer, 255, 20, 40, 250);
 	SDL_RenderDrawLine(renderer, player->currentState.positionX, player->currentState.positionY,
-			player->currentState.directionX, player->currentState.directionY);
+			player->h/2.0*player->currentState.velocityX,
+			player->w/2.0*player->currentState.velocityY);
 	SDL_RenderPresent(renderer);
 	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
 
