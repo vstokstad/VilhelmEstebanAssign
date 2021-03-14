@@ -11,16 +11,12 @@
 
 /cmake/
 
-<<<<<<< HEAD
 
 *.sln
 *.vcxproj
 /NurglesAsteroids/
+.vs
 
-
-=======
-/.vs
->>>>>>> Esteban
 
 
 
