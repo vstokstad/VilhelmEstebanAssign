@@ -75,8 +75,8 @@ public:
 		              (previousState.positionX - (mDestRect.w / 2)) * (1 - alpha);
 		mDestRect.y = (currentState.positionY - (mDestRect.h / 2)) * alpha +
 		              (previousState.positionY - (mDestRect.h / 2)) * (1 - alpha);
-		mCollider.x = mDestRect.x + (mDestRect.w / 2);
-		mCollider.y = mDestRect.y + (mDestRect.h / 2);
+		mCollider.x = mDestRect.x + (mDestRect.w / 4);
+		mCollider.y = mDestRect.y + (mDestRect.h / 4);
 
 		ScreenWrap(&currentState);
 	}
@@ -85,8 +85,8 @@ public:
 	{
 
 		using namespace std::literals;
-		state.velocityX += speed * state.accelerationX * dt / 1s;
-		state.velocityY += speed * state.accelerationY * dt / 1s;
+		state.velocityX += (speed * state.accelerationX) * dt / 1s;
+		state.velocityY += (speed * state.accelerationY) * dt / 1s;
 		state.directionX = (state.velocityX * (h / 2.0));
 		state.directionY = (state.velocityY * (w / 2.0));
 		state.angle = (atan2(state.directionY, state.directionX) * (180 / 3.14)) + 90;

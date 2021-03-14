@@ -28,7 +28,7 @@ int Bullet::OnHit(Asteroid* asteroid)
 
 int Bullet::Move()
 {
-	speed = 2;
+	speed = 1;
 	mDestRect.x += (directionX * speed) * dt / 1s;
 	mDestRect.y += (directionY * speed) * dt / 1s;
 

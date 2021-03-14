@@ -19,22 +19,22 @@ int Player::HandleInput(SDL_KeyboardEvent event)
 		switch (event.keysym.sym) {
 		UP:
 		case SDLK_UP:
-			currentState.accelerationY -= 0.2;
+			currentState.accelerationY -= 1;
 			std::cout << "up" << std::endl;
 			break;
 		DOWN:
 		case SDLK_DOWN:
-			currentState.accelerationY += 0.2;
+			currentState.accelerationY += 1;
 			std::cout << "down" << std::endl;
 			break;
 		LEFT:
 		case SDLK_LEFT:
-			currentState.accelerationX -= 0.2;
+			currentState.accelerationX -= 1;
 			std::cout << "left" << std::endl;
 			break;
 		RIGHT:
 		case SDLK_RIGHT:
-			currentState.accelerationX += 0.2;
+			currentState.accelerationX += 1;
 			std::cout << "right" << std::endl;
 			break;
 		SHOOT:
@@ -61,11 +61,16 @@ int Player::HandleInput(SDL_KeyboardEvent event)
 
 int Player::Move(time_point t)
 {
+	currentState.accelerationX = Library::clamp(currentState.accelerationX, -3.0, 3.0);
+	currentState.accelerationY = Library::clamp(currentState.accelerationY, -3.0, 3.0);
 
 	previousState = currentState;
 
 	Integrate(currentState, t);
-
+	currentState.velocityX = Library::clamp(currentState.velocityX, -10.0, 10.0);
+	currentState.velocityY = Library::clamp(currentState.velocityY, -10.0, 10.0);
+/*	currentState.velocityX = Library::Lerp(currentState.velocityX,0.0, 0.001);
+	currentState.velocityY = Library::Lerp(currentState.velocityY,0.0, 0.001);*/
 
 	return 0;
 }
@@ -113,7 +118,7 @@ int Player::Update(time_point t)
 
 Player::Player(SDL_Renderer* renderer)
 {
-isActive = true;
+	isActive = true;
 	SDL_GetRendererOutputSize(renderer, &w, &h);
 	mRenderer = renderer;
 
@@ -122,7 +127,7 @@ isActive = true;
 	currentState = { 0, 0, 0, 0, static_cast<double>(w / 2.0) - 32, static_cast<double>(h / 2.0) - 32, 1,
 	                 1, 90 };
 	previousState = { 0, 0, 0, 0, static_cast<double>(w / 2.0) - 32, static_cast<double>(h / 2.0) - 32, 1,
-	                  1, 90};
+	                  1, 90 };
 
 	IMG_Init(IMG_INIT_PNG);
 	const char* playerWhite = "assets/playerWhite.png";

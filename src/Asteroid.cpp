@@ -11,7 +11,7 @@ int Asteroid::Split()
 	isActive = false;
 	if (hasChildren) {
 		for (int i = 0; i < children.size(); ++i) {
-children[i]->Spawn();
+			children[i]->Spawn();
 		}
 	}
 	return 0;
