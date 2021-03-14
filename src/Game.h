@@ -7,6 +7,7 @@
 #include "include.h"
 #include "GameObject.h"
 #include <array>
+#include <list>
 
 class Player;
 
@@ -50,7 +51,8 @@ public:
 	std::array<Asteroid*, 3> bigAst{};
 	std::array<Asteroid*, 6> midAst{};
 	std::array<Asteroid*, 12> smallAst{};
-	std::array<Asteroid*, 12> ActiveAst{};
+	std::list<Asteroid*> ActiveAst{};
+
 
 
 };
