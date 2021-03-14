@@ -32,7 +32,7 @@ public:
 
 	static std::unordered_map<std::string, SDL_Surface> LoadAssets()
 	{
-		auto path = "./assets/";
+		auto path = "assets/";
 		std::unordered_map<std::string, SDL_Surface> surfaces;
 		for (const auto& entry : fs::directory_iterator(path)) {
 			auto* localPath = new char[entry.path().string().size() + 1];

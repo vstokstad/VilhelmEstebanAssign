@@ -45,6 +45,7 @@ public:
 	Asteroid* asteroid{};
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
+	SDL_Texture* backgroundTexture{};
 	SDL_Event events = SDL_Event();
 	std::array<Asteroid*, 5> bigAst{};
 
