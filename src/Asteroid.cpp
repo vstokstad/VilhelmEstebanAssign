@@ -64,7 +64,7 @@ Asteroid::Asteroid(SDL_Renderer* renderer, AsteroidSize size)
 	switch (size) {
 	case BIG:
 		rectSize = 256;
-		texture = "/assets/bigAsteroids.png";
+		texture = "assets/bigAsteroids.png";
 		hasChildren = true;
 		for (auto& c:children) {
 			c = new Asteroid(renderer, MID);
@@ -72,7 +72,7 @@ Asteroid::Asteroid(SDL_Renderer* renderer, AsteroidSize size)
 		break;
 	case MID:
 		rectSize = 128;
-		texture = "/assets/mediumAsteroids.png";
+		texture = "assets/mediumAsteroids.png";
 		hasChildren = true;
 		for (auto& c:children) {
 			c = new Asteroid(renderer, SMALL);
@@ -80,14 +80,14 @@ Asteroid::Asteroid(SDL_Renderer* renderer, AsteroidSize size)
 		break;
 	case SMALL:
 		rectSize = 64;
-		texture = "/assets/smallAsteroids.png";
+		texture = "assets/smallAsteroids.png";
 		hasChildren = false;
 		for (auto& c:children) {
 			delete c;
 		}
 		break;
 	default:
-		texture = "/assets/bigAsteroids.png";
+		texture = "assets/bigAsteroids.png";
 		rectSize = 128;
 	}
 

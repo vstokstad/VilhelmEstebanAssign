@@ -44,7 +44,17 @@ int Game::Init()
 
 	//present the first render.
 	SDL_RenderPresent(renderer);
+
+	int counter = 0;
 	for (auto& i : bigAst) {
+		counter += 1;
+		i = new Asteroid(renderer, BIG);
+		ActiveAst[counter] = i;
+	}	
+	for (auto& i : midAst) {
+		i = new Asteroid(renderer, );
+	}
+	for (auto& i : smallAst) {
 		i = new Asteroid(renderer, BIG);
 	}
 
@@ -223,6 +233,8 @@ int Game::CollisonCheck()
 {
 	for (auto ast : bigAst) {
 		if (player->CollisionDetection(&ast->mCollider) == 1 || player->CollisionDetection(&asteroid->mCollider) == 1) {
+
+			std::cout << "ded" << std::endl;
 			ShowGameOverScreen();
 		}
 		for (auto& b : player->bullets) {

@@ -46,7 +46,10 @@ public:
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
 	SDL_Event events = SDL_Event();
-	std::array<Asteroid*, 5> bigAst{};
+	std::array<Asteroid*, 3> bigAst{};
+	std::array<Asteroid*, 6> midAst{};
+	std::array<Asteroid*, 12> smallAst{};
+	std::array<Asteroid*, 12> ActiveAst{};
 
 
 };
