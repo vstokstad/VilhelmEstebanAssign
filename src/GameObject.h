@@ -20,7 +20,7 @@ struct State
 	double positionX = 0.0;
 	double positionY = 0.0;
 	double directionX = 0.0;
-	double directionY = 0.0;
+	double directionY = 1.0;
 	double angle = 0.0;
 };
 

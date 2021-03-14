@@ -28,7 +28,8 @@ int Bullet::OnHit(Asteroid* asteroid)
 
 int Bullet::Move()
 {
-	speed = 1;
+	speed = 0.01;
+
 	mDestRect.x += (directionX * speed) * dt / 1s;
 	mDestRect.y += (directionY * speed) * dt / 1s;
 
@@ -94,9 +95,7 @@ Bullet::Bullet(SDL_Renderer* renderer, Player* player, SDL_Texture* texture) : m
 
 int Bullet::Render(double alpha)
 {
-	speed = 1;
-	mDestRect.x += (directionX * speed)*dt/1s;
-	mDestRect.y += (directionX * speed)*dt/1s;
+
 	SDL_RenderCopy(mRenderer, mTexture, NULL, &mDestRect);
 	return 0;
 }
