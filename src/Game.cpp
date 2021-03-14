@@ -129,21 +129,25 @@ int Game::HandleEvents()
 int Game::Render(double alpha) const
 {
 
-
+// ALL THE DrawRects below are for debugging and draws the respective objects collider;
 	SDL_RenderClear(renderer);
 
+	SDL_SetRenderDrawColor(renderer, 255, 20, 40, 250);
 	player->Render(alpha);
 	asteroid->Render(alpha);
 	for (auto b : player->bullets) {
 		if (b.isActive) {
 			b.Render(alpha);
+			SDL_RenderDrawRect(renderer, &b.mDestRect);
 		}
 	}
 	for (auto a:bigAst) {
 		a->Render(alpha);
+		SDL_RenderDrawRect(renderer, &a->mCollider);
 		if (a->hasChildren) {
 			for (auto c:a->children) {
 				c->Render(alpha);
+				SDL_RenderDrawRect(renderer, &c->mCollider);
 			}
 
 		}
@@ -151,7 +155,7 @@ int Game::Render(double alpha) const
 	}
 
 	SDL_RenderPresent(renderer);
-
+	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
 	return 0;
 }
 
