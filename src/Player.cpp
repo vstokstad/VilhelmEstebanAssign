@@ -8,6 +8,7 @@
 #include "GameObject.h"
 #include "include.h"
 #include "Bullet.h"
+#include "Asteroid.h"
 
 int Player::HandleInput(SDL_KeyboardEvent event)
 {
@@ -142,13 +143,15 @@ Player::Player(SDL_Renderer* renderer)
 
 }
 
-int Player::CollisionDetection(SDL_Rect* sdlRect)
+int Player::CollisionDetection(Asteroid* asteroid)
 {
+	if (asteroid->isActive) {
+		if (SDL_HasIntersection(&mCollider, &asteroid->mCollider) == SDL_TRUE) {
 
-	if (SDL_HasIntersection(&mCollider, sdlRect) == SDL_TRUE) {
-		//std::cout << "collision" << std::endl;
+			//std::cout << "collision" << std::endl;
 
-		return 1;
+			return 1;
+		}
 	}
 	return 0;
 }

@@ -6,12 +6,12 @@
 #include "Player.h"
 #include "Asteroid.h"
 
-int Bullet::CollisionDetection(Asteroid* gameObject)
+int Bullet::CollisionDetection(Asteroid* asteroid)
 {
-	SDL_Rect* sdlRect = &gameObject->mCollider;
+	SDL_Rect* sdlRect = &asteroid->mCollider;
 	if (SDL_HasIntersection(&mDestRect, sdlRect) == SDL_TRUE) {
 
-		OnHit(gameObject);
+		OnHit(asteroid);
 		return 1;
 	}
 	return 0;
@@ -19,6 +19,8 @@ int Bullet::CollisionDetection(Asteroid* gameObject)
 
 int Bullet::OnHit(Asteroid* asteroid)
 {
+
+	asteroid->isActive = false;
 	asteroid->Split();
 	std::cout << "HIT!" << std::endl;
 	mLifeTime = 500;

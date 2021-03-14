@@ -243,25 +243,19 @@ int Game::Cleanup() const
 int Game::CollisonCheck()
 {
 	for (auto& ast : ActiveAst) {
-		if (ast->isActive) {
-
-			if (player->CollisionDetection(&ast->mCollider) == 1) {
-				ShowGameOverScreen();
-			}
-			for (auto& b : player->bullets) {
-				if (b.isActive) {
-					b.Update();
-					if (ast->isActive) {
-						b.CollisionDetection(ast);
-					}
-
-				}
+		if (player->CollisionDetection(ast) == 1) {
+			std::cout << "ded" << std::endl;
+			ShowGameOverScreen();
+			break;
+		}
+		for (auto& b : player->bullets) {
+			if (b.isActive) {
+				b.Update();
+				b.CollisionDetection(ast);
 			}
 		}
 	}
-
 	return 0;
 }
-
 
 
