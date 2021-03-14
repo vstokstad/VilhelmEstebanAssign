@@ -12,7 +12,7 @@
 
 
 class Bullet;
-
+class Asteroid;
 class Player : public virtual GameObject
 {
 
@@ -29,7 +29,7 @@ public:
 
 	int Render(double alpha) override;
 
-	int CollisionDetection(SDL_Rect* sdlRect);
+	int CollisionDetection(Asteroid* asteroid);
 
 	int Update(time_point t) override;
 
