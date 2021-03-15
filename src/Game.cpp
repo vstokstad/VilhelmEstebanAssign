@@ -201,6 +201,9 @@ int Game::RestartGame()
 	std::cout << "RESTARTING" << std::endl;
 	player->~Player();
 	ActiveAst.clear();
+	bigAst.clear();
+	midAst.clear();
+	smallAst.clear();
 	for (auto& i : ActiveAst) {
 		i->~Asteroid();
 	}
