@@ -21,27 +21,22 @@ int Player::HandleInput(SDL_KeyboardEvent event)
 		UP:
 		case SDLK_UP:
 			currentState.accelerationY -= 1;
-			std::cout << "up" << std::endl;
 			break;
 		DOWN:
 		case SDLK_DOWN:
 			currentState.accelerationY += 1;
-			std::cout << "down" << std::endl;
 			break;
 		LEFT:
 		case SDLK_LEFT:
 			currentState.accelerationX -= 1;
-			std::cout << "left" << std::endl;
 			break;
 		RIGHT:
 		case SDLK_RIGHT:
 			currentState.accelerationX += 1;
-			std::cout << "right" << std::endl;
 			break;
 		SHOOT:
 		case SDLK_SPACE:
 			Fire();
-			std::cout << "right" << std::endl;
 			break;
 		case SDLK_w:
 			goto UP;
@@ -51,11 +46,8 @@ int Player::HandleInput(SDL_KeyboardEvent event)
 			goto LEFT;
 		case SDLK_d:
 			goto RIGHT;
-
 		};
 	}
-
-
 	return 0;
 }
 
@@ -64,21 +56,17 @@ int Player::Move(time_point t)
 {
 	currentState.accelerationX = Library::clamp(currentState.accelerationX, -3.0, 3.0);
 	currentState.accelerationY = Library::clamp(currentState.accelerationY, -3.0, 3.0);
-	currentState.velocityX = Library::clamp(currentState.velocityX, -10.0, 10.0);
-	currentState.velocityY = Library::clamp(currentState.velocityY, -10.0, 10.0);
-
+	currentState.velocityX = Library::clamp(currentState.velocityX, -5.0, 5.0);
+	currentState.velocityY = Library::clamp(currentState.velocityY, -5.0, 5.0);
 	previousState = currentState;
-
 	Integrate(currentState, t);
 /*	currentState.velocityX = Library::Lerp(currentState.velocityX,0.0, 0.001);
 	currentState.velocityY = Library::Lerp(currentState.velocityY,0.0, 0.001);*/
-
 	return 0;
 }
 
 int Player::Render(double alpha)
 {
-
 	InterpolateState(alpha);
 	SDL_RenderCopyExF(mRenderer, mTexture, NULL, &mDestRect, currentState.angle, NULL, flip);
 	for (auto& b:bullets) {
@@ -132,7 +120,7 @@ Player::Player(SDL_Renderer* renderer)
 
 	IMG_Init(IMG_INIT_PNG);
 	const char* playerWhite = "assets/playerWhite.png";
-	const char* bullet = "assets/playerWhite.png";
+	const char* bullet = "assets/SmallAsteroids.png";
 	bulletTexture = TextureManager::LoadTexture(bullet, mRenderer);
 	mTexture = TextureManager::LoadTexture(playerWhite, mRenderer);
 	bullets.reserve(20);

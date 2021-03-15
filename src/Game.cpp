@@ -49,12 +49,12 @@ int Game::Init()
 	//present the first render.
 	SDL_RenderPresent(renderer);
 
+	//initialize asteroids of each kind and add them to active.
 	for (auto& i : bigAst) {
 		i = new Asteroid(renderer, BIG);
 		std::cout << i << std::endl;
 		ActiveAst.push_front(i);
 	}
-
 	for (auto& i : midAst) {
 		i = new Asteroid(renderer, MID);
 		ActiveAst.push_back(i);
@@ -70,8 +70,6 @@ int Game::Init()
 
 int Game::GameLoop()
 {
-
-
 //SET TIME START//
 
 	using namespace std::literals;
@@ -154,19 +152,18 @@ int Game::Render(double alpha) const
 	SDL_RenderCopy(renderer, backgroundTexture, NULL, NULL);
 	SDL_SetRenderDrawColor(renderer, 255, 20, 40, 250);
 	player->Render(alpha);
+	//render all bullets
 	for (auto b : player->bullets) {
 		if (b.isActive) {
 			b.Render(alpha);
 		}
 	}
+	//render all active asteroids
 	for (auto a:ActiveAst) {
 		if (a->isActive) {
 			a->Render(alpha);
 		}
-
-
 	}
-
 	SDL_RenderPresent(renderer);
 	SDL_SetRenderDrawColor(renderer, 30, 20, 40, 250);
 	return 0;
@@ -174,13 +171,11 @@ int Game::Render(double alpha) const
 
 int Game::Update(time_point t)
 {
-
 	HandleEvents();
 	player->Update(t);
 	for (auto& i : ActiveAst) {
 		i->Update(t);
 	}
-	//asteroid->Update(t);
 	CollisonCheck();
 
 
@@ -189,19 +184,14 @@ int Game::Update(time_point t)
 
 int Game::StartGame()
 {
-
 	this->Init();
 	this->GameLoop();
-
-
 	return 0;
 }
 
 int Game::ShowGameOverScreen()
 {
-	//TODO add text or sprites for a gameOver screen;
 	std::cout << "GAME OVER" << std::endl;
-
 	RestartGame();
 	return 0;
 }
@@ -210,8 +200,6 @@ int Game::RestartGame()
 {
 	std::cout << "RESTARTING" << std::endl;
 	player->~Player();
-
-	//asteroid->~Asteroid();
 	ActiveAst.clear();
 	for (auto& i : ActiveAst) {
 		i->~Asteroid();
@@ -244,6 +232,7 @@ int Game::Cleanup() const
 
 int Game::CollisonCheck()
 {
+	//goes through all active asteroids and checks each one with a collision with the player and bullet.
 	for (auto& ast : ActiveAst) {
 		if (player->CollisionDetection(ast) == 1) {
 			ShowGameOverScreen();
