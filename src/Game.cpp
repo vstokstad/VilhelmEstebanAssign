@@ -57,9 +57,11 @@ int Game::Init()
 
 	for (auto& i : midAst) {
 		i = new Asteroid(renderer, MID);
+		ActiveAst.push_front(i);
 	}
 	for (auto& i : smallAst) {
 		i = new Asteroid(renderer, SMALL);
+		ActiveAst.push_front(i);
 	}
 
 	return 0;
@@ -155,13 +157,11 @@ int Game::Render(double alpha) const
 	for (auto b : player->bullets) {
 		if (b.isActive) {
 			b.Render(alpha);
-			SDL_RenderDrawRect(renderer, &b.mDestRect);
 		}
 	}
 	for (auto a:ActiveAst) {
 		if (a->isActive) {
 			a->Render(alpha);
-			SDL_RenderDrawRect(renderer, &a->mCollider);
 		}
 
 
@@ -212,6 +212,7 @@ int Game::RestartGame()
 	player->~Player();
 
 	//asteroid->~Asteroid();
+	ActiveAst.clear();
 	for (auto& i : ActiveAst) {
 		i->~Asteroid();
 	}

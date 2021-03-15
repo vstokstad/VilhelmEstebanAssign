@@ -39,10 +39,10 @@ public:
 
 	int Spawn();
 
-	int randomNumberx = 0;
-	int randomNumbery = 0;
-	int velocity1 = 0;
-	int velocity2 = 0;
+	float randomNumberx = 0;
+	float randomNumbery = 0;
+	float velocity1 = 0;
+	float velocity2 = 0;
 
 };
 
