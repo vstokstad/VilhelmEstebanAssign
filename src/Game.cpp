@@ -57,11 +57,11 @@ int Game::Init()
 
 	for (auto& i : midAst) {
 		i = new Asteroid(renderer, MID);
-		ActiveAst.push_front(i);
+		ActiveAst.push_back(i);
 	}
 	for (auto& i : smallAst) {
 		i = new Asteroid(renderer, SMALL);
-		ActiveAst.push_front(i);
+		ActiveAst.push_back(i);
 	}
 
 	return 0;

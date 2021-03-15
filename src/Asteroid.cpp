@@ -132,7 +132,6 @@ int Asteroid::Spawn()
 	std::cout << velocity2 << std::endl;
 
 
-//TODO the stuff from the constructor that makes the thing appear on screen should move here. Or this should be a mehtod to place it in the correct vector that gets rendered on screen (in Game.Render())
 	return 0;
 }
 
